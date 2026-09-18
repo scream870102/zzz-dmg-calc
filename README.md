@@ -8,9 +8,9 @@
 - 完整傷害公式、變數說明、倍率表與即時計算結果。
 - 逐步乘區拆解、比較基準、預設範例與觀念練習。
 - 每個參數欄位附「填什麼／值從哪來」說明，另有常數與係數表（防禦係數 794、等級區、各屬性異常倍率等）。
-- 都市龐克風格：橘色輔色 `#de8a1e`、粗黑體、流動漸層背景、內嵌 ZZ 標誌 favicon（base64，離線可用）。
-- 首頁右上角角色頭像每 10 秒隨機替換，點擊可提早換下一張；34 張頭像取自巴哈《絕區零》1.4–2.3 版本的「角色頭像」情報串，切格後轉 WebP 內嵌，離線可用。
-- 支援桌面與手機；HTML、CSS、JavaScript 集中於單一檔案，可離線使用。
+- 都市龐克風格：橘色輔色 `#de8a1e`、粗黑體、流動漸層背景、ZZ 標誌 favicon（本機 PNG，離線可用）。
+- 首頁右上角角色頭像每 10 秒隨機替換，點擊可提早換下一張；34 張頭像取自巴哈《絕區零》1.4–2.3 版本的「角色頭像」情報串，切格後以原尺寸 280×280 PNG 放在 `assets/avatars/`，未再壓縮。
+- 支援桌面與手機；HTML、CSS、JavaScript 集中於 `index.html`，只有頭像是外部圖檔，可離線使用。
 
 ## 本機開啟
 
@@ -18,13 +18,15 @@
 
 使用網頁不需要安裝 Node.js、套件或啟動伺服器；Node.js 僅供執行驗證程式。
 
-頭像與 favicon 以 base64 內嵌，所以 `index.html` 約 300 KB；仍然是單一檔案、不連外。頭像版權屬 miHoYo／HoYoverse，此處為個人非商業用途。
+favicon 與左上角標誌共用 `assets/icon.png`，頭像放在 `assets/avatars/`，都以相對路徑引用，`file://` 直接開也讀得到。全站不連外部網域。頭像版權屬 miHoYo／HoYoverse，此處為個人非商業用途。
 
 ## 檔案結構
 
 ```text
 zzz-damage-calc/
 ├── index.html          # 網頁入口、樣式與計算邏輯
+├── assets/icon.png     # 站台圖示與左上角標誌（512×512 PNG）
+├── assets/avatars/     # 34 張角色頭像 PNG（原尺寸，未壓縮）
 ├── verify-damage.cjs   # 數值、離線依賴與瀏覽器互動驗證
 └── README.md           # 專案說明
 ```
@@ -50,13 +52,13 @@ node verify-damage.cjs --browser
 
 程式使用獨立的暫存瀏覽器設定檔；執行結果會列出截圖位置。其他作業系統或自訂安裝位置需先調整 `verify-damage.cjs` 的瀏覽器路徑。
 
-最近一次驗證：107 項數值與離線檢查，加上桌面、手機各 94 項互動／版面檢查，共 295 項通過。
+最近一次驗證：109 項數值與離線檢查，加上桌面、手機各 95 項互動／版面檢查，共 299 項通過。
 
 ## 發布到 GitHub Pages
 
 本專案為純靜態網頁，不需自行執行建置指令或安裝依賴。
 
-1. 建立 GitHub repository，例如 `zzz-damage-calc`，將專案檔案上傳至根目錄，確保 `index.html` 不在額外的子資料夾裡。
+1. 建立 GitHub repository，例如 `zzz-damage-calc`，將專案檔案上傳至根目錄，確保 `index.html` 不在額外的子資料夾裡，且 `assets/` 一併上傳（頭像靠相對路徑讀取）。
 2. 前往 repository 的 **Settings → Pages**。
 3. 在 **Build and deployment → Source** 選擇 **Deploy from a branch**。
 4. 選擇存放檔案的分支（例如 `main`），資料夾選 **/(root)**，按 **Save**。
