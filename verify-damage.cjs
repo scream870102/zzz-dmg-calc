@@ -102,7 +102,11 @@ close(calculate({...DEFAULTS,mode:'disorder',element:'frost',time:5}).coefficien
 close(calculate({...DEFAULTS,mode:'turbulence',element:'frost',turbulenceOrder:'nonWindFirst',time:5}).coefficient,3.75,'Frost turbulence has no flat base');
 close(calculate({...DEFAULTS,mode:'anomaly',element:'wind',hits:1}).coefficient,12.5,'Wind shatter single hit is 1250%');
 assert.ok(calculate({...DEFAULTS,mode:'turbulence',element:'wind'}).state.element==='electric','Wind cannot be the non-wind basis of turbulence');checks++;
-assert.ok(!/<script[^>]+src=|<link[^>]+href=.*(?:https?:)?\/\//i.test(html),'No external script or CSS dependencies');checks++;
+assert.ok(!/<script[^>]+src=|<link[^>]+href=["']?(?:https?:)?\/\//i.test(html),'No external script or CSS dependencies');checks++;
+assert.ok(/<link rel="icon" type="image\/png" href="data:image\/png;base64,/.test(html),'Favicon is embedded, not fetched');checks++;
+assert.ok(JSON.parse(html.match(/<script id="avatar-data" type="application\/json">(.*?)<\/script>/s)[1]).length>=20,'Avatar set is embedded offline');checks++;
+assert.ok(!/#d8ff62|#e1e544|#e4e7a1/i.test(html),'No leftover yellow accent');checks++;
+assert.ok((html.match(/--acid:#de8a1e/g)||[]).length===2,'Accent colour is #de8a1e in both palettes');checks++;
 console.log(`PASS: ${checks} numerical and offline checks`);
 if(!process.argv.includes('--browser'))process.exit(0);
 const chrome = ['C:/Program Files/Google/Chrome/Application/chrome.exe','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(p=>fs.existsSync(p));
@@ -173,6 +177,18 @@ window.addEventListener('load',()=>{
  check('true damage shows target HP and multiplier',!$('trueDmg-fields').hidden&&!$('skill-field').hidden&&$('attack-field').hidden);
  input('targetHp',50000);input('skill',20);check('true damage equals HP times multiplier',calculate(state).total===10000&&calculate(state).factors.length===2);
  click('#reset');
+ check('avatar rotator loaded',AVATARS.length>=20&&$('avatar-img').getAttribute('src').startsWith('data:image/webp;base64,')&&$('avatar-tag').textContent.startsWith('VER '));
+ const firstAvatar=$('avatar-img').getAttribute('src');let avatarChanged=false;
+ for(let i=0;i<10&&!avatarChanged;i++){click('#avatar-frame');avatarChanged=$('avatar-img').getAttribute('src')!==firstAvatar;}
+ check('clicking swaps to another avatar',avatarChanged);
+ check('hero tagline replaced',document.querySelector('.hero .tagline').textContent.includes('神祕懸賞'));
+ check('hero headline replaced',document.querySelector('.hero h1').textContent.includes('H.I.A.')&&document.querySelector('.hero h1').textContent.includes('刮痧師傅'));
+ check('brand mark has no circular frame',getComputedStyle($('brand-mark')).borderRadius==='0px'&&getComputedStyle($('brand-mark')).borderTopWidth==='0px');
+ check('body text uses the gothic stack',/JhengHei|Noto Sans TC|PingFang/.test(getComputedStyle(document.body).fontFamily));
+ check('animated background layers present',!!document.querySelector('.flow')&&!!document.querySelector('.grain')&&getComputedStyle(document.querySelector('.flow')).position==='fixed');
+ check('background layers stay behind the content',Number(getComputedStyle(document.querySelector('.flow')).zIndex)<0&&Number(getComputedStyle(document.querySelector('.grain')).zIndex)<0);
+ check('brand mark uses the embedded logo',$('brand-mark').getAttribute('src').startsWith('data:image/png;base64,'));
+ check('accent colour applied',getComputedStyle(document.documentElement).getPropertyValue('--acid').trim()==='#de8a1e');
  check('field help hidden by default',$('attack-help').hidden&&$('attack-help-btn').getAttribute('aria-expanded')==='false');
  click('#attack-help-btn');check('field help opens with both sections',!$('attack-help').hidden&&$('attack-help').textContent.includes('填什麼')&&$('attack-help').textContent.includes('值從哪來'));
  click('#attack-help-btn');check('field help closes again',$('attack-help').hidden);
