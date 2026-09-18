@@ -103,8 +103,11 @@ close(calculate({...DEFAULTS,mode:'turbulence',element:'frost',turbulenceOrder:'
 close(calculate({...DEFAULTS,mode:'anomaly',element:'wind',hits:1}).coefficient,12.5,'Wind shatter single hit is 1250%');
 assert.ok(calculate({...DEFAULTS,mode:'turbulence',element:'wind'}).state.element==='electric','Wind cannot be the non-wind basis of turbulence');checks++;
 assert.ok(!/<script[^>]+src=|<link[^>]+href=["']?(?:https?:)?\/\//i.test(html),'No external script or CSS dependencies');checks++;
-assert.ok(/<link rel="icon" type="image\/png" href="data:image\/png;base64,/.test(html),'Favicon is embedded, not fetched');checks++;
-assert.ok(JSON.parse(html.match(/<script id="avatar-data" type="application\/json">(.*?)<\/script>/s)[1]).length>=20,'Avatar set is embedded offline');checks++;
+assert.ok(/<link rel="icon" type="image\/png" href="assets\/icon\.png">/.test(html)&&fs.existsSync(path.join(__dirname,'assets','icon.png')),'Favicon ships as a local PNG file');checks++;
+const avatarList=JSON.parse(html.match(/<script id="avatar-data" type="application\/json">(.*?)<\/script>/s)[1]);
+assert.ok(avatarList.length>=20,'Avatar manifest lists the downloaded portraits');checks++;
+assert.ok(avatarList.every(a=>fs.existsSync(path.join(__dirname,'assets','avatars',a.f))),'Every listed avatar file exists');checks++;
+assert.ok(avatarList.every(a=>/^v\d+\.\d+-\d+\.png$/.test(a.f)),'Avatar files keep their original PNG form');checks++;
 assert.ok(!/#d8ff62|#e1e544|#e4e7a1/i.test(html),'No leftover yellow accent');checks++;
 assert.ok((html.match(/--acid:#de8a1e/g)||[]).length===2,'Accent colour is #de8a1e in both palettes');checks++;
 console.log(`PASS: ${checks} numerical and offline checks`);
@@ -177,7 +180,7 @@ window.addEventListener('load',()=>{
  check('true damage shows target HP and multiplier',!$('trueDmg-fields').hidden&&!$('skill-field').hidden&&$('attack-field').hidden);
  input('targetHp',50000);input('skill',20);check('true damage equals HP times multiplier',calculate(state).total===10000&&calculate(state).factors.length===2);
  click('#reset');
- check('avatar rotator loaded',AVATARS.length>=20&&$('avatar-img').getAttribute('src').startsWith('data:image/webp;base64,')&&$('avatar-tag').textContent.startsWith('VER '));
+ check('avatar rotator loaded',AVATARS.length>=20&&$('avatar-img').getAttribute('src').startsWith('assets/avatars/')&&$('avatar-tag').textContent.startsWith('VER '));
  const firstAvatar=$('avatar-img').getAttribute('src');let avatarChanged=false;
  for(let i=0;i<10&&!avatarChanged;i++){click('#avatar-frame');avatarChanged=$('avatar-img').getAttribute('src')!==firstAvatar;}
  check('clicking swaps to another avatar',avatarChanged);
@@ -187,7 +190,7 @@ window.addEventListener('load',()=>{
  check('body text uses the gothic stack',/JhengHei|Noto Sans TC|PingFang/.test(getComputedStyle(document.body).fontFamily));
  check('animated background layers present',!!document.querySelector('.flow')&&!!document.querySelector('.grain')&&getComputedStyle(document.querySelector('.flow')).position==='fixed');
  check('background layers stay behind the content',Number(getComputedStyle(document.querySelector('.flow')).zIndex)<0&&Number(getComputedStyle(document.querySelector('.grain')).zIndex)<0);
- check('brand mark uses the embedded logo',$('brand-mark').getAttribute('src').startsWith('data:image/png;base64,'));
+ check('brand mark uses the local logo file',$('brand-mark').getAttribute('src')==='assets/icon.png');
  check('accent colour applied',getComputedStyle(document.documentElement).getPropertyValue('--acid').trim()==='#de8a1e');
  check('field help hidden by default',$('attack-help').hidden&&$('attack-help-btn').getAttribute('aria-expanded')==='false');
  click('#attack-help-btn');check('field help opens with both sections',!$('attack-help').hidden&&$('attack-help').textContent.includes('填什麼')&&$('attack-help').textContent.includes('值從哪來'));
@@ -204,6 +207,7 @@ window.addEventListener('load',()=>{
  const pre=document.createElement('pre');pre.id='browser-test-results';pre.hidden=true;pre.textContent=JSON.stringify(results);document.body.append(pre);
 });
 </script>`;
+fs.cpSync(path.join(__dirname,'assets'),path.join(scratch,'assets'),{recursive:true});
 const testHtml=path.join(scratch,'test.html');fs.writeFileSync(testHtml,html.replace('</body>',browserScript+'</body>'),'utf8');
 // Chrome's window-size flag has a minimum width. CDP emulation verifies the actual phone viewport.
 async function browserChecks(){
