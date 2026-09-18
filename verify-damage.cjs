@@ -84,6 +84,24 @@ close(calculate({...turbulence,element:'custom',customMV:750}).coefficient,7.5,'
 close(calculate({...simple,def:1000,defUp:30,shred:20,pen:20}).defEffective,880,'Enemy DEF up and shred are additive before PEN');
 close(calculate({...simple,dmg:40,outgoingReduction:20}).total,1200,'Outgoing damage reduction is in bonus zone');
 close(calculate({...sheer,defUp:200}).total,2600,'Sheer ignores enemy DEF up');
+const aberrant = {...DEFAULTS,mode:'aberrant',attack:1000,skill:100,ap:100,aberrantAP:0,aberrantBonus:0,dmg:0,attribute:0,def:0};
+close(calculate(aberrant).total,2000,'Aberrant multiplies level zone only');
+close(calculate({...aberrant,aberrantAP:500}).total,4400,'Aberrant mastery feeds both its own zones');
+close(calculate({...aberrant,aberrantBonus:30}).total,2600,'Aberrant core and mindscape bonus land in the mutation zone');
+close(calculate({...aberrant,specialSigil:true}).total,5000,'Special sigil adds the extra level zone');
+close(calculate({...aberrant,m4:true}).total,2240,'Mindscape 4 is an independent 1.12 multiplier');
+assert.ok(!calculate({...aberrant,anomalyCr:100,anomalyCd:100}).factors.some(f=>f.id==='anomalyCrit'),'Aberrant never takes an anomaly critical zone');checks++;
+close(calculate({...aberrant,anomalyTaken:50}).total,3000,'Aberrant keeps the independent anomaly taken zone');
+
+const trueDamage = {...DEFAULTS,mode:'trueDmg',targetHp:50000,skill:20};
+close(calculate(trueDamage).total,10000,'True damage is multiplier times target max HP');
+close(calculate({...trueDamage,def:9999,res:100,cr:100,cd:300,dmg:200,stunned:true}).total,10000,'True damage ignores every other zone');
+assert.ok(calculate(trueDamage).factors.length===2,'True damage exposes only the base zone');checks++;
+
+close(calculate({...DEFAULTS,mode:'disorder',element:'frost',time:5}).coefficient,9.75,'Frost disorder starts at 600% with 75% per second');
+close(calculate({...DEFAULTS,mode:'turbulence',element:'frost',turbulenceOrder:'nonWindFirst',time:5}).coefficient,3.75,'Frost turbulence has no flat base');
+close(calculate({...DEFAULTS,mode:'anomaly',element:'wind',hits:1}).coefficient,12.5,'Wind shatter single hit is 1250%');
+assert.ok(calculate({...DEFAULTS,mode:'turbulence',element:'wind'}).state.element==='electric','Wind cannot be the non-wind basis of turbulence');checks++;
 assert.ok(!/<script[^>]+src=|<link[^>]+href=.*(?:https?:)?\/\//i.test(html),'No external script or CSS dependencies');checks++;
 console.log(`PASS: ${checks} numerical and offline checks`);
 if(!process.argv.includes('--browser'))process.exit(0);
@@ -121,7 +139,8 @@ window.addEventListener('load',()=>{
  input('labBonus',0);check('zero bonus 20% gain',$('same-gain').textContent==='+20.0%');input('labBonus',300);check('300% bonus 5% gain',$('same-gain').textContent==='+5.0%');
  click('[data-answer="b"]');check('quiz correction',$('quiz-feedback').textContent.includes('再想想'));click('[data-answer="a"]');check('quiz correct',$('quiz-feedback').textContent.includes('答對'));
  click('#sources-link');check('source link expands detail',$('sources').open);
- check('all seven formula entries',$('all-formula-list').children.length===7);
+ check('all nine formula entries',$('all-formula-list').children.length===9);
+ check('element list covers frost and wind',[...$('element').options].map(o=>o.value).join(',')==='physical,ice,frost,fire,electric,ether,wind,custom');
  click('[data-mode="sheer"]');check('sheer formula visible',$('full-equation').textContent.includes('貫穿力')&&$('full-equation').textContent.includes('防禦固定'));
  check('sheer enemy defense inputs disabled',$('def').disabled&&$('pen').disabled);
  change('sheerMethod','derive');input('attack',2000);input('maxHp',20000);check('sheer conversion',calculate(state).baseValue===2600);
@@ -129,6 +148,7 @@ window.addEventListener('load',()=>{
  check('sharp enemy defense input enabled',!$('def').disabled);
  input('sharpCr',150);input('sharpCd',150);check('sharp second critical multiplier',calculate(state).factors.find(f=>f.id==='crit').value===4.375);
  check('sharp probability explanation',$('sharp-prob').textContent.includes('二次暴擊 50%'));
+ check('sharp mode documents devastation',$('mode-explain').textContent.includes('毀傷')&&$('skill-field').textContent.includes('毀傷倍率'));
  click('[data-mode="turbulence"]');change('element','electric');change('turbulenceOrder','nonWindFirst');input('time',7.5);check('turbulence coefficient 1525%',calculate(state).coefficient===15.25);
  change('turbulenceOrder','windFirst');input('duration',10);check('wind-first shows duration and hides remaining time',!$('duration-field').hidden&&$('time-wrap').hidden&&calculate(state).coefficient===19);
  check('source role descriptions visible',!$('source-roles').hidden&&$('source-roles').textContent.includes('原異常基底'));
@@ -140,6 +160,27 @@ window.addEventListener('load',()=>{
  check('compact full formula synchronized',$('compact-equation').textContent===$('full-equation').textContent);
  check('substitution includes result',$('substitution').textContent.includes($('damage').value));
  for(const mode of Object.keys(MODE_NAMES)){click('[data-mode="'+mode+'"]');check(mode+' mode renders finite result',Number.isFinite(calculate(state).total));check(mode+' no horizontal overflow',document.documentElement.scrollWidth<=innerWidth+1);}
+ click('[data-mode="aberrant"]');
+ check('aberrant shows its own fields',!$('aberrant-fields').hidden&&$('crit-group').hidden&&$('anomaly-crit-fields').hidden);
+ check('aberrant keeps the anomaly taken zone visible',!$('anomaly-extra').hidden&&!$('anomalyTaken-field').hidden);
+ check('aberrant formula names its zones',$('full-equation').textContent.includes('異化係數區')&&$('full-equation').textContent.includes('耀變倍率提升區'));
+ input('aberrantAP',500);check('aberrant mastery drives two zones',calculate(state).factors.find(f=>f.id==='aberrantMv').value===2&&Math.abs(calculate(state).factors.find(f=>f.id==='aberrantCoef').value-1.2)<1e-10);
+ $('specialSigil').checked=true;$('specialSigil').dispatchEvent(new Event('change',{bubbles:true}));check('special sigil level zone appears',calculate(state).factors.find(f=>f.id==='specialLevel').value===2.5);
+ check('factor buttons rebuild when a zone appears',$('factors').querySelectorAll('[data-factor]').length===calculate(state).factors.length);
+ check('constants table documents the aberrant zones',$('constants-table').textContent.includes('耀變異化係數區')&&$('constants-table').textContent.includes('烈霜'));
+ click('[data-mode="trueDmg"]');
+ check('true damage hides the multiplier groups',$('bonus-group').hidden&&$('defense-group').hidden&&$('res-group').hidden&&$('anomaly-fields').hidden);
+ check('true damage shows target HP and multiplier',!$('trueDmg-fields').hidden&&!$('skill-field').hidden&&$('attack-field').hidden);
+ input('targetHp',50000);input('skill',20);check('true damage equals HP times multiplier',calculate(state).total===10000&&calculate(state).factors.length===2);
+ click('#reset');
+ check('field help hidden by default',$('attack-help').hidden&&$('attack-help-btn').getAttribute('aria-expanded')==='false');
+ click('#attack-help-btn');check('field help opens with both sections',!$('attack-help').hidden&&$('attack-help').textContent.includes('填什麼')&&$('attack-help').textContent.includes('值從哪來'));
+ click('#attack-help-btn');check('field help closes again',$('attack-help').hidden);
+ click('#help-all');check('expand all opens every field help',FIELD_SPEC.every(f=>!$(f[0]+'-help').hidden));
+ check('expanded help keeps layout inside viewport',document.documentElement.scrollWidth<=window.innerWidth+1);
+ click('#help-all');check('expand all collapses every field help',FIELD_SPEC.every(f=>$(f[0]+'-help').hidden));
+ check('every numeric field documented',FIELD_SPEC.every(f=>FIELD_HELP[f[0]]&&FIELD_HELP[f[0]][0]&&FIELD_HELP[f[0]][1]));
+ check('constants table documents defence coefficient',$('constants-table').textContent.includes('794')&&$('constants-table').querySelectorAll('tbody tr').length>=14);
  click('#reset');$('sources').open=false;$('defense-group').open=false;input('labBonus',100);window.scrollTo(0,0);
  check('no horizontal overflow',document.documentElement.scrollWidth<=window.innerWidth+1);
  check('all visible input boxes fit',[...document.querySelectorAll('input,select,button')].filter(e=>e.getClientRects().length).every(e=>{const r=e.getBoundingClientRect();return r.left>=-1&&r.right<=window.innerWidth+1;}));
@@ -164,7 +205,7 @@ async function browserChecks(){
   socket=new WebSocket(pages.find(p=>p.type==='page').webSocketDebuggerUrl);
   await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject;});
   let sequence=0;const pending=new Map(),errors=[];
-  socket.onmessage=event=>{const msg=JSON.parse(event.data);if(msg.method==='Runtime.exceptionThrown')errors.push(msg.params.exceptionDetails.text);if(!pending.has(msg.id))return;const {resolve,reject,timer}=pending.get(msg.id);clearTimeout(timer);pending.delete(msg.id);msg.error?reject(new Error(JSON.stringify(msg.error))):resolve(msg.result);};
+  socket.onmessage=event=>{const msg=JSON.parse(event.data);if(msg.method==='Runtime.exceptionThrown')errors.push(msg.params.exceptionDetails.exception?.description||msg.params.exceptionDetails.text);if(!pending.has(msg.id))return;const {resolve,reject,timer}=pending.get(msg.id);clearTimeout(timer);pending.delete(msg.id);msg.error?reject(new Error(JSON.stringify(msg.error))):resolve(msg.result);};
   function send(method,params={}){
    const [domain,command]=method.split('.');
    const schema=protocol.domains.find(d=>d.domain===domain)?.commands.find(c=>c.name===command);
@@ -196,6 +237,7 @@ async function browserChecks(){
    console.log(`${failures.length?'FAIL':'PASS'}: ${label} ${width}x${height}, ${results.length+2} interaction/layout checks; screenshot ${screenshot}`);
    for(const item of failures)console.error(item.name);if(failures.length)failed=true;
   }
+  for(const e of errors)console.error('JSERR '+e);
   assert.equal(errors.length,0,'No browser JavaScript exceptions');
   console.log('Verification artifacts: '+scratch);process.exitCode=failed?1:0;
   await send('Browser.close');
