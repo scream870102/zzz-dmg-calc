@@ -107,7 +107,9 @@ assert.ok(/<link rel="icon" type="image\/png" href="assets\/icon\.png">/.test(ht
 const avatarList=JSON.parse(html.match(/<script id="avatar-data" type="application\/json">(.*?)<\/script>/s)[1]);
 assert.ok(avatarList.length>=20,'Avatar manifest lists the downloaded portraits');checks++;
 assert.ok(avatarList.every(a=>fs.existsSync(path.join(__dirname,'assets','avatars',a.f))),'Every listed avatar file exists');checks++;
-assert.ok(avatarList.every(a=>/^v\d+\.\d+-\d+\.png$/.test(a.f)),'Avatar files keep their original PNG form');checks++;
+assert.ok(avatarList.every(a=>/^\d+\.\d+\/[^/]+\.png$/.test(a.f)),'Avatars live in per-version folders');checks++;
+assert.ok(avatarList.every(a=>a.n&&!/\d$/.test(a.n)&&a.f.includes('/'+a.n)),'Character name comes from the file name without its serial');checks++;
+assert.ok(new Set(avatarList.map(a=>a.v)).size>=20,'Every downloaded version is represented');checks++;
 assert.ok(!/#d8ff62|#e1e544|#e4e7a1/i.test(html),'No leftover yellow accent');checks++;
 assert.ok((html.match(/--acid:#de8a1e/g)||[]).length===2,'Accent colour is #de8a1e in both palettes');checks++;
 console.log(`PASS: ${checks} numerical and offline checks`);
@@ -180,7 +182,9 @@ window.addEventListener('load',()=>{
  check('true damage shows target HP and multiplier',!$('trueDmg-fields').hidden&&!$('skill-field').hidden&&$('attack-field').hidden);
  input('targetHp',50000);input('skill',20);check('true damage equals HP times multiplier',calculate(state).total===10000&&calculate(state).factors.length===2);
  click('#reset');
- check('avatar rotator loaded',AVATARS.length>=20&&$('avatar-img').getAttribute('src').startsWith('assets/avatars/')&&$('avatar-tag').textContent.startsWith('VER '));
+ check('avatar rotator loaded',AVATARS.length>=100&&$('avatar-img').getAttribute('src').startsWith('assets/avatars/')&&$('avatar-tag').textContent.startsWith('VER '));
+ check('character name tag filled',$('avatar-name').textContent.length>0&&$('avatar-img').alt===$('avatar-name').textContent);
+ check('tags sit on the frame, not inside it',$('avatar-tag').parentElement.classList.contains('avatar-slot')&&$('avatar-name').parentElement.classList.contains('avatar-slot'));
  const firstAvatar=$('avatar-img').getAttribute('src');let avatarChanged=false;
  for(let i=0;i<10&&!avatarChanged;i++){click('#avatar-frame');avatarChanged=$('avatar-img').getAttribute('src')!==firstAvatar;}
  check('clicking swaps to another avatar',avatarChanged);
@@ -207,7 +211,7 @@ window.addEventListener('load',()=>{
  const pre=document.createElement('pre');pre.id='browser-test-results';pre.hidden=true;pre.textContent=JSON.stringify(results);document.body.append(pre);
 });
 </script>`;
-fs.cpSync(path.join(__dirname,'assets'),path.join(scratch,'assets'),{recursive:true});
+fs.cpSync(path.join(__dirname,'assets'),path.join(scratch,'assets'),{recursive:true,filter:src=>!src.endsWith('.zip')});
 const testHtml=path.join(scratch,'test.html');fs.writeFileSync(testHtml,html.replace('</body>',browserScript+'</body>'),'utf8');
 // Chrome's window-size flag has a minimum width. CDP emulation verifies the actual phone viewport.
 async function browserChecks(){
