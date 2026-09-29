@@ -18,9 +18,9 @@
         "name": "荊棘玫瑰",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/07/28/c06b0fd130882fb22b422dc29c980734_562194368361393519.png",
         "display_field": {
+          "four_set_effect": "<p>裝備者造成的傷害提升15%，裝備者初始防禦力大於等於1000/1800點時，暴擊率提升8/16%</p>",
           "two_set_effect": "<p>防禦力+16%。</p>",
-          "single_set_effect": "",
-          "four_set_effect": "<p>裝備者造成的傷害提升15%，裝備者初始防禦力大於等於1000/1800點時，暴擊率提升8/16%</p>"
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -84,7 +84,7 @@
     "sha256": "c2d997e5ece23c68d6136a29adb11c2f8d2d298d02fe642cb7a1a62418ba5f3e",
     "bytes": 74665,
     "icon": "assets/images/synced/c2d997e5ece23c68d6136a29adb11c2f8d2d298d02fe642cb7a1a62418ba5f3e.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 1176,
@@ -105,9 +105,9 @@
         "name": "讖羽之誓",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/07/28/0bc6a03e304ab838d4e3e2804be708e5_7993761058901853668.png",
         "display_field": {
+          "four_set_effect": "<p>裝備者進入戰場時，或被切換為目前操作中角色時，獲得增益效果：</p><p>異常精通提升50點，若裝備者為<span style=\"color: rgba(252,169,221,1)\">流明屬性</span>，造成的屬性異常傷害提升15%，持續15秒。 </p><p>當裝備者為非操作中角色時，則始終持有該增益效果。</p>",
           "two_set_effect": "<p>異常精通+30點。</p>",
-          "single_set_effect": "",
-          "four_set_effect": "<p>裝備者進入戰場時，或被切換為目前操作中角色時，獲得增益效果：</p><p>異常精通提升50點，若裝備者為<span style=\"color: rgba(252,169,221,1)\">流明屬性</span>，造成的屬性異常傷害提升15%，持續15秒。 </p><p>當裝備者為非操作中角色時，則始終持有該增益效果。</p>"
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -171,7 +171,7 @@
     "sha256": "58dfc5a76f5c5bbd267d48c99d7bf5d5795fec26c45c92315fcf773e53fa9bac",
     "bytes": 72687,
     "icon": "assets/images/synced/58dfc5a76f5c5bbd267d48c99d7bf5d5795fec26c45c92315fcf773e53fa9bac.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 1109,
@@ -192,9 +192,9 @@
         "name": "拂曉行紀",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/06/16/83dc33403e36850f6aebab61d6a75a14_816854655715497740.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p>裝備者為<span style=\"color: rgba(254,66,125,1)\">以太屬性</span>代理人時，暴擊傷害提升30%。裝備者發動<span style=\"color: rgba(255,255,255,1)\">[強化特殊技]</span>或<span style=\"color: rgba(255,255,255,1)\">[終結技]</span>時，裝備者的攻擊力提升10%，持續30秒，重複觸發時重置持續時間。</p>",
-          "two_set_effect": "<p><span style=\"color: rgba(254,66,125,1)\">以太傷害</span>+10%</p>"
+          "two_set_effect": "<p><span style=\"color: rgba(254,66,125,1)\">以太傷害</span>+10%</p>",
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -258,7 +258,7 @@
     "sha256": "08d68b18dfa2511bb633041355db0e70791202b40e6b279bc770dd953cacc35b",
     "bytes": 71046,
     "icon": "assets/images/synced/08d68b18dfa2511bb633041355db0e70791202b40e6b279bc770dd953cacc35b.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 1108,
@@ -345,7 +345,7 @@
     "sha256": "c97bf1f8497b43f35d8f8145a00fc79c960bae6c358f04ebf38882e6225cb933",
     "bytes": 73915,
     "icon": "assets/images/synced/c97bf1f8497b43f35d8f8145a00fc79c960bae6c358f04ebf38882e6225cb933.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 1070,
@@ -366,9 +366,9 @@
         "name": "囚徒手記",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/03/23/ee7ad206fe6089cb283ddce94cf13ae2_1035147875814816092.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p>裝備者觸發<span style=\"color: rgba(255,255,255,1)\">[異放]</span>時，裝備者異常精通提升48點，持續30秒；重複觸發時重置持續時間。</p><p>裝備者觸發<span style=\"color: rgba(255,255,255,1)\">[凍結]</span>效果時，裝備者造成的所有屬性異常傷害、<span style=\"color: rgba(255,255,255,1)\">[紊亂]</span>傷害提升16%，持續30秒，重複觸發時重置持續時間。</p>",
-          "two_set_effect": "<p><span style=\"color: rgba(151,239,239,1)\">冰屬性傷害</span>+10%。</p>"
+          "two_set_effect": "<p><span style=\"color: rgba(151,239,239,1)\">冰屬性傷害</span>+10%。</p>",
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -432,7 +432,7 @@
     "sha256": "db96ec63a78659e0bc6ee0562fc9c24e1ee7bc8c7344fd5b2060c181b23d0e19",
     "bytes": 30260,
     "icon": "assets/images/synced/db96ec63a78659e0bc6ee0562fc9c24e1ee7bc8c7344fd5b2060c181b23d0e19.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 1069,
@@ -453,9 +453,9 @@
         "name": "雪兔夢遊仙境",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/03/23/7acf3d7763f83142dae00ec3d72382a6_4137210704565935097.png",
         "display_field": {
+          "two_set_effect": "<p>生命值+10%</p>",
           "single_set_effect": "",
-          "four_set_effect": "<p><span style=\"color: rgba(255,255,255,1)\">[防護]</span>角色裝備時：</p><p>裝備者發動<span style=\"color: rgba(255,255,255,1)\">[強化特殊技]</span>或隊伍中任意隊友發動<span style=\"color: rgba(255,255,255,1)\">[招架支援]</span>、<span style=\"color: rgba(255,255,255,1)\">[回避支援]</span>時，全隊角色造成傷害提升6%，最多疊加3層，持續25秒，層數逐層衰減，獲得或者衰減時刷新持續時間，同名被動效果之間不可疊加。</p>",
-          "two_set_effect": "<p>生命值+10%</p>"
+          "four_set_effect": "<p><span style=\"color: rgba(255,255,255,1)\">[防護]</span>角色裝備時：</p><p>裝備者發動<span style=\"color: rgba(255,255,255,1)\">[強化特殊技]</span>或隊伍中任意隊友發動<span style=\"color: rgba(255,255,255,1)\">[招架支援]</span>、<span style=\"color: rgba(255,255,255,1)\">[回避支援]</span>時，全隊角色造成傷害提升6%，最多疊加3層，持續25秒，層數逐層衰減，獲得或者衰減時刷新持續時間，同名被動效果之間不可疊加。</p>"
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -519,7 +519,7 @@
     "sha256": "70983fd73db91ef2e219bb3cf3bde7a60c863d61c197c668357f538f8338ac08",
     "bytes": 28675,
     "icon": "assets/images/synced/70983fd73db91ef2e219bb3cf3bde7a60c863d61c197c668357f538f8338ac08.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 993,
@@ -606,7 +606,7 @@
     "sha256": "e94eabf0cd9281b2f379558ea5bacd88f02e00cb11abe5803999e321a13962d0",
     "bytes": 29052,
     "icon": "assets/images/synced/e94eabf0cd9281b2f379558ea5bacd88f02e00cb11abe5803999e321a13962d0.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 992,
@@ -693,7 +693,7 @@
     "sha256": "17dbafa2d07350dac5d15449264d6cac817a40b1b83841c5b83b367aed206388",
     "bytes": 32047,
     "icon": "assets/images/synced/17dbafa2d07350dac5d15449264d6cac817a40b1b83841c5b83b367aed206388.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 914,
@@ -714,9 +714,9 @@
         "name": "月光騎士頌",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/09/01/c2d47b96d0adf4caab5c0706554b542d_5949183389957633910.png",
         "display_field": {
+          "single_set_effect": "",
           "four_set_effect": "<p>裝備者為<span style=\"color: #FFFFFF\">[支援]</span>角色時，發動<span style=\"color: #FFFFFF\">[強化特殊技]</span>或<span style=\"color: #FFFFFF\">[終結技]</span>會使全隊角色造成的傷害提升18%，持續25秒，重複觸發時重置持續時間，同名被動效果之間不可疊加。</p>",
-          "two_set_effect": "<p>能量自動回復+20%。</p>",
-          "single_set_effect": ""
+          "two_set_effect": "<p>能量自動回復+20%。</p>"
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -780,7 +780,7 @@
     "sha256": "b7a0e87488aca72943c6c52d4c6e19ed7a6ec22f8ec350cff776e0e2dc50d932",
     "bytes": 34199,
     "icon": "assets/images/synced/b7a0e87488aca72943c6c52d4c6e19ed7a6ec22f8ec350cff776e0e2dc50d932.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 913,
@@ -867,7 +867,7 @@
     "sha256": "3e399849c7c13eb9fce018f28f990e90e44d374daff7e76d6fffbd69c8204d2f",
     "bytes": 33741,
     "icon": "assets/images/synced/3e399849c7c13eb9fce018f28f990e90e44d374daff7e76d6fffbd69c8204d2f.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 790,
@@ -888,9 +888,9 @@
         "name": "山大王",
         "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/06/10/297246445/03e35db16c441db2b763b50adcf9d448_5114721643639738776.gif",
         "display_field": {
-          "four_set_effect": "<p>裝備者為[擊破]角色時，發動<span style=\"color: rgb(255, 255, 255)\">[強化特殊技]</span>或<span style=\"color: rgb(255, 255, 255)\">[連攜技]</span>會使全隊角色暴擊傷害提升15%。裝備者的暴擊率達到50%時，暴擊傷害額外提升15%，持續15秒，重複觸發時重置持續時間，同名被動效果之間不可疊加。</p>",
           "two_set_effect": "<p>攻擊造成的失衡值提升6%</p>",
-          "single_set_effect": ""
+          "single_set_effect": "",
+          "four_set_effect": "<p>裝備者為[擊破]角色時，發動<span style=\"color: rgb(255, 255, 255)\">[強化特殊技]</span>或<span style=\"color: rgb(255, 255, 255)\">[連攜技]</span>會使全隊角色暴擊傷害提升15%。裝備者的暴擊率達到50%時，暴擊傷害額外提升15%，持續15秒，重複觸發時重置持續時間，同名被動效果之間不可疊加。</p>"
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -954,7 +954,7 @@
     "sha256": "24ca88db1d82ab700d9b1973df4b5f30a64a632c5fcb65a19b0b07120a32eba4",
     "bytes": 58390,
     "icon": "assets/images/synced/24ca88db1d82ab700d9b1973df4b5f30a64a632c5fcb65a19b0b07120a32eba4.gif",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 789,
@@ -1005,7 +1005,7 @@
     "sha256": "259d761feb891cdcd7147eba36544c43cbab4e6d3c5b3c4ce5fbe199af373587",
     "bytes": 59232,
     "icon": "assets/images/synced/259d761feb891cdcd7147eba36544c43cbab4e6d3c5b3c4ce5fbe199af373587.gif",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 625,
@@ -1024,9 +1024,9 @@
         "name": "如影相隨",
         "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/03/21/186855736/42ba283c9d841a1e3446ca049ff4c17c_8643450229961392472.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p><span style=\"color: #FFFFFF\">[追加攻擊]</span>或<span style=\"color: #FFFFFF\">[衝刺攻擊]</span>命中敵人時，若造成的傷害與裝備者的屬性一致，則獲得1層增益效果，同一招式內最多觸發一次；每擁有1層增益效果，裝備者的攻擊力提升4%，暴擊率提升4%，最多疊加3層，持續15秒，重複觸發時刷新持續時間。</p><p></p>",
-          "two_set_effect": "<p><span style=\"color: #FFFFFF\">[追加攻擊]</span>和<span style=\"color: #FFFFFF\">[衝刺攻擊]</span>造成的傷害提升15%</p>"
+          "two_set_effect": "<p><span style=\"color: #FFFFFF\">[追加攻擊]</span>和<span style=\"color: #FFFFFF\">[衝刺攻擊]</span>造成的傷害提升15%</p>",
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1068,7 +1068,7 @@
     "sha256": "bb34b402d87e6c482f5129668579784062e81d8e8ba9d7682fee84ebab1384c9",
     "bytes": 33418,
     "icon": "assets/images/synced/bb34b402d87e6c482f5129668579784062e81d8e8ba9d7682fee84ebab1384c9.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 624,
@@ -1087,9 +1087,9 @@
         "name": "法厄同之歌",
         "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/03/21/186855736/11aa8d15d7780ed64c1e027427270977_3249572597102831633.png",
         "display_field": {
-          "four_set_effect": "<p>隊伍中任意角色發動<span style=\"color: rgb(255, 255, 255)\">[强化特殊技]</span>時，裝備者的異常精通提升45點，持續8秒；如果發動<span style=\"color: rgb(255, 255, 255)\">[强化特殊技]</span>的角色不是裝備者本人時，装裝備造成的<span style=\"color: rgb(254, 67, 126)\">以太傷害</span>提升25%。</p>",
           "two_set_effect": "<p>異常掌控+8%</p>",
-          "single_set_effect": ""
+          "single_set_effect": "",
+          "four_set_effect": "<p>隊伍中任意角色發動<span style=\"color: rgb(255, 255, 255)\">[强化特殊技]</span>時，裝備者的異常精通提升45點，持續8秒；如果發動<span style=\"color: rgb(255, 255, 255)\">[强化特殊技]</span>的角色不是裝備者本人時，装裝備造成的<span style=\"color: rgb(254, 67, 126)\">以太傷害</span>提升25%。</p>"
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1131,7 +1131,7 @@
     "sha256": "e33915a4a2833a9a775295648aee54fe302e789fc8b535d45167bd761514e1d8",
     "bytes": 12652,
     "icon": "assets/images/synced/e33915a4a2833a9a775295648aee54fe302e789fc8b535d45167bd761514e1d8.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 547,
@@ -1150,9 +1150,9 @@
         "name": "折枝劍歌",
         "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/12/25/297246445/2ef493e0fe25c73faf761cb991d9920f_7611550456542539564.png",
         "display_field": {
+          "four_set_effect": "<p>異常掌控大於等於115點時，装備者的暴擊傷害提升30%。</p><p>隊伍中任意角色對敵人施加<span style=\"color: rgb(152, 239, 240)\">[凍結]</span>或觸發<span style=\"color: rgb(152, 239, 240)\">[碎冰]</span>效果時，装備者的暴擊率提升12%，持續15秒。</p>",
           "two_set_effect": "<p>暴擊傷害+16%</p>",
-          "single_set_effect": "",
-          "four_set_effect": "<p>異常掌控大於等於115點時，装備者的暴擊傷害提升30%。</p><p>隊伍中任意角色對敵人施加<span style=\"color: rgb(152, 239, 240)\">[凍結]</span>或觸發<span style=\"color: rgb(152, 239, 240)\">[碎冰]</span>效果時，装備者的暴擊率提升12%，持續15秒。</p>"
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1194,7 +1194,7 @@
     "sha256": "bc6d4b008c147ad98946ef4b959b7262b0cd88d2f60e4a5ea64c5e480fa5c172",
     "bytes": 63144,
     "icon": "assets/images/synced/bc6d4b008c147ad98946ef4b959b7262b0cd88d2f60e4a5ea64c5e480fa5c172.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 546,
@@ -1213,9 +1213,9 @@
         "name": "靜聽嘉音",
         "icon_url": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/02/21/186855736/f194a3c57fa7110f1591286be2d9e875_2067185222887726471.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p>隊伍中任意角色通過<span style=\"color: #FFFFFF\">[快速支援]</span>入場時，全隊獲得1層<span style=\"color: #FFFFFF\">[嘉音]</span>，最多疊加3層，持續15秒，重複觸發時刷新持續時間，每擁有1層<span style=\"color: #FFFFFF\">[嘉音]</span>，通過<span style=\"color: #FFFFFF\">[快速支援]</span>入場的角色造成的傷害提升8%，該效果全隊唯一。</p>",
-          "two_set_effect": "<p>攻擊力+10%</p>"
+          "two_set_effect": "<p>攻擊力+10%</p>",
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1257,7 +1257,7 @@
     "sha256": "3e36db62f392b4ff7ebeaef13162e09c3f0a24073d2a30a0daba6d4eb69420aa",
     "bytes": 75020,
     "icon": "assets/images/synced/3e36db62f392b4ff7ebeaef13162e09c3f0a24073d2a30a0daba6d4eb69420aa.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 392,
@@ -1274,9 +1274,9 @@
         "name": "混沌爵士",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/09/24/3331555e4253b676a447e42f29201fd6_5344025446086892407.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p><span style=\"color: rgb(255, 85, 33)\">火屬性傷害</span>和<span style=\"color: rgb(46, 182, 255)\">電屬性傷害</span>提升15%。</p><p>位於後場時，<span style=\"color: rgb(255, 255, 255)\">[強化特殊技]</span>和<span style=\"color: rgb(255, 255, 255)\">[支援攻擊]</span>造成的傷害提升20%，換入前場後，該增益效果仍然保留，持續5秒，保留效果7.5秒內最多觸發一次。</p>",
-          "two_set_effect": "<p>異常精通+30點。</p>"
+          "two_set_effect": "<p>異常精通+30點。</p>",
+          "single_set_effect": ""
         },
         "filter_values": {},
         "desc": ""
@@ -1302,7 +1302,7 @@
     "sha256": "4b4df9c351ed9a6e8afe5851ede9a6f873ffee592cc55fdc58da6b515369375a",
     "bytes": 27557,
     "icon": "assets/images/synced/4b4df9c351ed9a6e8afe5851ede9a6f873ffee592cc55fdc58da6b515369375a.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 391,
@@ -1319,9 +1319,9 @@
         "name": "原始龐克",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/09/24/9ed2248f48456f1533d602635034b25e_2030621787622153035.png",
         "display_field": {
-          "four_set_effect": "<p>隊伍中任意角色發動<span style=\"color: rgb(255, 255, 255)\">[招架支援]</span>或<span style=\"color: rgb(255, 255, 255)\">[回避支援]</span>時，全隊造成的傷害提升15%，持續10秒，同名被動效果之間不可疊加。</p>",
           "two_set_effect": "<p>施加的護盾值提升15%。</p>",
-          "single_set_effect": ""
+          "single_set_effect": "",
+          "four_set_effect": "<p>隊伍中任意角色發動<span style=\"color: rgb(255, 255, 255)\">[招架支援]</span>或<span style=\"color: rgb(255, 255, 255)\">[回避支援]</span>時，全隊造成的傷害提升15%，持續10秒，同名被動效果之間不可疊加。</p>"
         },
         "filter_values": {},
         "desc": ""
@@ -1347,7 +1347,7 @@
     "sha256": "1659d75c75465f2b9ae6ef5df4238c38009c0aaae70878e7a4c8b694fb956b18",
     "bytes": 29390,
     "icon": "assets/images/synced/1659d75c75465f2b9ae6ef5df4238c38009c0aaae70878e7a4c8b694fb956b18.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 137,
@@ -1410,7 +1410,7 @@
     "sha256": "aad6996da4ee0430b76593cb68bea2b3ec55206eaae775ffe9e08987fbb25125",
     "bytes": 31422,
     "icon": "assets/images/synced/aad6996da4ee0430b76593cb68bea2b3ec55206eaae775ffe9e08987fbb25125.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 136,
@@ -1429,9 +1429,9 @@
         "name": "極地重金屬",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/1c3c63f61e89acf72f66fa49270b4e16_7690792437263479747.png",
         "display_field": {
+          "two_set_effect": "<p><span style=\"color: #98eff0\">冰屬性傷害</span>提升10%。</p>",
           "single_set_effect": "",
-          "four_set_effect": "<p><span style=\"color: #FFFFFF\">[普通攻擊]</span>和<span style=\"color: #FFFFFF\">[衝刺攻擊]</span>造成的傷害提升20%，隊伍中任意角色對敵人施加<span style=\"color: #98eff0\">[凍結]</span>或觸發<span style=\"color: #98eff0\">[碎冰]</span>效果時，該增益效果額外提升20%，持續12秒。</p>",
-          "two_set_effect": "<p><span style=\"color: #98eff0\">冰屬性傷害</span>提升10%。</p>"
+          "four_set_effect": "<p><span style=\"color: #FFFFFF\">[普通攻擊]</span>和<span style=\"color: #FFFFFF\">[衝刺攻擊]</span>造成的傷害提升20%，隊伍中任意角色對敵人施加<span style=\"color: #98eff0\">[凍結]</span>或觸發<span style=\"color: #98eff0\">[碎冰]</span>效果時，該增益效果額外提升20%，持續12秒。</p>"
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1473,7 +1473,7 @@
     "sha256": "b02bebe5e496f0cf60e27f5d771ca2da2794a1af773e23e57d690cfe2d0f045b",
     "bytes": 31243,
     "icon": "assets/images/synced/b02bebe5e496f0cf60e27f5d771ca2da2794a1af773e23e57d690cfe2d0f045b.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 135,
@@ -1536,7 +1536,7 @@
     "sha256": "7a9591401d3a65b8dd7593dfe5c337ea90d7110e3c79471e8f4e5be3ab6c9b65",
     "bytes": 32416,
     "icon": "assets/images/synced/7a9591401d3a65b8dd7593dfe5c337ea90d7110e3c79471e8f4e5be3ab6c9b65.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 134,
@@ -1599,7 +1599,7 @@
     "sha256": "0fc46e3398346cd71899d402520b51e6b1f0efb1e4555d050912e7bb5e4a7a3a",
     "bytes": 32590,
     "icon": "assets/images/synced/0fc46e3398346cd71899d402520b51e6b1f0efb1e4555d050912e7bb5e4a7a3a.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 133,
@@ -1662,7 +1662,7 @@
     "sha256": "03973619aae8f6cde1be0f3bf7c866365fdef7cd00e55f7c444d0954140604af",
     "bytes": 30762,
     "icon": "assets/images/synced/03973619aae8f6cde1be0f3bf7c866365fdef7cd00e55f7c444d0954140604af.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 132,
@@ -1681,9 +1681,9 @@
         "name": "靈魂搖滾",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/b4fd81cd50ea47a2107308e7a11d8a55_5618445283317531443.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p>受到敵方攻擊並損失生命值時，裝備者受到的傷害降低40%，持續2.5秒，15秒內最多觸發一次。</p>",
-          "two_set_effect": "防禦力提升16%。"
+          "two_set_effect": "防禦力提升16%。",
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1725,7 +1725,7 @@
     "sha256": "f5f5cc48927cc197c6f2240221775ce6907f312d4f65a2fd7baafb2dd5a089db",
     "bytes": 29549,
     "icon": "assets/images/synced/f5f5cc48927cc197c6f2240221775ce6907f312d4f65a2fd7baafb2dd5a089db.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 131,
@@ -1744,9 +1744,9 @@
         "name": "激素龐克",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/0a758d895fa95d4f11f36371c057c1cb_4732503042787764309.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p>進入接戰狀態或換入前場時，裝備者的攻擊力提升25%，持續10秒，20秒內最多觸發一次。</p>",
-          "two_set_effect": "攻擊力提升10%。"
+          "two_set_effect": "攻擊力提升10%。",
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1788,7 +1788,7 @@
     "sha256": "f85280e7f938096fed018d49278dc35126f0de7999dc659fb6961aebdec801f5",
     "bytes": 28210,
     "icon": "assets/images/synced/f85280e7f938096fed018d49278dc35126f0de7999dc659fb6961aebdec801f5.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 130,
@@ -1807,9 +1807,9 @@
         "name": "自由藍調",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/ec6bd15b507c13de9ed3dfe331893b03_7048380845230519712.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p><span style=\"color: #FFFFFF\">[強化特殊技]</span>命中敵人時，根據裝備者的屬性類型，使目標對應屬性異常積蓄抗性降低20%，持續8秒，相同屬性類型的效果不可疊加。</p>",
-          "two_set_effect": "異常精通提升30點。"
+          "two_set_effect": "異常精通提升30點。",
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1851,7 +1851,7 @@
     "sha256": "fe00a7e7e856c92ee908e6ff4cf70de89c534469206e9baac200e3982bc3a583",
     "bytes": 31012,
     "icon": "assets/images/synced/fe00a7e7e856c92ee908e6ff4cf70de89c534469206e9baac200e3982bc3a583.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 129,
@@ -1914,7 +1914,7 @@
     "sha256": "54ed5b818ecdb40dfbbb8ce2d32caf3471f9cd02d7e9e0db873f88a1bd1fd3d4",
     "bytes": 32559,
     "icon": "assets/images/synced/54ed5b818ecdb40dfbbb8ce2d32caf3471f9cd02d7e9e0db873f88a1bd1fd3d4.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 128,
@@ -1933,9 +1933,9 @@
         "name": "河豚電音",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/554cb9ae3eea679586cc85ac4cd586c0_9111840743195019243.png",
         "display_field": {
-          "single_set_effect": "",
           "four_set_effect": "<p><span style=\"color: #FFFFFF\">[終結技]</span>造成的傷害提升20%。發動<span style=\"color: #FFFFFF\">[終結技]</span>時，裝備者的攻擊力提升15%，持續12秒。</p>",
-          "two_set_effect": "穿透率提升8%。"
+          "two_set_effect": "穿透率提升8%。",
+          "single_set_effect": ""
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -1977,7 +1977,7 @@
     "sha256": "e410292a0970349922daf715bf08b6c44d9ed8d7e550e81042243874db817755",
     "bytes": 28858,
     "icon": "assets/images/synced/e410292a0970349922daf715bf08b6c44d9ed8d7e550e81042243874db817755.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 127,
@@ -1996,9 +1996,9 @@
         "name": "啄木鳥電音",
         "icon_url": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/0d4dd047370168a3b992d9884ca926c6_8904461176918742696.png",
         "display_field": {
+          "single_set_effect": "",
           "four_set_effect": "<p><span style=\"color: #FFFFFF\">[普通攻擊]</span>、<span style=\"color: #FFFFFF\">[閃避反擊]</span>或<span style=\"color: #FFFFFF\">[強化特殊技]</span>命中敵人並觸發暴擊時，分別為裝備者提供1層增益效果，每層增益效果使裝備者的攻擊力提升9%，持續6秒，不同招式分別結算持續時間。</p>",
-          "two_set_effect": "暴擊率提升8%。",
-          "single_set_effect": ""
+          "two_set_effect": "暴擊率提升8%。"
         },
         "filter_values": {
           "drivedisc_rarity": {
@@ -2040,7 +2040,7 @@
     "sha256": "702618f99300e9b83fb4c67c20e79a7f7a2dbdeb8f2fa5e48d987fe4ab662f30",
     "bytes": 31043,
     "icon": "assets/images/synced/702618f99300e9b83fb4c67c20e79a7f7a2dbdeb8f2fa5e48d987fe4ab662f30.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   },
   {
     "id": 5,
@@ -2103,6 +2103,6 @@
     "sha256": "cf6df773e93341090b40276a211a535de380139601fa950c9cf85520256b27df",
     "bytes": 34402,
     "icon": "assets/images/synced/cf6df773e93341090b40276a211a535de380139601fa950c9cf85520256b27df.png",
-    "fetchedAt": "2026-09-29T12:01:03.845Z"
+    "fetchedAt": "2026-09-29T13:33:10.612Z"
   }
 ]
