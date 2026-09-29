@@ -91,6 +91,36 @@ zzz-lab/
 
 圖片統一放在 `assets/images/`：`manual/avatars/` 是手動 Q 版，`synced/` 是爬蟲圖，`site/` 是網站圖示；`vendor/` 繼續保存程式庫。爬蟲不會取得或覆寫手動 Q 版。詳見 [素材管理說明](assets/README.md)。
 
+## 修改圖示表與新增項目
+
+圖示表（`icon-reference.html`、`data/icon-reference.md`）是**產物**，不要直接改；改來源資料後重新產生。原則：官方資料改爬蟲設定或人工欄位，不要手改 `sourceMetadata`、`icon`、`sha256` 這類爬蟲欄位，下次同步會被蓋掉。
+
+**改名稱或補資料**
+
+| 想改的東西 | 改哪裡 | 之後執行 |
+| --- | --- | --- |
+| 共用圖示顯示名稱：能力屬性、稀有度，以及操作裡的 `special_ready`、`ultimate`、`ultimate_ready`、`move` | `scripts/sync-icons.cjs` 的 `labels` | `node scripts/sync-icons.cjs` |
+| 上面這類名稱，只想先本機生效、不連網 | 同時改 `labels` 與 `data/icon-registry.json` 該筆的 `name`（兩邊要一致，否則下次同步會換回 `labels` 的值） | `node scripts/sync-icons.cjs --tables-only` |
+| 角色的陣營等爬蟲欄位有錯 | `data/characters.json` 該角色加 `overrides`（見上方「角色表」） | `node scripts/sync-icons.cjs` |
+| 角色簡稱、版本、Q 版頭像、攻略路徑 | 直接改 `data/characters.json` 的 `name`、`version`、`avatars`、`guide`；同步會保留 | `node scripts/sync-icons.cjs --tables-only` |
+| 音擎／驅動盤官方沒填的版本、攻略路徑 | 直接改 `data/wengines.json`／`data/discs.json` 的 `version`、`guide` | `node scripts/sync-icons.cjs --tables-only` |
+
+有些名稱**改 `labels` 沒用**，因為同步時會以官方文字覆蓋：
+- 操作：`normal`、`special`、`dodge`、`support`、`chain`、`core`，用 HoYoLAB 官方繁中語系。
+- 元素、職業：用 HoYoWiki 篩選選項的名稱。
+
+**新增項目**
+
+- **新角色、音擎、驅動盤、陣營**：官方 Wiki 上架後執行 `node scripts/sync-icons.cjs`，會自動加入，不用手動建檔。之後再手動補 `version`、`avatars`、`guide`。
+- **新的共用圖示**（例如新能力屬性、新操作）：先執行同步，官方新圖會出現在 `data/icon-registry.json` 的 `unclassified`，裡面有檔名（例如 `prop-xxx-icon`、`Icon_Xxx`）。確認官方繁中名稱後：
+  - 能力屬性：在 `labels.stat` 加 `xxx:'名稱'`，其中 `xxx` 對應檔名 `prop-xxx-icon`。
+  - 操作：在 `labels.action` 加 `xxx:'名稱'`，並在 `actionFiles` 加 `xxx:'Icon_Xxx'`。
+  - 再跑一次同步，引用代碼是 `{{stat:xxx}}`／`{{action:xxx}}`，名稱中的 `-` 會變成 `_`。
+  - 名稱查不到官方來源時先不要加，不要猜。
+- **非官方的自訂圖示**：目前不支援。同步只接受官方 https 來源並重新下載驗證；直接在 `data/icon-registry.json` 手加的項目，下次同步會因「已發布的代碼消失」而中止。
+
+**改完後的檢查**：執行 `node verify-icons.cjs` 與 `node verify-damage.cjs`。要看版面時，兩者都加 `--browser`。`verify-icons.cjs` 會確認所有攻略裡的 `{{...}}` 都找得到圖示。
+
 ## 撰寫攻略
 
 範本在 `guides/_templates/`。

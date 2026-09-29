@@ -242,8 +242,8 @@
 | `{{action:dodge}}` | <img src="../assets/images/synced/8b8931337367cc53c5697703b90089ca5fd48694b2ba0a07d1b98103dc9c25de.png" width="32" height="32" alt=""> | 閃避 | 操作 |  |  |
 | `{{action:support}}` | <img src="../assets/images/synced/3d0fc1fc0c4f5fce8f247f08155c72285571d51e391e3b00dcc15fbe49e59a2b.png" width="32" height="32" alt=""> | 支援技 | 操作 |  |  |
 | `{{action:chain}}` | <img src="../assets/images/synced/59175fc6df32baa8b91ec756290e57983aae09adac1504b7f135c68151f394a2.png" width="32" height="32" alt=""> | 連攜技 | 操作 |  |  |
-| `{{action:ultimate}}` | <img src="../assets/images/synced/913712bbdddc64bf305cb0e3891401ad113e2f1eb62eddc385925a1060097047.png" width="32" height="32" alt=""> | 終結技 | 操作 |  |  |
-| `{{action:ultimate_ready}}` | <img src="../assets/images/synced/3de6850c41b463c37075ebfbbaf0343257db493123570beed3c2d67c48107150.png" width="32" height="32" alt=""> | 終結技（可發動） | 操作 |  |  |
+| `{{action:ultimate}}` | <img src="../assets/images/synced/913712bbdddc64bf305cb0e3891401ad113e2f1eb62eddc385925a1060097047.png" width="32" height="32" alt=""> | 終結技(未就緒) | 操作 |  |  |
+| `{{action:ultimate_ready}}` | <img src="../assets/images/synced/3de6850c41b463c37075ebfbbaf0343257db493123570beed3c2d67c48107150.png" width="32" height="32" alt=""> | 終結技 | 操作 |  |  |
 | `{{action:core}}` | <img src="../assets/images/synced/e22bed54f02d536a43c7a03a103a43ce4065e245296efe8ce07b1fea14ba0878.png" width="32" height="32" alt=""> | 核心技 | 操作 |  |  |
 | `{{action:move}}` | <img src="../assets/images/synced/8fa9e0da7244f42f98ae06386252ad8b1e5c81f92d494d5f734a9c5a3855ae6d.png" width="32" height="32" alt=""> | 移動 | 操作 |  |  |
 | `{{element:honededge}}` | <img src="../assets/images/synced/4811be82c2bdb4104083e170f99785552b3c90ca3760ef4103987642810fae97.png" width="32" height="32" alt=""> | 凜刃 | 元素 |  |  |

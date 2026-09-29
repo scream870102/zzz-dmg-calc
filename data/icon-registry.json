@@ -796,7 +796,7 @@
     },
     "action:ultimate": {
       "kind": "action",
-      "name": "終結技",
+      "name": "終結技(未就緒)",
       "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_Ultimate.1ac20d28.png",
       "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
       "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
@@ -807,7 +807,7 @@
     },
     "action:ultimate_ready": {
       "kind": "action",
-      "name": "終結技（可發動）",
+      "name": "終結技",
       "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_UltimateReady.b750178d.png",
       "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
       "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
