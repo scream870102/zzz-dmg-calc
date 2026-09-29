@@ -383,7 +383,7 @@ function calculate(input){
 const $=id=>document.getElementById(id);
 let CHARACTERS=[],TEAMS=[],AVATARS=[],ICON_ENTRIES={};
 const PAGES={agents:'agents',agent:'agents',teams:'teams',team:'teams',calc:'calc'};
-const getJson=url=>fetch(url).then(r=>{if(!r.ok)throw new Error(url+' '+r.status);return r.json();});
+const getJson=url=>fetch(url,{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(url+' '+r.status);return r.json();});
 const dataReady=Promise.all([getJson('data/characters.json'),getJson('data/teams.json'),getJson('data/icon-registry.json').catch(error=>{console.warn('Icon registry unavailable:',error);return {entries:{}};})]).then(([characters,teams,registry])=>{
   CHARACTERS=characters;TEAMS=teams;ICON_ENTRIES=registry.entries||{};
   AVATARS=characters.filter(c=>c.version).flatMap(c=>c.avatars.map(f=>({f,n:c.name,v:c.version})));
@@ -540,7 +540,7 @@ function renderTeamPage(box,t,token){
 
 const guideCache=new Map();
 function loadGuide(path){
-  if(!guideCache.has(path))guideCache.set(path,fetch(path).then(r=>{if(!r.ok)throw new Error(r.status);return r.text();}).catch(e=>{guideCache.delete(path);throw e;}));
+  if(!guideCache.has(path))guideCache.set(path,fetch(path,{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text();}).catch(e=>{guideCache.delete(path);throw e;}));
   return guideCache.get(path);
 }
 function fillGuide(body,path,token){
