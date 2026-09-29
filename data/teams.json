@@ -2,11 +2,13 @@
   {
     "id": 2001,
     "title": "帶傲嬌女兒的女僕媽媽",
-    "members": [
-      1185,
-      1085,
-      30
-    ],
+    "members": [1185, 1085, 30],
     "guide": "guides/teams/2001.md"
+  },
+  {
+    "id": 2002,
+    "title": "馬娘戳戳戳",
+    "members": [1113, 1085, 588],
+    "guide": "guides/teams/2002.md"
   }
 ]
