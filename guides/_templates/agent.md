@@ -1,5 +1,5 @@
 <!--
-角色攻略範本：複製到 guides/agents/<WikiID>.md，再到 data/characters.json 該角色加上
+代理人攻略範本：複製到 guides/agents/<WikiID>.md，再到 data/characters.json 該角色加上
 "guide":"guides/agents/<WikiID>.md"。這個資料夾不會出現在網站上。
 
 語法速查

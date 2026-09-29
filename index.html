@@ -93,10 +93,12 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .roster-filter-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0 18px 18px}
 .roster-filter-fields fieldset{min-width:0;margin:0;padding:10px;border:1px solid var(--line);border-radius:8px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:6px}.roster-filter-fields legend{padding:0 5px;color:var(--muted);font-size:12px}
 .filter-option{display:flex;align-items:center;gap:5px;position:relative;padding:6px 8px;min-height:34px;border:1px solid #555;border-radius:7px;font-size:12px;cursor:pointer}.filter-option input{position:absolute;width:1px;height:1px;opacity:0;margin:0}.filter-option img{width:22px;height:22px;object-fit:contain}.filter-option:has(input:checked){background:#de8a1e25;border-color:var(--acid);color:#fff}.filter-option:has(input:focus-visible){outline:2px solid var(--acid);outline-offset:2px}
-.roster-sort-label{display:grid;gap:7px;color:var(--muted);font-size:12px;min-width:0}.roster-filter-fields select{width:100%;min-width:0;font-size:13px;min-height:42px}
+.filter-option:has(input[type=checkbox]:checked):after{content:'✓';margin-left:2px;color:var(--acid);font-weight:900}
+.item-body .item-effect{white-space:pre-line}.item-body .item-condition{color:var(--muted);font-size:14px}.item-source{color:var(--muted);font-size:12px}.item-agents{padding-bottom:6px}.guide-body .item-agents .member-link{color:var(--text)}
+.roster-filter-fields .roster-sort-field{align-content:flex-start}.roster-filter-fields select{width:100%;min-width:0;font-size:13px;min-height:42px;align-self:flex-start}#filter-faction{grid-column:span 2}
 .roster-filter-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}
 .roster-count{margin:0 0 18px;font-size:13px;color:var(--muted)}.roster-empty{grid-column:1/-1;margin:0;padding:32px 18px;text-align:center;border:1px dashed var(--line);border-radius:10px;line-height:1.8}
-@media(max-width:760px){.roster-filter-fields{grid-template-columns:minmax(0,1fr);gap:12px;padding:0 14px 14px}.roster-filter-footer{align-items:flex-start}.roster-filter-footer span{max-width:65%;line-height:1.6}}
+@media(max-width:760px){#filter-faction{grid-column:auto}.roster-filter-fields{grid-template-columns:minmax(0,1fr);gap:12px;padding:0 14px 14px}.roster-filter-footer{align-items:flex-start}.roster-filter-footer span{max-width:65%;line-height:1.6}}
 .agent-ver{position:absolute;top:-7px;right:-8px;padding:3px 6px;border:2px solid #0b0b0b;border-radius:3px;background:var(--acid);color:#17120a;font:800 9px/1 ui-monospace,monospace;letter-spacing:.1em;transform:rotate(6deg);box-shadow:2px 2px 0 #050505}
 /* Portrait edges move 1px right per 4px down. Tail = caption/4; edge correction = (rail + tail - caption)/4. The right rail follows the same slope. */
 .agent-card{--agent-slant:14.036243deg;--agent-rail:28px;--agent-name-height:32px;--agent-tail:8px;--agent-edge-correction:1px;--agent-name-offset:5px;--agent-badge-size:22px;position:relative;display:block;gap:0;padding:0;background:#22211f;border:0;border-radius:0;box-shadow:none;clip-path:polygon(0 0,calc(75% + var(--agent-edge-correction)) 0,100% 100%,calc(25% - var(--agent-edge-correction)) 100%);color:var(--text);font-size:13px;font-weight:800;text-align:center}
@@ -113,6 +115,18 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .agent-card:hover,.agent-card:focus-visible{background:#4c4839}.agent-card:focus-visible .agent-name{color:var(--acid)}
 .agent-card,.team-card,.member-link,.agent-chip,.back-link{text-decoration:none;transition:border-color .15s,transform .15s}
 .agent-card:hover,.team-card:hover{border-color:var(--acid);transform:translateY(-2px)}
+/* Capsule language on the slanted card: 2px black outline + hard offset shadow, drawn outside the clip-path. */
+.agent-card-wrap{display:block;min-width:0;filter:drop-shadow(2px 0 0 #070707) drop-shadow(-2px 0 0 #070707) drop-shadow(0 -2px 0 #070707) drop-shadow(0 2px 0 #070707) drop-shadow(3px 4px 0 #070707)}
+.item-card{position:relative;display:grid;gap:8px;min-width:0;padding:8px 8px 10px;background:linear-gradient(120deg,#ffffff03,transparent 45%),var(--panel);border:3px solid #070707;border-radius:16px;box-shadow:inset 0 0 0 1px #565656,0 4px 0 #070707;color:var(--text);font-size:13px;font-weight:800;text-align:center;text-decoration:none;transition:border-color .15s,transform .15s}
+.item-card:hover,.item-card:focus-visible{border-color:var(--acid);transform:translateY(-2px)}.item-card:focus-visible .item-card-name{color:var(--acid)}
+.item-card-art{position:relative;display:block;aspect-ratio:1;border-radius:10px;background:#4e4e4e;overflow:hidden}
+.item-card-art .portrait-image{display:block;width:100%;height:100%;object-fit:contain}
+.item-card-badges{position:absolute;top:5px;right:5px;display:flex;gap:3px}.item-card-badges .agent-badge{display:grid;place-items:center;width:24px;height:24px;border:2px solid #070707;border-radius:999px;background:#11110f}.item-card-badges .agent-badge img{width:80%;height:80%;object-fit:contain}
+.item-card-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item-portrait{--portrait-size:144px;position:relative;flex:none;width:var(--portrait-size);height:var(--portrait-size);overflow:hidden;border:4px solid #070707;border-radius:24px;background:#4e4e4e;box-shadow:6px 7px 0 #070707}
+.item-portrait:after{content:'';position:absolute;inset:0;border:2px solid #707070;border-radius:19px;pointer-events:none}
+.item-avatar{display:block;width:100%;height:100%;object-fit:contain}
+.agent-wengines .item-grid{grid-template-columns:repeat(auto-fill,minmax(128px,1fr));padding-bottom:14px}
 .agent-card.no-guide .portrait-image{filter:grayscale(1);opacity:.45}.agent-card.no-guide .agent-name{color:var(--muted)}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;color:var(--muted);font-size:14px}
 .team-card{display:grid;gap:12px;padding:14px 16px 16px;background:linear-gradient(120deg,#ffffff03,transparent 45%),var(--panel);border:3px solid #070707;border-radius:16px 30px 16px 16px;box-shadow:inset 0 0 0 1px #565656,0 4px 0 #070707;color:var(--text)}
@@ -128,7 +142,7 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .guide-avatar{position:absolute;top:50%;left:50%;display:block;width:var(--portrait-size);height:var(--portrait-size);max-width:none;object-fit:contain;transform:translate(-50%,-50%) skewX(-14.036243deg)}
 .agent-facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.agent-fact{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border:2px solid #070707;border-radius:999px;background:var(--raised);box-shadow:inset 0 0 0 1px #565656,0 2px 0 #070707;font-size:12px;font-weight:800;white-space:nowrap}.agent-fact img{width:20px;height:20px;object-fit:contain}
 .guide-chibi{display:block;margin:10px 12px 12px 0}.guide-chibi .hero-art{cursor:default}.guide-chibi .hero-art:hover{outline:none}.guide-chibi img{display:block;width:100%;height:100%;object-fit:contain}
-@media(max-width:760px){.agent-head{grid-template-columns:auto minmax(0,1fr) 72px;gap:10px}.agent-head h2{font-size:26px;overflow-wrap:anywhere}.guide-portrait{--portrait-size:100px;margin:0 12px;border-radius:19px}.guide-portrait:after{border-radius:14px}.agent-facts{gap:4px;margin-top:10px}.agent-fact{padding:4px 7px;font-size:11px}.agent-fact img{width:16px;height:16px}.guide-chibi{display:block;margin:0}.guide-chibi .hero-art{display:block;width:72px;min-width:0;height:76px;border-radius:16px;border-width:3px}.guide-chibi .avatar-tag{display:none}.guide-chibi .avatar-name{left:-4px;bottom:-4px;max-width:80px;padding:3px 5px;font-size:10px}}
+@media(max-width:760px){.agent-head{grid-template-columns:auto minmax(0,1fr) 72px;gap:10px}.agent-head h2{font-size:26px;overflow-wrap:anywhere}.guide-portrait{--portrait-size:100px;margin:0 12px;border-radius:19px}.guide-portrait:after{border-radius:14px}.agent-facts{gap:4px;margin-top:10px}.agent-fact{padding:4px 7px;font-size:11px}.agent-fact img{width:16px;height:16px}.item-portrait{--portrait-size:100px;border-radius:19px}.item-portrait:after{border-radius:14px}.item-card{padding:5px 5px 7px;font-size:12px;gap:6px}.item-card-badges .agent-badge{width:20px;height:20px}.agent-wengines .item-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.guide-chibi{display:block;margin:0}.guide-chibi .hero-art{display:block;width:72px;min-width:0;height:76px;border-radius:16px;border-width:3px}.guide-chibi .avatar-tag{display:none}.guide-chibi .avatar-name{left:-4px;bottom:-4px;max-width:80px;padding:3px 5px;font-size:10px}}
 .team-head{flex-wrap:wrap;justify-content:space-between}
 .member-link{display:grid;justify-items:center;gap:6px;color:var(--text);font-size:12px;font-weight:800}.member-link img{width:84px;height:84px;object-fit:cover;border:3px solid #070707;border-radius:16px;background:#4e4e4e;box-shadow:0 4px 0 #070707}.member-link:hover img{border-color:var(--acid)}
 .guide-body{font-size:15px;line-height:1.95;font-weight:500;color:var(--text)}
@@ -152,18 +166,19 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 <body>
 <div class="flow" aria-hidden="true"><span class="streak"></span></div><div class="grain" aria-hidden="true"></div>
 <div class="shell">
-  <header class="topbar"><div class="brand"><img class="mark" id="brand-mark" src="assets/images/site/icon.png" alt="" aria-hidden="true" width="38" height="38">傷害乘區實驗室 <span class="edition">ZENLESS ZONE ZERO</span></div><nav class="toplinks module-tabs" aria-label="切換模塊"><a href="#/agents" data-module-link="agents">角色攻略</a><a href="#/teams" data-module-link="teams">隊伍攻略</a><a href="#/calc" data-module-link="calc">傷害計算</a></nav></header>
+  <header class="topbar"><div class="brand"><img class="mark" id="brand-mark" src="assets/images/site/icon.png" alt="" aria-hidden="true" width="38" height="38">傷害乘區實驗室 <span class="edition">ZENLESS ZONE ZERO</span></div><nav class="toplinks module-tabs" aria-label="切換模塊"><a href="#/agents" data-module-link="agents">代理人</a><a href="#/wengines" data-module-link="wengines">音擎</a><a href="#/discs" data-module-link="discs">驅動盤</a><a href="#/teams" data-module-link="teams">隊伍</a><a href="#/calc" data-module-link="calc">傷害計算</a></nav></header>
   <section class="module" id="module-agents" data-module="agents" hidden>
     <div id="agents-list">
-      <div class="module-head"><div class="eyebrow">AGENT FILES</div><h2>角色攻略</h2><p>篩選角色、查閱攻略；灰色表示攻略還在撰寫中。</p></div>
+      <div class="module-head"><div class="eyebrow">AGENT FILES</div><h2>代理人</h2><p>篩選代理人、查閱攻略；灰色表示攻略還在撰寫中。</p></div>
       <details class="roster-filters" id="roster-filters">
         <summary>篩選與排序</summary>
         <div class="roster-filter-fields">
           <fieldset id="filter-rarity"><legend>稀有度</legend></fieldset>
           <fieldset id="filter-element"><legend>元素</legend></fieldset>
           <fieldset id="filter-profession"><legend>職業</legend></fieldset>
-          <label class="roster-sort-label" for="roster-sort">排序<select id="roster-sort"><option value="version-desc">版本：新到舊</option><option value="version-asc">版本：舊到新</option><option value="name-asc">名稱：正序</option><option value="name-desc">名稱：反序</option><option value="rarity-desc">稀有度：高到低</option><option value="id-asc">Wiki ID：小到大</option></select></label>
-          <div class="roster-filter-footer"><span>條件可同時套用，版本未提供的角色排在版本排序末尾。</span><button type="button" class="button" id="roster-reset">重設</button></div>
+          <fieldset id="filter-faction"><legend>陣營</legend></fieldset>
+          <fieldset class="roster-sort-field"><legend>排序</legend><select id="roster-sort" aria-label="排序"><option value="version-desc">版本：新到舊</option><option value="version-asc">版本：舊到新</option><option value="name-asc">名稱：正序</option><option value="name-desc">名稱：反序</option><option value="rarity-desc">稀有度：高到低</option><option value="id-asc">Wiki ID：小到大</option></select></fieldset>
+          <div class="roster-filter-footer"><span>同一類可複選（符合任一即顯示），不同類同時套用；版本未提供的角色排在版本排序末尾。</span><button type="button" class="button" id="roster-reset">重設</button></div>
         </div>
       </details>
       <p class="roster-count" id="roster-count" role="status" aria-live="polite"></p>
@@ -171,9 +186,41 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
     </div>
     <article class="guide-page" id="agent-page" hidden></article>
   </section>
+  <section class="module" id="module-wengines" data-module="wengines" hidden>
+    <div id="wengines-list">
+      <div class="module-head"><div class="eyebrow">W-ENGINE FILES</div><h2>音擎</h2><p>篩選音擎，點進去查看基礎屬性、音擎效果與推薦代理人。</p></div>
+      <details class="roster-filters" id="wengine-roster-filters">
+        <summary>篩選與排序</summary>
+        <div class="roster-filter-fields">
+          <fieldset id="wengine-filter-rarity"><legend>稀有度</legend></fieldset>
+          <fieldset id="wengine-filter-profession"><legend>職業</legend></fieldset>
+          <fieldset class="roster-sort-field"><legend>排序</legend><select id="wengine-roster-sort" aria-label="排序"><option value="version-desc">版本：新到舊</option><option value="version-asc">版本：舊到新</option><option value="name-asc">名稱：正序</option><option value="name-desc">名稱：反序</option><option value="rarity-desc">稀有度：高到低</option><option value="id-asc">Wiki ID：小到大</option></select></fieldset>
+          <div class="roster-filter-footer"><span>同一類可複選（符合任一即顯示），不同類同時套用；官方未提供版本的音擎排在版本排序末尾。</span><button type="button" class="button" id="wengine-roster-reset">重設</button></div>
+        </div>
+      </details>
+      <p class="roster-count" id="wengine-roster-count" role="status" aria-live="polite"></p>
+      <div class="roster" id="wengine-roster">載入音擎資料中…</div>
+    </div>
+    <article class="guide-page" id="wengine-page" hidden></article>
+  </section>
+  <section class="module" id="module-discs" data-module="discs" hidden>
+    <div id="discs-list">
+      <div class="module-head"><div class="eyebrow">DRIVE DISC FILES</div><h2>驅動盤</h2><p>點驅動盤套裝查看 2 件與 4 件套效果。</p></div>
+      <details class="roster-filters" id="disc-roster-filters">
+        <summary>排序</summary>
+        <div class="roster-filter-fields">
+          <fieldset class="roster-sort-field"><legend>排序</legend><select id="disc-roster-sort" aria-label="排序"><option value="version-desc">版本：新到舊</option><option value="version-asc">版本：舊到新</option><option value="name-asc">名稱：正序</option><option value="name-desc">名稱：反序</option><option value="id-asc">Wiki ID：小到大</option></select></fieldset>
+          <div class="roster-filter-footer"><span>官方未提供版本的驅動盤排在版本排序末尾。</span><button type="button" class="button" id="disc-roster-reset">重設</button></div>
+        </div>
+      </details>
+      <p class="roster-count" id="disc-roster-count" role="status" aria-live="polite"></p>
+      <div class="roster" id="disc-roster">載入驅動盤資料中…</div>
+    </div>
+    <article class="guide-page" id="disc-page" hidden></article>
+  </section>
   <section class="module" id="module-teams" data-module="teams" hidden>
     <div id="teams-list">
-      <div class="module-head"><div class="eyebrow">SQUAD FILES</div><h2>隊伍攻略</h2><p>點隊伍看配隊攻略，點成員頭像回到角色攻略。</p></div>
+      <div class="module-head"><div class="eyebrow">SQUAD FILES</div><h2>隊伍</h2><p>點隊伍看配隊攻略，點成員頭像回到代理人頁。</p></div>
       <div class="team-grid" id="team-list" aria-live="polite">載入隊伍資料中…</div>
     </div>
     <article class="guide-page" id="team-page" hidden></article>
@@ -381,15 +428,19 @@ function calculate(input){
 'use strict';
 // Site shell: module router, character/team tables (data/*.json) and markdown guides (guides/**/*.md).
 const $=id=>document.getElementById(id);
-let CHARACTERS=[],TEAMS=[],AVATARS=[],ICON_ENTRIES={};
-const PAGES={agents:'agents',agent:'agents',teams:'teams',team:'teams',calc:'calc'};
+let CHARACTERS=[],TEAMS=[],AVATARS=[],ICON_ENTRIES={},WENGINES=[],DISCS=[];
+const PAGES={agents:'agents',agent:'agents',wengines:'wengines',wengine:'wengines',discs:'discs',disc:'discs',teams:'teams',team:'teams',calc:'calc'};
+// Detail route -> [module, article id].
+const DETAIL_PAGES={agent:['agents','agent-page'],wengine:['wengines','wengine-page'],disc:['discs','disc-page'],team:['teams','team-page']};
 const getJson=url=>fetch(url,{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(url+' '+r.status);return r.json();});
-const dataReady=Promise.all([getJson('data/characters.json'),getJson('data/teams.json'),getJson('data/icon-registry.json').catch(error=>{console.warn('Icon registry unavailable:',error);return {entries:{}};})]).then(([characters,teams,registry])=>{
-  CHARACTERS=characters;TEAMS=teams;ICON_ENTRIES=registry.entries||{};
+const dataReady=Promise.all([getJson('data/characters.json'),getJson('data/teams.json'),getJson('data/icon-registry.json').catch(error=>{console.warn('Icon registry unavailable:',error);return {entries:{}};}),getJson('data/wengines.json'),getJson('data/discs.json')]).then(([characters,teams,registry,wengines,discs])=>{
+  CHARACTERS=characters;TEAMS=teams;ICON_ENTRIES=registry.entries||{};WENGINES=wengines;DISCS=discs;
   AVATARS=characters.filter(c=>c.version).flatMap(c=>c.avatars.map(f=>({f,n:c.name,v:c.version})));
 });
-dataReady.catch(()=>{for(const id of ['roster','team-list'])$(id).textContent='資料載入失敗。請透過網頁伺服器開啟（直接雙擊 index.html 無法讀取 data/ 內的檔案，見 README）。';});
+dataReady.catch(()=>{for(const id of ['roster','wengine-roster','disc-roster','team-list'])$(id).textContent='資料載入失敗。請透過網頁伺服器開啟（直接雙擊 index.html 無法讀取 data/ 內的檔案，見 README）。';});
 const findCharacter=id=>CHARACTERS.find(c=>c.id===Number(id));
+const findWengine=id=>WENGINES.find(w=>w.id===Number(id));
+const findDisc=id=>DISCS.find(d=>d.id===Number(id));
 const findTeam=id=>TEAMS.find(t=>t.id===Number(id));
 const el=(tag,className,text)=>{const e=document.createElement(tag);if(className)e.className=className;if(text!=null)e.textContent=text;return e;};
 const avatarImg=(c,className)=>{const img=el('img',className);img.src=encodeURI(c.icon);img.alt=c.name;img.loading='lazy';return img;};
@@ -411,28 +462,45 @@ function route(){
   if(name!=='calc')dataReady.then(()=>{if(token===routeToken)renderPage(page,id,token);},()=>{});
 }
 function renderPage(page,id,token){
-  const detail=page==='agent'||page==='team',module=PAGES[page];
-  $(module+'-list').hidden=detail;
-  const box=$(module==='agents'?'agent-page':'team-page');box.hidden=!detail;
-  if(page==='agents')renderRoster();
+  const module=PAGES[page],detail=DETAIL_PAGES[page];
+  $(module+'-list').hidden=!!detail;
+  const box=$((detail||DETAIL_PAGES[page.slice(0,-1)])[1]);box.hidden=!detail;
+  if(CATALOGS[page])renderCatalog(page);
   else if(page==='teams')renderTeamList();
   else if(page==='agent')renderAgentPage(box,findCharacter(id),token);
+  else if(page==='wengine')renderWenginePage(box,findWengine(id),token);
+  else if(page==='disc')renderDiscPage(box,findDisc(id),token);
   else renderTeamPage(box,findTeam(id),token);
 }
 
+function appendBadges(box,badgeList){
+  for(const [kind,value]of badgeList){
+    const entry=categoryIcon(kind,value);if(!entry)continue;
+    const badge=el('span','agent-badge');badge.dataset.kind=kind;badge.title=entry.name;badge.setAttribute('role','img');badge.setAttribute('aria-label',entry.name);
+    const img=el('img');img.src=encodeURI(entry.icon);img.alt='';badge.append(img);box.append(badge);
+  }
+}
+// Agents: slanted card (portrait, category badge rail, name plate). The clip-path would cut a shadow off,
+// so the card sits in a wrapper that draws the outline and hard shadow with drop-shadow filters.
 function agentCard(c){
   const card=el('a','agent-card'+(c.guide?'':' no-guide'));card.href='#/agent/'+c.id;card.dataset.id=c.id;
   const portrait=el('span','agent-portrait');portrait.append(avatarImg(c,'portrait-image'));card.append(portrait);
   const badges=el('span','agent-badges');portrait.append(badges);
-  for(const [kind,value]of [['rarity',c.rarity],['profession',c.professionId],['element',c.elementId]]){
-    const entry=categoryIcon(kind,value);if(!entry)continue;
-    const badge=el('span','agent-badge');badge.dataset.kind=kind;badge.title=entry.name;badge.setAttribute('role','img');badge.setAttribute('aria-label',entry.name);
-    const img=el('img');img.src=encodeURI(entry.icon);img.alt='';badge.append(img);badges.append(badge);
-  }
+  appendBadges(badges,[['rarity',c.rarity],['profession',c.professionId],['element',c.elementId],['faction',c.faction]]);
   const name=el('span','agent-name');name.append(el('span','agent-name-text',c.name));card.append(name);
   if(!c.guide)card.title='攻略撰寫中';
+  const wrap=el('div','agent-card-wrap');wrap.append(card);return wrap;
+}
+// W-Engine / disc artwork is square, so they keep the rounded-square capsule card.
+function itemCard(item,href,badgeList){
+  const card=el('a','item-card');card.href=href;card.dataset.id=item.id;
+  const art=el('span','item-card-art');art.append(avatarImg(item,'portrait-image'));
+  const badges=el('span','item-card-badges');appendBadges(badges,badgeList);art.append(badges);
+  card.append(art,el('span','item-card-name',item.name));
   return card;
 }
+const wengineCard=w=>itemCard(w,'#/wengine/'+w.id,[['rarity',w.rarity],['profession',w.professionId]]);
+const discCard=d=>itemCard(d,'#/disc/'+d.id,[]);
 function teamCard(t){
   const card=el('a','team-card');card.href='#/team/'+t.id;card.dataset.id=t.id;
   const members=el('div','team-members');
@@ -440,51 +508,72 @@ function teamCard(t){
   card.append(el('h3',null,t.title),members);
   return card;
 }
-let rosterControlsReady=false;
-const rosterFilterFields=[['filter-rarity','rarity'],['filter-element','elementId'],['filter-profession','professionId']];
 const characterNameOrder=new Intl.Collator('zh-Hant',{numeric:true});
 const versionOrder=new Intl.Collator('en',{numeric:true});
 const rarityOrder={S:3,A:2,B:1};
-const categoryIcon=(kind,value)=>value?ICON_ENTRIES[kind+':'+(kind==='rarity'?value.toLowerCase():value)]:null;
-function initRosterControls(){
-  if(rosterControlsReady)return;
-  rosterControlsReady=true;
-  for(const [id,field]of rosterFilterFields){
-    const options=new Map();
-    for(const c of CHARACTERS){const value=c[field];if(value)options.set(value,field==='rarity'?value+'級':c[field==='elementId'?'element':'profession']||value);}
-    const sorted=[...options].sort((a,b)=>field==='rarity'?(rarityOrder[b[0]]||0)-(rarityOrder[a[0]]||0):characterNameOrder.compare(a[1],b[1]));
-    const choices=[['','全部'],...sorted];if(CHARACTERS.some(c=>!c[field]))choices.push(['__unknown__','未分類／未提供']);
+const categoryIcon=(kind,value)=>!value?null:kind==='faction'?Object.entries(ICON_ENTRIES).find(([key,e])=>key.startsWith('faction:')&&e.name===value)?.[1]:ICON_ENTRIES[kind+':'+(kind==='rarity'?value.toLowerCase():value)];
+// Overview pages. Element ids are prefix + 'filter-<kind>' / 'roster-sort' / 'roster-reset' / 'roster-count' / 'roster'.
+// Each filter maps an item to its values; checked options in one group are OR-ed, groups are AND-ed, none checked = all.
+const CATALOGS={
+  agents:{prefix:'',items:()=>CHARACTERS,unit:'位角色',noun:'角色',card:agentCard,filters:{rarity:c=>[c.rarity],element:c=>[c.elementId],profession:c=>[c.professionId],faction:c=>[c.faction]}},
+  wengines:{prefix:'wengine-',items:()=>WENGINES,unit:'把音擎',noun:'音擎',card:wengineCard,filters:{rarity:w=>[w.rarity],profession:w=>[w.professionId]}},
+  discs:{prefix:'disc-',items:()=>DISCS,unit:'套驅動盤',noun:'驅動盤',card:discCard,filters:{}},
+};
+const itemRarity=item=>item.rarity??item.rarities?.[0];
+const filterLabel=(kind,value)=>categoryIcon(kind,value)?.name??(kind==='rarity'?value+'級':value);
+function filterValues(config,kind,item){return config.filters[kind](item).filter(Boolean);}
+function checkedFilterValues(fieldset){return [...fieldset.querySelectorAll('input:checked')].map(i=>i.value).filter(Boolean);}
+function initCatalogControls(page){
+  const config=CATALOGS[page],p=config.prefix;
+  if(config.ready)return;
+  config.ready=true;
+  const render=()=>renderCatalog(page);
+  for(const kind of Object.keys(config.filters)){
+    const fieldset=$(p+'filter-'+kind),values=new Set();let unknown=false;
+    for(const item of config.items()){const v=filterValues(config,kind,item);v.forEach(x=>values.add(x));if(!v.length)unknown=true;}
+    const sorted=[...values].sort((a,b)=>kind==='rarity'?(rarityOrder[b]||0)-(rarityOrder[a]||0):characterNameOrder.compare(filterLabel(kind,a),filterLabel(kind,b)));
+    const choices=[['','全部'],...sorted.map(v=>[v,filterLabel(kind,v)])];if(unknown)choices.push(['__unknown__','未分類／未提供']);
     for(const [value,label]of choices){
-      const option=el('label','filter-option'),input=el('input');input.type='radio';input.name=id;input.value=value;input.checked=value==='';option.append(input);
-      const entry=categoryIcon(id.slice(7),value);if(entry){const img=el('img');img.src=encodeURI(entry.icon);img.alt='';option.append(img);}
-      option.append(el('span',null,label));$(id).append(option);
+      const option=el('label','filter-option'),input=el('input');input.type='checkbox';input.name=fieldset.id;input.value=value;input.checked=value==='';option.append(input);
+      const entry=categoryIcon(kind,value);if(entry){const img=el('img');img.src=encodeURI(entry.icon);img.alt='';option.append(img);}
+      option.append(el('span',null,label));fieldset.append(option);
     }
-    $(id).addEventListener('change',renderRoster);
+    // "全部" is checked exactly when nothing else is: picking it clears the group, clearing the last option restores it.
+    fieldset.addEventListener('change',e=>{
+      const all=fieldset.querySelector('input[value=""]');
+      if(e.target===all)for(const i of fieldset.querySelectorAll('input'))i.checked=i===all;
+      else all.checked=!checkedFilterValues(fieldset).length;
+      render();
+    });
   }
-  $('roster-sort').addEventListener('change',renderRoster);
-  $('roster-reset').addEventListener('click',()=>{for(const [id]of rosterFilterFields)$(id).querySelector('input[value=""]').checked=true;$('roster-sort').value='version-desc';renderRoster();});
+  $(p+'roster-sort').addEventListener('change',render);
+  $(p+'roster-reset').addEventListener('click',()=>{for(const kind of Object.keys(config.filters))for(const i of $(p+'filter-'+kind).querySelectorAll('input'))i.checked=i.value==='';$(p+'roster-sort').value='version-desc';render();});
 }
-function renderRoster(){
-  initRosterControls();
-  const roster=$('roster');roster.textContent='';roster.classList.add('roster-grid');
-  const filtered=CHARACTERS.filter(c=>rosterFilterFields.every(([id,field])=>{const value=$(id).querySelector('input:checked').value;return !value||(value==='__unknown__'?!c[field]:c[field]===value);}));
-  const sort=$('roster-sort').value;
+function renderCatalog(page){
+  initCatalogControls(page);
+  const config=CATALOGS[page],p=config.prefix,items=config.items();
+  const roster=$(p+'roster');roster.textContent='';roster.classList.add('roster-grid');
+  const filtered=items.filter(item=>Object.keys(config.filters).every(kind=>{
+    const selected=checkedFilterValues($(p+'filter-'+kind)),values=filterValues(config,kind,item);
+    return !selected.length||selected.some(v=>v==='__unknown__'?!values.length:values.includes(v));
+  }));
+  const sort=$(p+'roster-sort').value;
   filtered.sort((a,b)=>{
     if(sort.startsWith('version-')){
       if(!a.version||!b.version)return Number(!a.version)-Number(!b.version);
       return versionOrder.compare(a.version,b.version)*(sort==='version-desc'?-1:1);
     }
     if(sort.startsWith('name-'))return characterNameOrder.compare(a.name,b.name)*(sort==='name-desc'?-1:1);
-    if(sort==='rarity-desc')return (rarityOrder[b.rarity]||0)-(rarityOrder[a.rarity]||0);
+    if(sort==='rarity-desc')return (rarityOrder[itemRarity(b)]||0)-(rarityOrder[itemRarity(a)]||0);
     return a.id-b.id;
   });
-  $('roster-count').textContent=`顯示 ${filtered.length} / ${CHARACTERS.length} 位角色`;
-  if(!filtered.length){roster.append(el('p','roster-empty','沒有符合條件的角色。請調整篩選條件或按「重設」。'));return;}
-  for(const c of filtered)roster.append(agentCard(c));
+  $(p+'roster-count').textContent=`顯示 ${filtered.length} / ${items.length} ${config.unit}`;
+  if(!filtered.length){roster.append(el('p','roster-empty',`沒有符合條件的${config.noun}。請調整篩選條件或按「重設」。`));return;}
+  for(const item of filtered)roster.append(config.card(item));
 }
 function renderTeamList(){
   const list=$('team-list');list.textContent='';
-  if(!TEAMS.length){list.append(el('p','guide-empty','還沒有隊伍攻略。'));return;}
+  if(!TEAMS.length){list.append(el('p','guide-empty','還沒有隊伍。'));return;}
   for(const t of TEAMS)list.append(teamCard(t));
 }
 function notFound(box,label,back,backText){
@@ -492,9 +581,9 @@ function notFound(box,label,back,backText){
   box.append(link,el('p','guide-empty','找不到這個'+label+'。'));
 }
 function renderAgentPage(box,c,token){
-  if(!c)return notFound(box,'角色','#/agents','← 全部角色');
+  if(!c)return notFound(box,'角色','#/agents','← 全部代理人');
   box.textContent='';
-  const back=el('a','back-link','← 全部角色');back.href='#/agents';
+  const back=el('a','back-link','← 全部代理人');back.href='#/agents';
   const head=el('header','guide-head agent-head'),title=el('div','agent-title');
   if(c.version)title.append(el('span','agent-ver','VER '+c.version));
   title.append(el('h2',null,c.name));
@@ -504,6 +593,7 @@ function renderAgentPage(box,c,token){
     const fact=el('span','agent-fact');fact.dataset.kind=kind;
     const icon=el('img');icon.src=encodeURI(entry.icon);icon.alt='';fact.append(icon,el('span',null,entry.name));facts.append(fact);
   }
+  if(c.faction)facts.append(factPill('faction',c.faction,categoryIcon('faction',c.faction)?.icon));
   title.append(facts);
   const portrait=el('div','guide-portrait');portrait.append(avatarImg(c,'guide-avatar'));head.append(portrait,title);
   const chibi=manualAvatar(c);
@@ -514,12 +604,79 @@ function renderAgentPage(box,c,token){
   }
   const body=el('div','guide-body');
   const related=el('section','guide-related'),teams=TEAMS.filter(t=>t.members.includes(c.id));
-  related.append(el('h3',null,'相關隊伍攻略'));
+  related.append(el('h3',null,'相關隊伍'));
   const grid=el('div','team-grid');
-  if(teams.length)grid.append(...teams.map(teamCard));else grid.append(el('p','guide-empty','還沒有收錄這個角色的隊伍攻略。'));
+  if(teams.length)grid.append(...teams.map(teamCard));else grid.append(el('p','guide-empty','還沒有收錄這個代理人的隊伍。'));
   related.append(grid);
-  box.append(back,head,body,related);
+  // Official agent-page recommendations first, then W-Engines that list this agent.
+  const engineIds=[...new Set([...(c.recommendedWengines||[]),...WENGINES.filter(w=>w.recommendedAgents.includes(c.id)).map(w=>w.id)])];
+  const engines=engineIds.map(findWengine).filter(Boolean);
+  // Collapsible block in the guide-section style, open by default like the markdown sections.
+  const engineGrid=el('div','roster-grid item-grid');
+  if(engines.length)engineGrid.append(...engines.map(wengineCard));else engineGrid.append(el('p','guide-empty','官方資料尚未列出推薦音擎。'));
+  const recommended=infoSection('推薦音擎',engineGrid);recommended.classList.add('agent-wengines');
+  box.append(back,head,recommended,body,related);
   fillGuide(body,c.guide,token);
+}
+// W-Engine / disc pages: official data from their tables, plus an optional guide markdown like agents.
+function factPill(kind,text,icon){
+  const fact=el('span','agent-fact');fact.dataset.kind=kind;
+  if(icon){const img=el('img');img.src=encodeURI(icon);img.alt='';fact.append(img);}
+  fact.append(el('span',null,text));return fact;
+}
+function itemHead(item,facts){
+  const head=el('header','guide-head agent-head item-head'),title=el('div','agent-title');
+  if(item.version)title.append(el('span','agent-ver','VER '+item.version));
+  title.append(el('h2',null,item.name));
+  const list=el('div','agent-facts');list.append(...facts);title.append(list);
+  const portrait=el('div','item-portrait');portrait.append(avatarImg(item,'item-avatar'));head.append(portrait,title);
+  return head;
+}
+function infoSection(heading,...children){
+  const section=el('details','guide-section item-section');section.open=true;
+  const summary=el('summary');summary.append(el('h2',null,heading));section.append(summary,...children);
+  return section;
+}
+const effectText=(text,className='item-effect')=>el('p',className,text||'官方資料未提供。');
+function itemGuide(box,item,token){
+  if(!item.guide)return;
+  const body=el('div','guide-body');box.append(body);fillGuide(body,item.guide,token);
+}
+function renderWenginePage(box,w,token){
+  if(!w)return notFound(box,'音擎','#/wengines','← 全部音擎');
+  box.textContent='';
+  const back=el('a','back-link','← 全部音擎');back.href='#/wengines';
+  const facts=[];
+  const rarity=categoryIcon('rarity',w.rarity);if(rarity)facts.push(factPill('rarity',rarity.name,rarity.icon));
+  const profession=categoryIcon('profession',w.professionId);if(profession)facts.push(factPill('profession',profession.name,profession.icon));
+  for(const [kind,stat]of [['base-stat',w.baseStat],['advanced-stat',w.advancedStat]])if(stat?.value)facts.push(factPill(kind,stat.name+' '+stat.value));
+  const body=el('div','guide-body item-body');
+  const effect=[];if(w.effectCondition)effect.push(el('p','item-condition',w.effectCondition));effect.push(effectText(w.effect));
+  body.append(infoSection('音擎效果'+(w.effectName?'｜'+w.effectName:''),...effect));
+  const agents=w.recommendedAgents.map(findCharacter).filter(Boolean);
+  if(agents.length){
+    const members=el('div','team-members item-agents');
+    for(const c of agents){const link=el('a','member-link');link.href='#/agent/'+c.id;link.dataset.id=c.id;const avatar=manualAvatar(c);if(avatar)link.append(avatar);link.append(el('span',null,c.name));members.append(link);}
+    body.append(infoSection('推薦代理人',members));
+  }
+  if(w.intro)body.append(infoSection('簡介',effectText(w.intro)));
+  const note=el('p','item-source');const src=el('a',null,'HoYoWiki');src.href=w.sourcePage;src.target='_blank';src.rel='noopener';
+  note.append('屬性為 Lv.60 改裝後數值；資料來源：',src,'。');
+  body.append(note);
+  box.append(back,itemHead(w,facts),body);
+  itemGuide(box,w,token);
+}
+function renderDiscPage(box,d,token){
+  if(!d)return notFound(box,'驅動盤','#/discs','← 全部驅動盤');
+  box.textContent='';
+  const back=el('a','back-link','← 全部驅動盤');back.href='#/discs';
+  const body=el('div','guide-body item-body');
+  body.append(infoSection('2 件套效果',effectText(d.twoPiece)),infoSection('4 件套效果',effectText(d.fourPiece)));
+  const note=el('p','item-source');const src=el('a',null,'HoYoWiki');src.href=d.sourcePage;src.target='_blank';src.rel='noopener';
+  note.append('資料來源：',src,'。');
+  body.append(note);
+  box.append(back,itemHead(d,[]),body);
+  itemGuide(box,d,token);
 }
 function renderTeamPage(box,t,token){
   if(!t)return notFound(box,'隊伍','#/teams','← 全部隊伍');
@@ -567,6 +724,14 @@ function videoEmbed(href){
   if(bv)return 'https://player.bilibili.com/player.html?bvid='+bv+'&autoplay=0'+(u.searchParams.get('p')?'&p='+u.searchParams.get('p'):'');
   return null;
 }
+// Agents use the manual chibi (name only without one); W-Engines/discs use their official icon and link to their page.
+function resolveReference(key){
+  const [kind,id]=key.split(':');
+  if(kind==='agent'){const c=findCharacter(id);return c&&{name:c.name,src:c.avatars?.[0],href:'#/agent/'+c.id};}
+  const item=kind==='wengine'?findWengine(id):kind==='disc'?findDisc(id):null;
+  if(item)return {name:item.name,src:item.icon,href:'#/'+kind+'/'+item.id};
+  const entry=ICON_ENTRIES[key];return entry&&{name:entry.name,src:entry.icon};
+}
 function renderMarkdown(body,md,path){
   const tmp=el('div');tmp.innerHTML=marked.parse(md);
   const base=new URL(path,location.href);
@@ -590,15 +755,13 @@ function renderMarkdown(body,md,path){
     node.nodeValue.split(/(\{\{(?:\d+|[a-z][a-z0-9_]*:[a-zA-Z0-9_-]+)\}\})/).forEach((part,i)=>{
       if(i%2===0){if(part)frag.append(part);return;}
       const reference=part.slice(2,-2),key=/^\d+$/.test(reference)?'agent:'+reference:reference;
-      const c=key.startsWith('agent:')?findCharacter(key.slice(6)):null,entry=key.startsWith('agent:')?c:ICON_ENTRIES[key];
-      if(!entry&&!c){frag.append(el('span','agent-chip icon-chip missing',part));return;}
-      const chip=el(c?'a':'span','agent-chip icon-chip');chip.dataset.iconKey=key;
-      if(c)chip.href='#/agent/'+c.id;
-      const name=entry.name;
-      const src=c?c.avatars?.[0]:entry.icon;
-      if(src){const img=el('img');img.src=encodeURI(src);img.alt='';img.loading='lazy';chip.append(img);}
+      const ref=resolveReference(key);
+      if(!ref){frag.append(el('span','agent-chip icon-chip missing',part));return;}
+      const chip=el(ref.href?'a':'span','agent-chip icon-chip');chip.dataset.iconKey=key;
+      if(ref.href)chip.href=ref.href;
+      if(ref.src){const img=el('img');img.src=encodeURI(ref.src);img.alt='';img.loading='lazy';chip.append(img);}
       else chip.classList.add('text-only');
-      chip.append(name);frag.append(chip);
+      chip.append(ref.name);frag.append(chip);
     });
     node.replaceWith(frag);
   }

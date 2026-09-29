@@ -1,18 +1,21 @@
-# ZZZ Damage Calculator｜絕區零傷害乘區實驗室
+# ZZZ Lab｜絕區零傷害乘區實驗室
 
-以繁體中文呈現的《絕區零》互動傷害計算與公式教學網頁。調整數值，即可查看各乘區如何影響最終傷害，並對照完整公式與數值代入過程。
+以繁體中文呈現的《絕區零》攻略與傷害計算網站：代理人、音擎、驅動盤資料與攻略，隊伍配置，以及互動傷害計算與公式教學。調整數值，即可查看各乘區如何影響最終傷害，並對照完整公式與數值代入過程。
 
 ## 圖示引用
 
-攻略可引用官方圖示與文字，例如 `{{1185}}`（克拉蕾的 Wiki ID）、`{{stat:crit_rate}}`、`{{disc:1177}}`。角色清單、路由、攻略檔名與數字引用统一採官方 Wiki ID。請參閱 [圖示預覽／搜尋表](icon-reference.html) 與 [引用及更新說明](ICONS.md)。保留可重跑的官方資源抓取程式：`node scripts/sync-icons.cjs`。
+攻略可引用官方圖示與文字，例如 `{{1185}}`（克拉蕾的 Wiki ID）、`{{stat:crit_rate}}`、`{{wengine:1189}}`（音擎）、`{{disc:1177}}`（驅動盤）。角色清單、路由、攻略檔名與數字引用统一採官方 Wiki ID。請參閱 [圖示預覽／搜尋表](icon-reference.html) 與 [引用及更新說明](ICONS.md)。保留可重跑的官方資源抓取程式：`node scripts/sync-icons.cjs`。
 
 ## 功能
 
-- 三個模塊，以頂端分頁切換，同一時間只顯示一個：**角色攻略**（預設）、**隊伍攻略**、**傷害計算**。網址 hash 對應模塊：`#/agents`、`#/teams`、`#/calc`；頁內錨點（如 `#workbench`）會自動切到所屬模塊。
-- 角色攻略列出全部代理人（新版本在前），還沒有攻略的角色顯示灰色；點頭像進入 `#/agent/<id>`，頁尾自動列出含這個角色的隊伍攻略。
-- 角色總覽的「篩選與排序」可展開，以稀有度、元素、職業交叉篩選並顯示結果數；可依版本新舊、名稱正反、稀有度或 Wiki ID 排序。未提供版本的角色在版本排序時置後，重設恢復全部角色與最新版本優先。當頁切換攻略再返回會保留條件。
-- 篩選條件以帶圖示的單選選項呈現，支援鍵盤操作。角色卡左側沿肖像斜邊显示稀有度、職業、元素圖示，名稱透過提示及輔助文字提供；缺少的官方資料不顯示猜測圖示。版本標籤仍在右上方。
-- 隊伍攻略頁 `#/team/<id>` 顯示成員頭像，點頭像跳回該角色攻略。
+- 五個模塊，以頂端分頁切換，同一時間只顯示一個：**代理人**（預設）、**音擎**、**驅動盤**、**隊伍**、**傷害計算**。網址 hash 對應模塊：`#/agents`、`#/wengines`、`#/discs`、`#/teams`、`#/calc`；頁內錨點（如 `#workbench`）會自動切到所屬模塊。
+- 代理人模塊列出全部代理人（新版本在前），還沒有攻略的角色顯示灰色；點頭像進入 `#/agent/<id>`，頁尾自動列出含這個角色的隊伍攻略。
+- 代理人頁顯示稀有度、元素、職業、陣營。爬蟲取得的「推薦音擎」以可折疊區塊（預設展開）放在上方（先列官方代理人頁的推薦，再補上在音擎頁把這位代理人列為推薦的音擎），自己撰寫的 Markdown 攻略與相關隊伍放在下方。
+- 音擎總覽可依稀有度、職業篩選，點進 `#/wengine/<id>` 看 Lv.60 基礎／高級屬性、音擎效果、推薦代理人（連回代理人頁）與簡介；驅動盤總覽只提供排序（各套皆有 S 級，不設篩選、不顯示稀有度圖示），點進 `#/disc/<id>` 看 2 件／4 件套效果。資料都由爬蟲自官方 HoYoWiki 抓取，也可選填攻略 Markdown，接在資料下方。
+- 代理人、音擎總覽的「篩選與排序」可展開，篩選為**複選**：同一類勾選多項時符合任一即顯示，不同類同時套用，都不勾（「全部」）即不限；代理人可依稀有度、元素、職業、陣營篩選。排序選單與篩選群組同樣式。可依版本新舊、名稱正反、稀有度或 Wiki ID 排序；未提供版本的項目在版本排序時置後，重設恢復全部與最新版本優先。當頁切換後再返回會保留條件。
+- 篩選條件以帶圖示的核取方塊呈現（已勾選顯示 ✓），Tab 移動、空白鍵勾選。角色卡左側沿肖像斜邊显示稀有度、職業、元素、陣營圖示（陣營沒有官方圖示時不顯示），名稱透過提示及輔助文字提供；缺少的官方資料不顯示猜測圖示。版本標籤仍在右上方。
+- 卡片外觀：代理人維持沿肖像斜邊的平行四邊形卡，外加黑色描邊與硬陰影；音擎、驅動盤原圖是正方形，使用圓角方形膠囊卡（粗黑框、內側灰線、下方硬陰影），詳細頁頭像同樣是不傾斜的圓角方框。
+- 隊伍頁 `#/team/<id>` 顯示成員頭像，點頭像跳回該代理人頁。
 - 攻略以 Markdown 撰寫：`##` 區塊可折疊（預設展開）、影片連結自動嵌入、`{{角色id}}` 變成角色頭像連結。詳見下方「撰寫攻略」。
 - 九種傷害模式：直傷、貫穿、銳化、異常、紊亂、亂流、異放、耀變、真實傷害。
 - 完整傷害公式、變數說明、倍率表與即時計算結果。
@@ -39,11 +42,13 @@ favicon 與左上角標誌共用 `assets/images/site/icon.png`，頭像放在 `a
 ## 檔案結構
 
 ```text
-zzz-damage-calc/
+zzz-lab/
 ├── index.html          # 網頁入口、模塊切換、樣式與計算邏輯
 ├── data/characters.json # 角色表：id、名稱、版本、頭像路徑、攻略檔
+├── data/wengines.json  # 音擎表：Wiki ID、名稱、稀有度、職業、Lv.60 屬性、效果、推薦代理人、圖示
+├── data/discs.json     # 驅動盤表：Wiki ID、名稱、稀有度、2／4 件套效果、圖示
 ├── data/teams.json     # 隊伍表：id、名稱、成員 id、攻略檔
-├── guides/agents/      # 角色攻略 .md（檔名建議用角色 id）
+├── guides/agents/      # 代理人攻略 .md（檔名建議用角色 id）
 ├── guides/teams/       # 隊伍攻略 .md
 ├── guides/img/         # 攻略用圖片
 ├── guides/_templates/  # 攻略範本（不會出現在網站上）
@@ -65,11 +70,22 @@ zzz-damage-calc/
 ```
 
 - `id`：官方 HoYoWiki 角色條目數字 ID，角色表由同步程式更新，不自行編號。例如克拉蕾 `1185`、麗娜 `30`、哲 `7`、鈴 `8`。Wiki ID 與遊戲 ID 不同。
+- `faction`、`factionId`、`factionWiki`、`recommendedWengines`：陣營名稱與圖示 ID（官方代理人陣營篩選選項，20 個皆有圖示）、爬蟲從代理人詳細頁表格讀到的原文、官方推薦音擎 Wiki ID。
+- `overrides`（選填，人工校正）：例如 `"overrides":{"faction":"對空洞特別行動部第六課"}`。同步時爬蟲資料照常更新，但以人工值為準，爬蟲原值存在 `wikiValues`，方便日後比對；刪除 `overrides` 後重新同步即回到官方值。
 - `icon`、`elementId`、`professionId`、`rarity`：角色表集中保存官方頭像、元素、職業、稀有度，以及來源 URL、圖檔雜湊、`sourceMetadata`。角色引用直接讀此表，圖示 registry 不重複保存 agent；操作只使用 `action`。
 - `name`：顯示名稱（繁體中文）。頭像檔名可與名稱不同（例如雨果、維琳娜、諾姆的檔名沿用原始字元）。
 - `version`：登場版本，須與頭像所在的 `assets/images/manual/avatars/<版本>/` 資料夾一致。
 - `avatars`：只能填手動下載的 Q 版頭像，第一張用於內文及隊伍小頭像；有已確認版本的角色參與傷害計算頁輪播。空陣列表示尚未手動下載，內文顯示名字。總覽與角色詳情使用爬蟲提供的完整 `icon`。
 - `guide`（選填）：攻略 md 路徑，例如 `"guides/agents/1185.md"`。沒填的角色在列表顯示灰色。
+
+## 音擎與驅動盤表
+
+`data/wengines.json`、`data/discs.json` 由 `node scripts/sync-icons.cjs` 從官方 HoYoWiki 清單與詳細頁產生，`id` 同樣是 Wiki ID。官方富文字轉為純文字（保留換行）後才存入，網頁不插入官方 HTML；原始欄位保留在 `sourceMetadata`。
+
+- 音擎：`rarity`、`professionId`／`profession`（沒有職業限制的留 `null`）、`baseStat`／`advancedStat`（Lv.60 改裝後）、`effectName`、`effectCondition`、`effect`、`intro`、`recommendedAgents`（Wiki 的推薦／專屬代理人 ID）。
+- 驅動盤：`rarities`（該套可出現的品質）、`twoPiece`、`fourPiece`。
+- `version`：取自 Wiki「實裝版本」。官方未填時為 `null`，不推測；可手動填入，重新同步時官方仍未提供就保留手填值。
+- `guide`（選填）：例如 `"guides/wengines/1189.md"`、`"guides/discs/1177.md"`，會接在資料下方以攻略格式顯示。
 
 新增角色：執行 `node scripts/sync-icons.cjs` 從官方清單加入，未確認的版本留 `null`。之後可補上版本、原有頭像素材與攻略路徑；同步會保留這些欄位。執行 `node verify-icons.cjs` 與 `node verify-damage.cjs` 檢查資料、引用與圖片。
 
@@ -79,7 +95,7 @@ zzz-damage-calc/
 
 範本在 `guides/_templates/`。
 
-**角色攻略**：複製 `agent.md` 到 `guides/agents/<角色id>.md`，再到 `data/characters.json` 該角色加上 `"guide":"guides/agents/<角色id>.md"`。
+**代理人攻略**：複製 `agent.md` 到 `guides/agents/<角色id>.md`，再到 `data/characters.json` 該角色加上 `"guide":"guides/agents/<角色id>.md"`。
 
 **隊伍攻略**：複製 `team.md` 到 `guides/teams/<隊伍id>.md`，在 `data/teams.json` 加一筆：
 
@@ -87,7 +103,7 @@ zzz-damage-calc/
 {"id":2001,"title":"隊伍名稱","members":[29,30,837],"guide":"guides/teams/2001.md"}
 ```
 
-隊伍是本站自創內容，隊伍 id 從 2001 起編，不可改或重用；這與官方 Wiki 角色 ID 分開。`members` 填成員的 Wiki ID，順序就是頁面顯示順序；每個成員的角色攻略頁會自動列出這支隊伍，不用另外維護。`guide` 可以先不填，頁面會顯示「攻略撰寫中」。
+隊伍是本站自創內容，隊伍 id 從 2001 起編，不可改或重用；這與官方 Wiki 角色 ID 分開。`members` 填成員的 Wiki ID，順序就是頁面顯示順序；每個成員的代理人頁會自動列出這支隊伍，不用另外維護。`guide` 可以先不填，頁面會顯示「攻略撰寫中」。
 
 **Markdown 規則**
 
@@ -99,7 +115,8 @@ zzz-damage-calc/
 | `![說明](../img/a.png)` | 圖片，路徑相對於 md 檔本身（編輯器預覽也看得到） |
 | YouTube／B 站連結**單獨一行** | 嵌入播放器；YouTube 可帶 `t=1m30s` 指定開始、`end=2m` 指定結束（兩者都從影片開頭算，也可寫純秒數如 `t=90`） |
 | 其他平台 | 直接貼該平台分享的 `<iframe>` 原始碼 |
-| `{{30}}` 或 `{{agent:30}}` | 麗娜的官方頭像＋名稱，點擊跳到該角色攻略；未知 Wiki ID 顯示橘色虛線框提醒 |
+| `{{30}}` 或 `{{agent:30}}` | 麗娜的官方頭像＋名稱，點擊跳到該代理人頁；未知 Wiki ID 顯示橘色虛線框提醒 |
+| `{{wengine:1189}}`、`{{disc:1177}}` | 音擎／驅動盤官方圖示＋名稱，點擊跳到其專屬頁 |
 
 寫在句子裡或 `[文字](網址)` 形式的影片連結會保持一般連結。放在行內程式碼（反引號包住）裡的 `{{id}}` 不會轉換。
 
@@ -128,13 +145,13 @@ node verify-damage.cjs --browser
 
 瀏覽器驗證的攻略頁測試使用寫在暫存資料夾的假資料，不會動到 `data/` 與 `guides/`。
 
-最近一次驗證：120 項數值、離線與資料表檢查，加上桌面、手機各 127 項互動／版面檢查，共 374 項通過。
+最近一次驗證（2026-09-29）：`verify-damage.cjs --browser` 120 項數值、離線與資料表檢查，加上桌面、手機各 134 項互動／版面檢查；`verify-icons.cjs --browser` 含角色／音擎／驅動盤總覽、複選篩選、排序、專屬頁、引用代碼與圖示搜尋表，全部通過。
 
 ## 發布到 GitHub Pages
 
 本專案為純靜態網頁，不需自行執行建置指令或安裝依賴。
 
-1. 建立 GitHub repository，例如 `zzz-damage-calc`，將專案檔案上傳至根目錄，確保 `index.html` 不在額外的子資料夾裡，且 `assets/` 一併上傳（頭像靠相對路徑讀取）。
+1. 建立 GitHub repository，例如 `zzz-lab`，將專案檔案上傳至根目錄，確保 `index.html` 不在額外的子資料夾裡，且 `assets/` 一併上傳（頭像靠相對路徑讀取）。
 2. 前往 repository 的 **Settings → Pages**。
 3. 在 **Build and deployment → Source** 選擇 **Deploy from a branch**。
 4. 選擇存放檔案的分支（例如 `main`），資料夾選 **/(root)**，按 **Save**。
@@ -159,4 +176,4 @@ node verify-damage.cjs --browser
 
 ## 修改方式
 
-編輯 `index.html` 即可調整網頁，角色資料改 `data/characters.json`。模塊切換與攻略渲染在 `site-ui` script（`route()`、`renderMarkdown()`）。計算邏輯位於 `damage-engine` script，畫面與互動位於 `damage-ui` script；修改公式後請執行驗證，並同步更新畫面上的公式說明。
+編輯 `index.html` 即可調整網頁，角色資料改 `data/characters.json`。模塊切換與攻略渲染在 `site-ui` script（`route()`、`renderMarkdown()`）；三個總覽共用 `CATALOGS` 設定與 `renderCatalog()`，新增篩選維度只需在對應設定的 `filters` 加一個取值函式並在 HTML 放同名 fieldset。計算邏輯位於 `damage-engine` script，畫面與互動位於 `damage-ui` script；修改公式後請執行驗證，並同步更新畫面上的公式說明。
