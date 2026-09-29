@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>傷害乘區實驗室 · 絕區零</title>
-<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="icon" type="image/png" href="assets/images/site/icon.png">
 <style>
 :root{--bg:#0e0f11;--panel:#17191c;--raised:#202328;--line:#33373d;--text:#eceef2;--muted:#aeb4bd;--acid:#de8a1e;--cyan:#8ee7de;--orange:#ffbb87;--radius:18px;font-family:"Noto Sans TC","Source Han Sans TC","Microsoft JhengHei UI","Microsoft JhengHei","PingFang TC","Hiragino Sans GB","Segoe UI",system-ui,sans-serif;color:var(--text);background:var(--bg)}
 *{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:var(--cyan);text-underline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}button:disabled{opacity:.45;cursor:not-allowed}[hidden]{display:none!important}button{color:var(--text)}
@@ -88,13 +88,32 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .module-head{padding:44px 0 26px}.module-head h2{font-size:clamp(32px,4.5vw,54px);font-weight:900;font-style:italic;letter-spacing:-.06em;margin:14px 0 10px;text-shadow:4px 4px 0 #00000070}.module-head p{margin:0;color:var(--muted);font-size:14px;line-height:1.9}
 .roster{color:var(--muted);font-size:14px;padding-bottom:40px}
 .roster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:18px 14px}
+.roster-filters{margin:0 0 18px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.roster-filters summary{padding:15px 18px}.roster-filters summary:after{content:'＋'}.roster-filters[open] summary:after{content:'−'}
+.roster-filter-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0 18px 18px}
+.roster-filter-fields fieldset{min-width:0;margin:0;padding:10px;border:1px solid var(--line);border-radius:8px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:6px}.roster-filter-fields legend{padding:0 5px;color:var(--muted);font-size:12px}
+.filter-option{display:flex;align-items:center;gap:5px;position:relative;padding:6px 8px;min-height:34px;border:1px solid #555;border-radius:7px;font-size:12px;cursor:pointer}.filter-option input{position:absolute;width:1px;height:1px;opacity:0;margin:0}.filter-option img{width:22px;height:22px;object-fit:contain}.filter-option:has(input:checked){background:#de8a1e25;border-color:var(--acid);color:#fff}.filter-option:has(input:focus-visible){outline:2px solid var(--acid);outline-offset:2px}
+.roster-sort-label{display:grid;gap:7px;color:var(--muted);font-size:12px;min-width:0}.roster-filter-fields select{width:100%;min-width:0;font-size:13px;min-height:42px}
+.roster-filter-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted)}
+.roster-count{margin:0 0 18px;font-size:13px;color:var(--muted)}.roster-empty{grid-column:1/-1;margin:0;padding:32px 18px;text-align:center;border:1px dashed var(--line);border-radius:10px;line-height:1.8}
+@media(max-width:760px){.roster-filter-fields{grid-template-columns:minmax(0,1fr);gap:12px;padding:0 14px 14px}.roster-filter-footer{align-items:flex-start}.roster-filter-footer span{max-width:65%;line-height:1.6}}
 .agent-ver{position:absolute;top:-7px;right:-8px;padding:3px 6px;border:2px solid #0b0b0b;border-radius:3px;background:var(--acid);color:#17120a;font:800 9px/1 ui-monospace,monospace;letter-spacing:.1em;transform:rotate(6deg);box-shadow:2px 2px 0 #050505}
-.agent-card{position:relative;display:grid;gap:8px;padding:8px 8px 10px;background:linear-gradient(120deg,#ffffff03,transparent 45%),var(--panel);border:3px solid #070707;border-radius:16px;box-shadow:inset 0 0 0 1px #565656,0 4px 0 #070707;color:var(--text);font-size:13px;font-weight:800;text-align:center}
-.agent-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;background:#4e4e4e}
-.agent-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* Portrait edges move 1px right per 4px down. Tail = caption/4; edge correction = (rail + tail - caption)/4. The right rail follows the same slope. */
+.agent-card{--agent-slant:14.036243deg;--agent-rail:28px;--agent-name-height:32px;--agent-tail:8px;--agent-edge-correction:1px;--agent-name-offset:5px;--agent-badge-size:22px;position:relative;display:block;gap:0;padding:0;background:#22211f;border:0;border-radius:0;box-shadow:none;clip-path:polygon(0 0,calc(75% + var(--agent-edge-correction)) 0,100% 100%,calc(25% - var(--agent-edge-correction)) 100%);color:var(--text);font-size:13px;font-weight:800;text-align:center}
+.agent-portrait{position:relative;display:block;width:calc(100% - var(--agent-rail) - var(--agent-tail));margin-left:0;aspect-ratio:1;min-width:0;background:transparent}
+.agent-portrait:before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,#b3712f,#47423a);clip-path:polygon(0 0,75% 0,100% 100%,25% 100%)}
+.agent-card .portrait-image{position:relative;display:block;width:100%;height:100%;aspect-ratio:1;object-fit:contain;border-radius:0;background:transparent}
+.agent-badges{position:absolute;left:75%;top:0;display:flex;flex-direction:column;gap:0;width:var(--agent-rail);height:100%;background:#11110f;border-left:1px solid #686055;transform:skewX(var(--agent-slant));transform-origin:top left}
+.agent-badge{display:grid;place-items:center;flex:0 0 var(--agent-badge-size);width:100%;height:var(--agent-badge-size)}
+.agent-badge img{width:calc(var(--agent-badge-size) * .8);height:80%;object-fit:contain;transform:skewX(calc(-1 * var(--agent-slant)))}
+.agent-name{position:relative;isolation:isolate;display:block;width:calc(75% + var(--agent-edge-correction));height:var(--agent-name-height);line-height:var(--agent-name-height);margin-left:calc(25% - var(--agent-name-offset));padding:0 5px;background:transparent;border:0;border-radius:0}
+.agent-name:before{content:'';position:absolute;top:0;bottom:0;left:calc(var(--agent-tail) / -2);right:calc(var(--agent-tail) / 2);z-index:-1;background:linear-gradient(120deg,#ffffff03,transparent 45%),var(--panel);border:3px solid #070707;box-shadow:inset 0 0 0 1px #565656;transform:skewX(var(--agent-slant));transform-origin:top left}
+.agent-name-text{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.agent-card:hover .agent-name:before,.agent-card:focus-visible .agent-name:before{border-color:var(--acid)}
+.agent-card:hover,.agent-card:focus-visible{background:#4c4839}.agent-card:focus-visible .agent-name{color:var(--acid)}
 .agent-card,.team-card,.member-link,.agent-chip,.back-link{text-decoration:none;transition:border-color .15s,transform .15s}
 .agent-card:hover,.team-card:hover{border-color:var(--acid);transform:translateY(-2px)}
-.agent-card.no-guide img{filter:grayscale(1);opacity:.45}.agent-card.no-guide .agent-name{color:var(--muted)}.agent-card.no-guide .agent-ver{background:#8a8a84}
+.agent-card.no-guide .portrait-image{filter:grayscale(1);opacity:.45}.agent-card.no-guide .agent-name{color:var(--muted)}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;color:var(--muted);font-size:14px}
 .team-card{display:grid;gap:12px;padding:14px 16px 16px;background:linear-gradient(120deg,#ffffff03,transparent 45%),var(--panel);border:3px solid #070707;border-radius:16px 30px 16px 16px;box-shadow:inset 0 0 0 1px #565656,0 4px 0 #070707;color:var(--text)}
 .team-card h3{margin:0;font-size:16px;font-weight:900}
@@ -103,7 +122,13 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .back-link{display:inline-block;margin-bottom:18px;color:var(--muted);font-size:13px;font-weight:800}.back-link:hover{color:var(--acid)}
 .guide-head{display:flex;align-items:center;gap:22px;margin-bottom:26px}.guide-head h2{font-size:clamp(30px,4vw,48px);font-weight:900;font-style:italic;letter-spacing:-.05em;margin:12px 0 0;text-shadow:4px 4px 0 #00000070}
 .guide-head .agent-ver{position:static;display:inline-block}
-.guide-avatar{width:132px;height:132px;flex:none;object-fit:cover;border:4px solid #070707;border-radius:24px;background:#4e4e4e;box-shadow:inset 0 0 0 2px #707070,6px 7px 0 #070707;transform:rotate(-4deg)}
+.agent-head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:28px}.agent-title{min-width:0}
+.guide-portrait{--portrait-size:144px;position:relative;width:calc(var(--portrait-size) * .75);height:var(--portrait-size);margin:0 18px;overflow:hidden;border:4px solid #070707;border-radius:24px;background:#4e4e4e;box-shadow:6px 7px 0 #070707;transform:skewX(14.036243deg)}
+.guide-portrait:after{content:'';position:absolute;inset:0;border:2px solid #707070;border-radius:19px;pointer-events:none}
+.guide-avatar{position:absolute;top:50%;left:50%;display:block;width:var(--portrait-size);height:var(--portrait-size);max-width:none;object-fit:contain;transform:translate(-50%,-50%) skewX(-14.036243deg)}
+.agent-facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.agent-fact{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border:2px solid #070707;border-radius:999px;background:var(--raised);box-shadow:inset 0 0 0 1px #565656,0 2px 0 #070707;font-size:12px;font-weight:800;white-space:nowrap}.agent-fact img{width:20px;height:20px;object-fit:contain}
+.guide-chibi{display:block;margin:10px 12px 12px 0}.guide-chibi .hero-art{cursor:default}.guide-chibi .hero-art:hover{outline:none}.guide-chibi img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:760px){.agent-head{grid-template-columns:auto minmax(0,1fr) 72px;gap:10px}.agent-head h2{font-size:26px;overflow-wrap:anywhere}.guide-portrait{--portrait-size:100px;margin:0 12px;border-radius:19px}.guide-portrait:after{border-radius:14px}.agent-facts{gap:4px;margin-top:10px}.agent-fact{padding:4px 7px;font-size:11px}.agent-fact img{width:16px;height:16px}.guide-chibi{display:block;margin:0}.guide-chibi .hero-art{display:block;width:72px;min-width:0;height:76px;border-radius:16px;border-width:3px}.guide-chibi .avatar-tag{display:none}.guide-chibi .avatar-name{left:-4px;bottom:-4px;max-width:80px;padding:3px 5px;font-size:10px}}
 .team-head{flex-wrap:wrap;justify-content:space-between}
 .member-link{display:grid;justify-items:center;gap:6px;color:var(--text);font-size:12px;font-weight:800}.member-link img{width:84px;height:84px;object-fit:cover;border:3px solid #070707;border-radius:16px;background:#4e4e4e;box-shadow:0 4px 0 #070707}.member-link:hover img{border-color:var(--acid)}
 .guide-body{font-size:15px;line-height:1.95;font-weight:500;color:var(--text)}
@@ -117,20 +142,32 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .guide-section>summary{padding:18px 0}.guide-section>summary h2{display:inline;margin:0;font-size:20px;font-weight:900;font-style:italic;letter-spacing:-.03em}
 .guide-section[open]>summary{border-bottom:1px solid var(--line);margin-bottom:16px}
 .video-embed{aspect-ratio:16/9;margin:0 0 16px;border:3px solid #070707;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 4px 0 #070707}.video-embed iframe{display:block;width:100%;height:100%;border:0}
-.agent-chip{display:inline-flex;align-items:center;gap:5px;padding:1px 9px 1px 2px;margin:0 2px;vertical-align:middle;border:2px solid #070707;border-radius:30px;background:var(--raised);color:var(--text)!important;font-size:.9em;font-weight:800;line-height:1.7}.agent-chip img{width:24px;height:24px;border-radius:50%;object-fit:cover}.agent-chip:hover{border-color:var(--acid)}.agent-chip.missing{padding-left:9px;color:var(--orange)!important;border-style:dashed}
+.agent-chip{display:inline-flex;align-items:center;gap:5px;padding:1px 9px 1px 2px;margin:0 2px;vertical-align:middle;border:2px solid #070707;border-radius:30px;background:var(--raised);color:var(--text)!important;font-size:.9em;font-weight:800;line-height:1.7}.agent-chip img{width:24px;height:24px;border-radius:50%;object-fit:cover}.agent-chip:hover{border-color:var(--acid)}.agent-chip.text-only{padding-left:9px}.agent-chip.missing{padding-left:9px;color:var(--orange)!important;border-style:dashed}
 .guide-related{margin-top:34px}.guide-related h3{font-size:18px;font-weight:900;margin:0 0 14px}
+.icon-chip img{object-fit:contain;border-radius:0}
 .guide-empty{color:var(--muted);font-size:14px}
-@media(max-width:760px){.module-head{padding:28px 0 20px}.roster-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.agent-card{font-size:12px;padding:6px 6px 8px}.calc-links{width:100%;margin-top:16px}.guide-page{padding-top:20px}.guide-avatar{width:92px;height:92px;border-radius:18px}.guide-head{gap:16px}.guide-section{padding:0 14px 6px}.guide-body{font-size:14px}.member-link img{width:64px;height:64px}.team-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.module-head{padding:28px 0 20px}.roster-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.agent-card{--agent-rail:24px;--agent-name-height:28px;--agent-tail:7px;--agent-edge-correction:.75px;--agent-name-offset:4.25px;--agent-badge-size:18px;font-size:12px;padding:0}.calc-links{width:100%;margin-top:16px}.guide-page{padding-top:20px}.guide-head:not(.agent-head){gap:16px}.guide-section{padding:0 14px 6px}.guide-body{font-size:14px}.member-link img{width:64px;height:64px}.team-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="flow" aria-hidden="true"><span class="streak"></span></div><div class="grain" aria-hidden="true"></div>
 <div class="shell">
-  <header class="topbar"><div class="brand"><img class="mark" id="brand-mark" src="assets/icon.png" alt="" aria-hidden="true" width="38" height="38">傷害乘區實驗室 <span class="edition">ZENLESS ZONE ZERO</span></div><nav class="toplinks module-tabs" aria-label="切換模塊"><a href="#/agents" data-module-link="agents">角色攻略</a><a href="#/teams" data-module-link="teams">隊伍攻略</a><a href="#/calc" data-module-link="calc">傷害計算</a></nav></header>
+  <header class="topbar"><div class="brand"><img class="mark" id="brand-mark" src="assets/images/site/icon.png" alt="" aria-hidden="true" width="38" height="38">傷害乘區實驗室 <span class="edition">ZENLESS ZONE ZERO</span></div><nav class="toplinks module-tabs" aria-label="切換模塊"><a href="#/agents" data-module-link="agents">角色攻略</a><a href="#/teams" data-module-link="teams">隊伍攻略</a><a href="#/calc" data-module-link="calc">傷害計算</a></nav></header>
   <section class="module" id="module-agents" data-module="agents" hidden>
     <div id="agents-list">
-      <div class="module-head"><div class="eyebrow">AGENT FILES</div><h2>角色攻略</h2><p>依版本排列的全部代理人，灰色表示攻略還在撰寫中。</p></div>
-      <div class="roster" id="roster" aria-live="polite">載入角色資料中…</div>
+      <div class="module-head"><div class="eyebrow">AGENT FILES</div><h2>角色攻略</h2><p>篩選角色、查閱攻略；灰色表示攻略還在撰寫中。</p></div>
+      <details class="roster-filters" id="roster-filters">
+        <summary>篩選與排序</summary>
+        <div class="roster-filter-fields">
+          <fieldset id="filter-rarity"><legend>稀有度</legend></fieldset>
+          <fieldset id="filter-element"><legend>元素</legend></fieldset>
+          <fieldset id="filter-profession"><legend>職業</legend></fieldset>
+          <label class="roster-sort-label" for="roster-sort">排序<select id="roster-sort"><option value="version-desc">版本：新到舊</option><option value="version-asc">版本：舊到新</option><option value="name-asc">名稱：正序</option><option value="name-desc">名稱：反序</option><option value="rarity-desc">稀有度：高到低</option><option value="id-asc">Wiki ID：小到大</option></select></label>
+          <div class="roster-filter-footer"><span>條件可同時套用，版本未提供的角色排在版本排序末尾。</span><button type="button" class="button" id="roster-reset">重設</button></div>
+        </div>
+      </details>
+      <p class="roster-count" id="roster-count" role="status" aria-live="polite"></p>
+      <div class="roster" id="roster">載入角色資料中…</div>
     </div>
     <article class="guide-page" id="agent-page" hidden></article>
   </section>
@@ -344,18 +381,19 @@ function calculate(input){
 'use strict';
 // Site shell: module router, character/team tables (data/*.json) and markdown guides (guides/**/*.md).
 const $=id=>document.getElementById(id);
-let CHARACTERS=[],TEAMS=[],AVATARS=[];
+let CHARACTERS=[],TEAMS=[],AVATARS=[],ICON_ENTRIES={};
 const PAGES={agents:'agents',agent:'agents',teams:'teams',team:'teams',calc:'calc'};
 const getJson=url=>fetch(url).then(r=>{if(!r.ok)throw new Error(url+' '+r.status);return r.json();});
-const dataReady=Promise.all([getJson('data/characters.json'),getJson('data/teams.json')]).then(([characters,teams])=>{
-  CHARACTERS=characters;TEAMS=teams;
-  AVATARS=characters.flatMap(c=>c.avatars.map(f=>({f,n:c.name,v:c.version})));
+const dataReady=Promise.all([getJson('data/characters.json'),getJson('data/teams.json'),getJson('data/icon-registry.json').catch(error=>{console.warn('Icon registry unavailable:',error);return {entries:{}};})]).then(([characters,teams,registry])=>{
+  CHARACTERS=characters;TEAMS=teams;ICON_ENTRIES=registry.entries||{};
+  AVATARS=characters.filter(c=>c.version).flatMap(c=>c.avatars.map(f=>({f,n:c.name,v:c.version})));
 });
 dataReady.catch(()=>{for(const id of ['roster','team-list'])$(id).textContent='資料載入失敗。請透過網頁伺服器開啟（直接雙擊 index.html 無法讀取 data/ 內的檔案，見 README）。';});
 const findCharacter=id=>CHARACTERS.find(c=>c.id===Number(id));
 const findTeam=id=>TEAMS.find(t=>t.id===Number(id));
 const el=(tag,className,text)=>{const e=document.createElement(tag);if(className)e.className=className;if(text!=null)e.textContent=text;return e;};
-const avatarImg=(c,className)=>{const img=el('img',className);img.src=encodeURI(c.avatars[0]);img.alt=c.name;img.loading='lazy';return img;};
+const avatarImg=(c,className)=>{const img=el('img',className);img.src=encodeURI(c.icon);img.alt=c.name;img.loading='lazy';return img;};
+const manualAvatar=c=>{if(!c.avatars?.[0])return null;const img=el('img');img.src=encodeURI(c.avatars[0]);img.alt=c.name;img.loading='lazy';return img;};
 
 let lastView='',routeToken=0;
 function route(){
@@ -384,21 +422,65 @@ function renderPage(page,id,token){
 
 function agentCard(c){
   const card=el('a','agent-card'+(c.guide?'':' no-guide'));card.href='#/agent/'+c.id;card.dataset.id=c.id;
-  card.append(avatarImg(c),el('span','agent-ver','VER '+c.version),el('span','agent-name',c.name));
+  const portrait=el('span','agent-portrait');portrait.append(avatarImg(c,'portrait-image'));card.append(portrait);
+  const badges=el('span','agent-badges');portrait.append(badges);
+  for(const [kind,value]of [['rarity',c.rarity],['profession',c.professionId],['element',c.elementId]]){
+    const entry=categoryIcon(kind,value);if(!entry)continue;
+    const badge=el('span','agent-badge');badge.dataset.kind=kind;badge.title=entry.name;badge.setAttribute('role','img');badge.setAttribute('aria-label',entry.name);
+    const img=el('img');img.src=encodeURI(entry.icon);img.alt='';badge.append(img);badges.append(badge);
+  }
+  const name=el('span','agent-name');name.append(el('span','agent-name-text',c.name));card.append(name);
   if(!c.guide)card.title='攻略撰寫中';
   return card;
 }
 function teamCard(t){
   const card=el('a','team-card');card.href='#/team/'+t.id;card.dataset.id=t.id;
   const members=el('div','team-members');
-  for(const c of t.members.map(findCharacter).filter(Boolean))members.append(avatarImg(c));
+  for(const c of t.members.map(findCharacter).filter(Boolean))members.append(manualAvatar(c)||el('span',null,c.name));
   card.append(el('h3',null,t.title),members);
   return card;
 }
+let rosterControlsReady=false;
+const rosterFilterFields=[['filter-rarity','rarity'],['filter-element','elementId'],['filter-profession','professionId']];
+const characterNameOrder=new Intl.Collator('zh-Hant',{numeric:true});
+const versionOrder=new Intl.Collator('en',{numeric:true});
+const rarityOrder={S:3,A:2,B:1};
+const categoryIcon=(kind,value)=>value?ICON_ENTRIES[kind+':'+(kind==='rarity'?value.toLowerCase():value)]:null;
+function initRosterControls(){
+  if(rosterControlsReady)return;
+  rosterControlsReady=true;
+  for(const [id,field]of rosterFilterFields){
+    const options=new Map();
+    for(const c of CHARACTERS){const value=c[field];if(value)options.set(value,field==='rarity'?value+'級':c[field==='elementId'?'element':'profession']||value);}
+    const sorted=[...options].sort((a,b)=>field==='rarity'?(rarityOrder[b[0]]||0)-(rarityOrder[a[0]]||0):characterNameOrder.compare(a[1],b[1]));
+    const choices=[['','全部'],...sorted];if(CHARACTERS.some(c=>!c[field]))choices.push(['__unknown__','未分類／未提供']);
+    for(const [value,label]of choices){
+      const option=el('label','filter-option'),input=el('input');input.type='radio';input.name=id;input.value=value;input.checked=value==='';option.append(input);
+      const entry=categoryIcon(id.slice(7),value);if(entry){const img=el('img');img.src=encodeURI(entry.icon);img.alt='';option.append(img);}
+      option.append(el('span',null,label));$(id).append(option);
+    }
+    $(id).addEventListener('change',renderRoster);
+  }
+  $('roster-sort').addEventListener('change',renderRoster);
+  $('roster-reset').addEventListener('click',()=>{for(const [id]of rosterFilterFields)$(id).querySelector('input[value=""]').checked=true;$('roster-sort').value='version-desc';renderRoster();});
+}
 function renderRoster(){
+  initRosterControls();
   const roster=$('roster');roster.textContent='';roster.classList.add('roster-grid');
-  // Newest version first; within a version keep table order (sort is stable).
-  for(const c of [...CHARACTERS].sort((a,b)=>parseFloat(b.version)-parseFloat(a.version)))roster.append(agentCard(c));
+  const filtered=CHARACTERS.filter(c=>rosterFilterFields.every(([id,field])=>{const value=$(id).querySelector('input:checked').value;return !value||(value==='__unknown__'?!c[field]:c[field]===value);}));
+  const sort=$('roster-sort').value;
+  filtered.sort((a,b)=>{
+    if(sort.startsWith('version-')){
+      if(!a.version||!b.version)return Number(!a.version)-Number(!b.version);
+      return versionOrder.compare(a.version,b.version)*(sort==='version-desc'?-1:1);
+    }
+    if(sort.startsWith('name-'))return characterNameOrder.compare(a.name,b.name)*(sort==='name-desc'?-1:1);
+    if(sort==='rarity-desc')return (rarityOrder[b.rarity]||0)-(rarityOrder[a.rarity]||0);
+    return a.id-b.id;
+  });
+  $('roster-count').textContent=`顯示 ${filtered.length} / ${CHARACTERS.length} 位角色`;
+  if(!filtered.length){roster.append(el('p','roster-empty','沒有符合條件的角色。請調整篩選條件或按「重設」。'));return;}
+  for(const c of filtered)roster.append(agentCard(c));
 }
 function renderTeamList(){
   const list=$('team-list');list.textContent='';
@@ -413,9 +495,23 @@ function renderAgentPage(box,c,token){
   if(!c)return notFound(box,'角色','#/agents','← 全部角色');
   box.textContent='';
   const back=el('a','back-link','← 全部角色');back.href='#/agents';
-  const head=el('header','guide-head'),title=el('div');
-  title.append(el('span','agent-ver','VER '+c.version),el('h2',null,c.name));
-  head.append(avatarImg(c,'guide-avatar'),title);
+  const head=el('header','guide-head agent-head'),title=el('div','agent-title');
+  if(c.version)title.append(el('span','agent-ver','VER '+c.version));
+  title.append(el('h2',null,c.name));
+  const facts=el('div','agent-facts');
+  for(const [kind,value]of [['rarity',c.rarity],['element',c.elementId],['profession',c.professionId]]){
+    const entry=categoryIcon(kind,value);if(!entry)continue;
+    const fact=el('span','agent-fact');fact.dataset.kind=kind;
+    const icon=el('img');icon.src=encodeURI(entry.icon);icon.alt='';fact.append(icon,el('span',null,entry.name));facts.append(fact);
+  }
+  title.append(facts);
+  const portrait=el('div','guide-portrait');portrait.append(avatarImg(c,'guide-avatar'));head.append(portrait,title);
+  const chibi=manualAvatar(c);
+  if(chibi){
+    const slot=el('div','avatar-slot guide-chibi'),frame=el('div','hero-art');frame.append(chibi);slot.append(frame);
+    if(c.version)slot.append(el('span','avatar-tag','VER '+c.version));
+    slot.append(el('span','avatar-name',c.name));head.append(slot);
+  }
   const body=el('div','guide-body');
   const related=el('section','guide-related'),teams=TEAMS.filter(t=>t.members.includes(c.id));
   related.append(el('h3',null,'相關隊伍攻略'));
@@ -432,7 +528,8 @@ function renderTeamPage(box,t,token){
   const head=el('header','guide-head team-head'),members=el('div','team-members');
   for(const c of t.members.map(findCharacter).filter(Boolean)){
     const link=el('a','member-link');link.href='#/agent/'+c.id;link.dataset.id=c.id;
-    link.append(avatarImg(c),el('span',null,c.name));members.append(link);
+    const avatar=manualAvatar(c);if(avatar)link.append(avatar);
+    link.append(el('span',null,c.name));members.append(link);
   }
   const title=el('div');title.append(el('div','eyebrow','SQUAD FILE'),el('h2',null,t.title));
   head.append(title,members);
@@ -484,16 +581,24 @@ function renderMarkdown(body,md,path){
     frame.setAttribute('allow','accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
     wrap.append(frame);p.replaceWith(wrap);
   }
-  // {{1016}} → avatar chip linking to that character (left alone inside code).
+  // Numeric and agent references use official HoYoWiki character IDs.
   const walker=document.createTreeWalker(tmp,NodeFilter.SHOW_TEXT),texts=[];
-  while(walker.nextNode())if(/\{\{\d+\}\}/.test(walker.currentNode.nodeValue)&&!walker.currentNode.parentElement.closest('code,pre'))texts.push(walker.currentNode);
+  const tokenPattern=/\{\{(?:\d+|[a-z][a-z0-9_]*:[a-zA-Z0-9_-]+)\}\}/;
+  while(walker.nextNode())if(tokenPattern.test(walker.currentNode.nodeValue)&&!walker.currentNode.parentElement.closest('code,pre'))texts.push(walker.currentNode);
   for(const node of texts){
     const frag=document.createDocumentFragment();
-    node.nodeValue.split(/(\{\{\d+\}\})/).forEach((part,i)=>{
+    node.nodeValue.split(/(\{\{(?:\d+|[a-z][a-z0-9_]*:[a-zA-Z0-9_-]+)\}\})/).forEach((part,i)=>{
       if(i%2===0){if(part)frag.append(part);return;}
-      const c=findCharacter(part.slice(2,-2));
-      if(!c){frag.append(el('span','agent-chip missing',part));return;}
-      const chip=el('a','agent-chip');chip.href='#/agent/'+c.id;chip.append(avatarImg(c),c.name);frag.append(chip);
+      const reference=part.slice(2,-2),key=/^\d+$/.test(reference)?'agent:'+reference:reference;
+      const c=key.startsWith('agent:')?findCharacter(key.slice(6)):null,entry=key.startsWith('agent:')?c:ICON_ENTRIES[key];
+      if(!entry&&!c){frag.append(el('span','agent-chip icon-chip missing',part));return;}
+      const chip=el(c?'a':'span','agent-chip icon-chip');chip.dataset.iconKey=key;
+      if(c)chip.href='#/agent/'+c.id;
+      const name=entry.name;
+      const src=c?c.avatars?.[0]:entry.icon;
+      if(src){const img=el('img');img.src=encodeURI(src);img.alt='';img.loading='lazy';chip.append(img);}
+      else chip.classList.add('text-only');
+      chip.append(name);frag.append(chip);
     });
     node.replaceWith(frag);
   }

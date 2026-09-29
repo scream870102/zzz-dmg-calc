@@ -2,10 +2,16 @@
 
 以繁體中文呈現的《絕區零》互動傷害計算與公式教學網頁。調整數值，即可查看各乘區如何影響最終傷害，並對照完整公式與數值代入過程。
 
+## 圖示引用
+
+攻略可引用官方圖示與文字，例如 `{{1185}}`（克拉蕾的 Wiki ID）、`{{stat:crit_rate}}`、`{{disc:1177}}`。角色清單、路由、攻略檔名與數字引用统一採官方 Wiki ID。請參閱 [圖示預覽／搜尋表](icon-reference.html) 與 [引用及更新說明](ICONS.md)。保留可重跑的官方資源抓取程式：`node scripts/sync-icons.cjs`。
+
 ## 功能
 
 - 三個模塊，以頂端分頁切換，同一時間只顯示一個：**角色攻略**（預設）、**隊伍攻略**、**傷害計算**。網址 hash 對應模塊：`#/agents`、`#/teams`、`#/calc`；頁內錨點（如 `#workbench`）會自動切到所屬模塊。
 - 角色攻略列出全部代理人（新版本在前），還沒有攻略的角色顯示灰色；點頭像進入 `#/agent/<id>`，頁尾自動列出含這個角色的隊伍攻略。
+- 角色總覽的「篩選與排序」可展開，以稀有度、元素、職業交叉篩選並顯示結果數；可依版本新舊、名稱正反、稀有度或 Wiki ID 排序。未提供版本的角色在版本排序時置後，重設恢復全部角色與最新版本優先。當頁切換攻略再返回會保留條件。
+- 篩選條件以帶圖示的單選選項呈現，支援鍵盤操作。角色卡左側沿肖像斜邊显示稀有度、職業、元素圖示，名稱透過提示及輔助文字提供；缺少的官方資料不顯示猜測圖示。版本標籤仍在右上方。
 - 隊伍攻略頁 `#/team/<id>` 顯示成員頭像，點頭像跳回該角色攻略。
 - 攻略以 Markdown 撰寫：`##` 區塊可折疊（預設展開）、影片連結自動嵌入、`{{角色id}}` 變成角色頭像連結。詳見下方「撰寫攻略」。
 - 九種傷害模式：直傷、貫穿、銳化、異常、紊亂、亂流、異放、耀變、真實傷害。
@@ -13,7 +19,7 @@
 - 逐步乘區拆解、比較基準、預設範例與觀念練習。
 - 每個參數欄位附「填什麼／值從哪來」說明，另有常數與係數表（防禦係數 794、等級區、各屬性異常倍率等）。
 - 都市龐克風格：橘色輔色 `#de8a1e`、粗黑體、流動漸層背景、ZZ 標誌 favicon（本機 PNG，離線可用）。
-- 傷害計算頁右上角角色頭像每 10 秒隨機替換，點擊可提早換下一張；外框上貼版本標籤與角色名稱標籤。共 108 張 1000×1000 原圖，涵蓋 1.0–3.2 共 20 個版本，依版本分資料夾放在 `assets/avatars/<版本>/`，未經壓縮；角色名稱與版本讀自角色表 `data/characters.json`。
+- 傷害計算頁右上角角色頭像每 10 秒隨機替換，點擊可提早換下一張；外框上貼版本標籤與角色名稱標籤。共 108 張 1000×1000 原圖，涵蓋 1.0–3.2 共 20 個版本，依版本分資料夾放在 `assets/images/manual/avatars/<版本>/`，未經壓縮；角色名稱與版本讀自角色表 `data/characters.json`。
 - 支援桌面與手機；HTML、CSS、JavaScript 集中於 `index.html`，角色表與頭像為獨立檔案，不連外部網域。
 
 ## 本機開啟
@@ -28,7 +34,7 @@ python -m http.server 8000
 
 再以瀏覽器開啟終端機顯示的網址（例如 http://localhost:8000）。GitHub Pages 本身就是伺服器，不受影響。
 
-favicon 與左上角標誌共用 `assets/icon.png`，頭像放在 `assets/avatars/`，都以相對路徑引用。除了攻略內嵌入的 YouTube／B 站影片，全站不連外部網域；Markdown 解析器 marked 也放在 repo 內（`assets/vendor/`，MIT 授權）。頭像版權屬 miHoYo／HoYoverse，此處為個人非商業用途。
+favicon 與左上角標誌共用 `assets/images/site/icon.png`，頭像放在 `assets/images/manual/avatars/`，都以相對路徑引用。除了攻略內嵌入的 YouTube／B 站影片，全站不連外部網域；Markdown 解析器 marked 也放在 repo 內（`assets/vendor/`，MIT 授權）。頭像版權屬 miHoYo／HoYoverse，此處為個人非商業用途。
 
 ## 檔案結構
 
@@ -42,8 +48,10 @@ zzz-damage-calc/
 ├── guides/img/         # 攻略用圖片
 ├── guides/_templates/  # 攻略範本（不會出現在網站上）
 ├── assets/vendor/      # marked v18.0.14（Markdown 解析）與授權檔
-├── assets/icon.png     # 站台圖示與左上角標誌（512×512 PNG）
-├── assets/avatars/     # 角色頭像，依版本分資料夾（1.0–3.2，108 張原圖，約 29 MB）
+├── assets/images/site/icon.png     # 站台圖示與左上角標誌（512×512 PNG）
+├── assets/images/manual/avatars/     # 手動 Q 版頭像，依版本分資料夾（108 張原圖，約 29 MB）
+├── assets/images/synced/            # 爬蟲下載的完整肖像與共用圖示
+├── assets/README.md                # 圖片來源分區與手動更新步驟
 ├── verify-damage.cjs   # 數值、離線依賴與瀏覽器互動驗證
 └── README.md           # 專案說明
 ```
@@ -53,16 +61,19 @@ zzz-damage-calc/
 `data/characters.json` 是角色相關資訊的唯一來源，每個角色一行：
 
 ```json
-{"id":1001,"name":"11號","version":"1.0","avatars":["assets/avatars/1.0/11號.png"]}
+{"id":22,"name":"11號","version":"1.0","avatars":["assets/images/manual/avatars/1.0/11號.png"]}
 ```
 
-- `id`：整數流水號，從 1001 起依版本順序編。**已發出的 id 不可改、不可重用**，日後攻略會用它指向角色；新角色接在最大 id 之後。
+- `id`：官方 HoYoWiki 角色條目數字 ID，角色表由同步程式更新，不自行編號。例如克拉蕾 `1185`、麗娜 `30`、哲 `7`、鈴 `8`。Wiki ID 與遊戲 ID 不同。
+- `icon`、`elementId`、`professionId`、`rarity`：角色表集中保存官方頭像、元素、職業、稀有度，以及來源 URL、圖檔雜湊、`sourceMetadata`。角色引用直接讀此表，圖示 registry 不重複保存 agent；操作只使用 `action`。
 - `name`：顯示名稱（繁體中文）。頭像檔名可與名稱不同（例如雨果、維琳娜、諾姆的檔名沿用原始字元）。
-- `version`：登場版本，須與頭像所在的 `assets/avatars/<版本>/` 資料夾一致。
-- `avatars`：頭像路徑陣列，第一張用於角色列表，全部參與傷害計算頁的輪播。
-- `guide`（選填）：攻略 md 路徑，例如 `"guides/agents/1011.md"`。沒填的角色在列表顯示灰色。
+- `version`：登場版本，須與頭像所在的 `assets/images/manual/avatars/<版本>/` 資料夾一致。
+- `avatars`：只能填手動下載的 Q 版頭像，第一張用於內文及隊伍小頭像；有已確認版本的角色參與傷害計算頁輪播。空陣列表示尚未手動下載，內文顯示名字。總覽與角色詳情使用爬蟲提供的完整 `icon`。
+- `guide`（選填）：攻略 md 路徑，例如 `"guides/agents/1185.md"`。沒填的角色在列表顯示灰色。
 
-新增角色：把頭像放進對應版本資料夾，在表尾加一行，執行 `node verify-damage.cjs` 確認 id 不重複、檔案都存在，且沒有未登記的頭像。日後要加欄位（屬性、陣營、攻略檔名等）直接加在同一物件上。
+新增角色：執行 `node scripts/sync-icons.cjs` 從官方清單加入，未確認的版本留 `null`。之後可補上版本、原有頭像素材與攻略路徑；同步會保留這些欄位。執行 `node verify-icons.cjs` 與 `node verify-damage.cjs` 檢查資料、引用與圖片。
+
+圖片統一放在 `assets/images/`：`manual/avatars/` 是手動 Q 版，`synced/` 是爬蟲圖，`site/` 是網站圖示；`vendor/` 繼續保存程式庫。爬蟲不會取得或覆寫手動 Q 版。詳見 [素材管理說明](assets/README.md)。
 
 ## 撰寫攻略
 
@@ -73,10 +84,10 @@ zzz-damage-calc/
 **隊伍攻略**：複製 `team.md` 到 `guides/teams/<隊伍id>.md`，在 `data/teams.json` 加一筆：
 
 ```json
-{"id":2001,"title":"隊伍名稱","members":[1011,1016,1040],"guide":"guides/teams/2001.md"}
+{"id":2001,"title":"隊伍名稱","members":[29,30,837],"guide":"guides/teams/2001.md"}
 ```
 
-隊伍 id 從 2001 起編，規則同角色 id（不可改、不可重用）。`members` 的順序就是頁面顯示順序；每個成員的角色攻略頁會自動列出這支隊伍，不用另外維護。`guide` 可以先不填，頁面會顯示「攻略撰寫中」。
+隊伍是本站自創內容，隊伍 id 從 2001 起編，不可改或重用；這與官方 Wiki 角色 ID 分開。`members` 填成員的 Wiki ID，順序就是頁面顯示順序；每個成員的角色攻略頁會自動列出這支隊伍，不用另外維護。`guide` 可以先不填，頁面會顯示「攻略撰寫中」。
 
 **Markdown 規則**
 
@@ -88,7 +99,7 @@ zzz-damage-calc/
 | `![說明](../img/a.png)` | 圖片，路徑相對於 md 檔本身（編輯器預覽也看得到） |
 | YouTube／B 站連結**單獨一行** | 嵌入播放器；YouTube 可帶 `t=1m30s` 指定開始、`end=2m` 指定結束（兩者都從影片開頭算，也可寫純秒數如 `t=90`） |
 | 其他平台 | 直接貼該平台分享的 `<iframe>` 原始碼 |
-| `{{1016}}` | 角色頭像＋名稱，點擊跳到該角色攻略；id 不存在時顯示橘色虛線框提醒 |
+| `{{30}}` 或 `{{agent:30}}` | 麗娜的官方頭像＋名稱，點擊跳到該角色攻略；未知 Wiki ID 顯示橘色虛線框提醒 |
 
 寫在句子裡或 `[文字](網址)` 形式的影片連結會保持一般連結。放在行內程式碼（反引號包住）裡的 `{{id}}` 不會轉換。
 

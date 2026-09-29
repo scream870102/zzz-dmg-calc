@@ -1,0 +1,1002 @@
+{
+  "schemaVersion": 3,
+  "idNamespace": "hoyowiki",
+  "locale": "zh-tw",
+  "fetchedAt": "2026-09-29T07:43:39.519Z",
+  "sources": [
+    "https://act.hoyolab.com/app/zzz-game-record/index.html",
+    "https://webstatic.hoyoverse.com/admin/mi18n/nap_global/m20240410hy38foxb7k/m20240410hy38foxb7k-zh-tw.json",
+    "https://wiki.hoyolab.com/pc/zzz/home",
+    "https://sg-wiki-api.hoyolab.com/hoyowiki/zzz/wapi/get_menus",
+    "https://sg-wiki-api.hoyolab.com/hoyowiki/zzz/wapi/get_entry_page_list",
+    "https://sg-wiki-api.hoyolab.com/hoyowiki/zzz/wapi/entry_page?entry_page_id=8",
+    "https://sg-wiki-api.hoyolab.com/hoyowiki/zzz/wapi/entry_page?entry_page_id=7"
+  ],
+  "bundles": [
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "sha256": "41a40908d18d3c0c6848b07534cdf647196182f239388eb5018d8098eceda047"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_8126b8f9.js",
+      "sha256": "4de0159abf1ce1eb5dae1ed6214b53f8784a2ceb638aed27ba886eabba344b67"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_6a283e40.js",
+      "sha256": "6f57a70da97355b375910026cb5874de7f9abea46e9fe59caadc244b0ff4defc"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_3890b315.js",
+      "sha256": "342744a1d8e79472f1b24c2719af5ef69f8feb96171f67ca90b47624ca9bd632"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_a101b3aa.js",
+      "sha256": "c48fccbb594961fefc6a412f15b8e7cb073bb12c4a54c50685a19716169b3ddf"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_bd61bf4d.js",
+      "sha256": "c71bfc6b1e397b18fc2289a2e501530dd4f4584ff4d90e029048c24462bbf316"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_83fa6015.js",
+      "sha256": "cdb82b3ac2b1b2cce6dad43b6b66a907f56319dbb3e78aaaa8fa3c9078b9695a"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_df6ae83e.js",
+      "sha256": "9ec02d11ebdcc5e669a1c20e59152da2dd32411e8ad752bc6ef1278c3f8312c5"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_acec264b.js",
+      "sha256": "c94ffae840180892d5bf5ece0aabdb7584593ea93c97e8ab0bae7e7b77a55ea8"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_b7788091.js",
+      "sha256": "0151204a8076100992fcb32c2766de32740dbe73d0d1307ca8b0a756ec35558a"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_70575195.js",
+      "sha256": "ea9fe4cb0ec30e4f505d0c9cd78248334d66534a01db5624cc524ef068fa6774"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_3b18768e.js",
+      "sha256": "b56086382443cad0b33bc6a9a2c575d69b11a46ac72f33d32df4c97c644ddd21"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_274e2061.js",
+      "sha256": "534f4092cebc648ba9ecafc72ddeec4934d9a930749167c8fab46d06d7370867"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_dc22c873.js",
+      "sha256": "ddaae70363606db4f7e8ec2c208f1c5dc23e1852811cf9cd4974193eb03ee47e"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_ced81d8d.js",
+      "sha256": "485e35c57b0ba00e14a56ef9d9b1dd9330a6b4076be509eb4bb40fa01fda9903"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_717dd3b8.js",
+      "sha256": "44b9fed5687b9717b741a9640ca5e8b98c304368283a1e861855679f626371fd"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_c207ccef.js",
+      "sha256": "f18eb5e97885562602e5c1cf3235481e0303c1fe106a38ad8b0dce07b7140336"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_0ff15da2.js",
+      "sha256": "7a6632550f83794a3ea760e4029419077d8ef79a9239ebba867223bdd57452fb"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_3b2df3bb.js",
+      "sha256": "4e5d0b3bb13de85471bf1414affd1c73fa728b23a98fe7aa1a32466a37f03dce"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "sha256": "3bc63f66f1976eee71d2eb298ffa9a4dedc110dd284eb7855ed81ff9d8e917ef"
+    },
+    {
+      "url": "https://act.hoyolab.com/app/zzz-game-record/pc_8673ae26.js",
+      "sha256": "e59196be8cfda3825dae59c2402adfd9ac027c3b0a9d20490a804e623ac02b5f"
+    }
+  ],
+  "unclassified": [
+    {
+      "name": "Icon_SpecialReady_Rp",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_SpecialReady_Rp.38f03ef8.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js"
+    }
+  ],
+  "entries": {
+    "element:physical": {
+      "kind": "element",
+      "name": "物理",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-physical-icon.a657c07a.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "2e24ccc1fe3f6b4245df395ec256a1c156259234c7241ff5a355d56396aa5875",
+      "bytes": 3678,
+      "icon": "assets/images/synced/2e24ccc1fe3f6b4245df395ec256a1c156259234c7241ff5a355d56396aa5875.png"
+    },
+    "element:fire": {
+      "kind": "element",
+      "name": "火屬性",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-fire-icon.aeddecee.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "04ba0a2a2d65009c983bfcfa90fe1b9cdef39c8f82b9b7fd7311b3dec22873b7",
+      "bytes": 5004,
+      "icon": "assets/images/synced/04ba0a2a2d65009c983bfcfa90fe1b9cdef39c8f82b9b7fd7311b3dec22873b7.png"
+    },
+    "element:ice": {
+      "kind": "element",
+      "name": "冰屬性",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-ice-icon.5c85742d.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "f7aa2b4d203d30a8c7b3e0e0bca35218b656c9638e3178c11b2cc5dc13358ac6",
+      "bytes": 4154,
+      "icon": "assets/images/synced/f7aa2b4d203d30a8c7b3e0e0bca35218b656c9638e3178c11b2cc5dc13358ac6.png"
+    },
+    "element:electric": {
+      "kind": "element",
+      "name": "電屬性",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-electric-icon.ad4c441f.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "ba1fd03d1d42e287169816492fe7152ad12700ec1242e0e60947748ae15ad223",
+      "bytes": 4205,
+      "icon": "assets/images/synced/ba1fd03d1d42e287169816492fe7152ad12700ec1242e0e60947748ae15ad223.png"
+    },
+    "element:ether": {
+      "kind": "element",
+      "name": "以太",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-ether-icon.9a1e42a1.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "2862fab8f1ce235e7e6fdde53cc2c35f105447a9e290433dfcd37df7501509c8",
+      "bytes": 4245,
+      "icon": "assets/images/synced/2862fab8f1ce235e7e6fdde53cc2c35f105447a9e290433dfcd37df7501509c8.png"
+    },
+    "element:wind": {
+      "kind": "element",
+      "name": "風屬性",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-wind-icon.c5358f7e.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "a27aeca8b71e4a7e2bc1dafcc0641113d49e83c598497512b2b31daca032378e",
+      "bytes": 3355,
+      "icon": "assets/images/synced/a27aeca8b71e4a7e2bc1dafcc0641113d49e83c598497512b2b31daca032378e.png"
+    },
+    "element:light": {
+      "kind": "element",
+      "name": "流明",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-light-icon.3434f5b5.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "48179ec787cdfe0103d15d6f376ba66126669c7c1812475fbbf8dbd24b3d0837",
+      "bytes": 3527,
+      "icon": "assets/images/synced/48179ec787cdfe0103d15d6f376ba66126669c7c1812475fbbf8dbd24b3d0837.png"
+    },
+    "element:frost": {
+      "kind": "element",
+      "name": "烈霜屬性",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-frost-icon.8de86b8f.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "93ffce87029130c6c082f50c63b44e5a13bcedd3d21a080e927821e7d798fe97",
+      "bytes": 4272,
+      "icon": "assets/images/synced/93ffce87029130c6c082f50c63b44e5a13bcedd3d21a080e927821e7d798fe97.png"
+    },
+    "profession:attack": {
+      "kind": "profession",
+      "name": "強攻",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/profession-attack-icon.3c2a053f.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "d42d4660a2117d41d9ae175c6dc74ba75aa89206976a4ecde07b17292dd3265d",
+      "bytes": 6229,
+      "icon": "assets/images/synced/d42d4660a2117d41d9ae175c6dc74ba75aa89206976a4ecde07b17292dd3265d.png"
+    },
+    "profession:breakthrough": {
+      "kind": "profession",
+      "name": "擊破",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/profession-breakthrough-icon.84a7f20a.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "e005e4d9b087fe647d9a8c1228e6329ba62e6d6d7e307236febcbbd5ee4548b6",
+      "bytes": 6061,
+      "icon": "assets/images/synced/e005e4d9b087fe647d9a8c1228e6329ba62e6d6d7e307236febcbbd5ee4548b6.png"
+    },
+    "profession:anomaly": {
+      "kind": "profession",
+      "name": "異常",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/profession-anomaly-icon.cd1b1573.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "85325ac35b2f06504ba4354a9444eef186b0488d661b0a39e4d359ca5a81c88a",
+      "bytes": 5921,
+      "icon": "assets/images/synced/85325ac35b2f06504ba4354a9444eef186b0488d661b0a39e4d359ca5a81c88a.png"
+    },
+    "profession:support": {
+      "kind": "profession",
+      "name": "支援",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/profession-support-icon.9cf39df7.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "7768d17cb0e9cb4ef57a3090422911bf0cf876e9638a69dc0369584a78542f28",
+      "bytes": 5765,
+      "icon": "assets/images/synced/7768d17cb0e9cb4ef57a3090422911bf0cf876e9638a69dc0369584a78542f28.png"
+    },
+    "profession:defensive": {
+      "kind": "profession",
+      "name": "防護",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/profession-defensive-icon.9bd60af4.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "75897b282ebd2c619c6fc4da6352a36a62d939c27c98a8bf3fabaa92d3da2232",
+      "bytes": 5288,
+      "icon": "assets/images/synced/75897b282ebd2c619c6fc4da6352a36a62d939c27c98a8bf3fabaa92d3da2232.png"
+    },
+    "profession:rupture": {
+      "kind": "profession",
+      "name": "命破",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/profession-rupture-icon.4668f112.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "3b48202757b73b0139eed326795737bfc4a4c5c1c2d2367da9c6e7ef125e08ca",
+      "bytes": 6497,
+      "icon": "assets/images/synced/3b48202757b73b0139eed326795737bfc4a4c5c1c2d2367da9c6e7ef125e08ca.png"
+    },
+    "profession:fengyu": {
+      "kind": "profession",
+      "name": "鋒御",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/profession-fengyu-icon.00032c58.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "ef43ba2a2c697c6c8b83fa0640dffd7902855a7e473cc764c2ace372421c96a7",
+      "bytes": 7854,
+      "icon": "assets/images/synced/ef43ba2a2c697c6c8b83fa0640dffd7902855a7e473cc764c2ace372421c96a7.png"
+    },
+    "stat:hp": {
+      "kind": "stat",
+      "name": "生命值",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-hp-icon.59cb16ef.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "c28ac68e4439e535a602cdc482a1ace5f6f22ece172d3dee66bd419e12d5853b",
+      "bytes": 2068,
+      "icon": "assets/images/synced/c28ac68e4439e535a602cdc482a1ace5f6f22ece172d3dee66bd419e12d5853b.png"
+    },
+    "stat:atk": {
+      "kind": "stat",
+      "name": "攻擊力",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-atk-icon.7e5f0cb6.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "3fc35fff1e7fe01016214472bba85c14eb660afc6c9ac29ee46e8956f437065d",
+      "bytes": 1770,
+      "icon": "assets/images/synced/3fc35fff1e7fe01016214472bba85c14eb660afc6c9ac29ee46e8956f437065d.png"
+    },
+    "stat:def": {
+      "kind": "stat",
+      "name": "防禦力",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-def-icon.a927965c.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "fc03d6c996852fa1447e769d1f9f7c6494a6a79c14f4eeec99404307c7efcf6c",
+      "bytes": 2537,
+      "icon": "assets/images/synced/fc03d6c996852fa1447e769d1f9f7c6494a6a79c14f4eeec99404307c7efcf6c.png"
+    },
+    "stat:impact": {
+      "kind": "stat",
+      "name": "衝擊力",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-impact-icon.6d9c9282.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "e6a7e836a908429b9d8f847cd8845824b67a86337255550ffdd657d18eb24806",
+      "bytes": 2125,
+      "icon": "assets/images/synced/e6a7e836a908429b9d8f847cd8845824b67a86337255550ffdd657d18eb24806.png"
+    },
+    "stat:crit_rate": {
+      "kind": "stat",
+      "name": "暴擊率",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-crit-rate-icon.810d1d8e.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "9730f89a0ead38161d6f6fa75f275cb938fe774e0cb00c74745da30b237d1946",
+      "bytes": 2095,
+      "icon": "assets/images/synced/9730f89a0ead38161d6f6fa75f275cb938fe774e0cb00c74745da30b237d1946.png"
+    },
+    "stat:crit_dmg": {
+      "kind": "stat",
+      "name": "暴擊傷害",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-crit-dmg-icon.b896fc9e.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "2c60df146f0b66efa9a58682bd62c07d19f944ab1e9e47f5e64e8261259ee41e",
+      "bytes": 1991,
+      "icon": "assets/images/synced/2c60df146f0b66efa9a58682bd62c07d19f944ab1e9e47f5e64e8261259ee41e.png"
+    },
+    "stat:anomaly_proficiency": {
+      "kind": "stat",
+      "name": "異常精通",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-anomaly-proficiency-icon.38adc36b.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "1bb0befea2c7da3767f3f625a86a02dc6fc0fe7440afc72e9fbcd684f10a09b4",
+      "bytes": 2598,
+      "icon": "assets/images/synced/1bb0befea2c7da3767f3f625a86a02dc6fc0fe7440afc72e9fbcd684f10a09b4.png"
+    },
+    "stat:anomaly_mastery": {
+      "kind": "stat",
+      "name": "異常掌控",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-anomaly-mastery-icon.f4fc5970.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "a7dae4c087a19a761033d853677598ae949eb9e791e0b880f32e3602713b234f",
+      "bytes": 2355,
+      "icon": "assets/images/synced/a7dae4c087a19a761033d853677598ae949eb9e791e0b880f32e3602713b234f.png"
+    },
+    "stat:pen_ratio": {
+      "kind": "stat",
+      "name": "穿透率",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-pen-ratio-icon.90bc6385.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "39b97adf28484ba5530f6dcb9689ef628e6ebbbbd1eccfbe7061446e5bba4f2f",
+      "bytes": 2117,
+      "icon": "assets/images/synced/39b97adf28484ba5530f6dcb9689ef628e6ebbbbd1eccfbe7061446e5bba4f2f.png"
+    },
+    "stat:pen_value": {
+      "kind": "stat",
+      "name": "穿透值",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-pen-value-icon.7646b67f.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "f3ca375177aa4df563582f0046529ff0524293b1efaa8f232037efb87e0bbe3d",
+      "bytes": 2028,
+      "icon": "assets/images/synced/f3ca375177aa4df563582f0046529ff0524293b1efaa8f232037efb87e0bbe3d.png"
+    },
+    "stat:energy_regen": {
+      "kind": "stat",
+      "name": "能量自動回復",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-energy-regen-icon.2ec55369.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "c56dfdf453f3bce2490fae416d34d5b67132012a57a43d5d9709b9692f7304fa",
+      "bytes": 2146,
+      "icon": "assets/images/synced/c56dfdf453f3bce2490fae416d34d5b67132012a57a43d5d9709b9692f7304fa.png"
+    },
+    "stat:physical": {
+      "kind": "stat",
+      "name": "物理傷害加成",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-physical-icon.a657c07a.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "2e24ccc1fe3f6b4245df395ec256a1c156259234c7241ff5a355d56396aa5875",
+      "bytes": 3678,
+      "icon": "assets/images/synced/2e24ccc1fe3f6b4245df395ec256a1c156259234c7241ff5a355d56396aa5875.png"
+    },
+    "stat:fire": {
+      "kind": "stat",
+      "name": "火屬性傷害加成",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-fire-icon.aeddecee.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "04ba0a2a2d65009c983bfcfa90fe1b9cdef39c8f82b9b7fd7311b3dec22873b7",
+      "bytes": 5004,
+      "icon": "assets/images/synced/04ba0a2a2d65009c983bfcfa90fe1b9cdef39c8f82b9b7fd7311b3dec22873b7.png"
+    },
+    "stat:ice": {
+      "kind": "stat",
+      "name": "冰屬性傷害加成",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-ice-icon.5c85742d.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "f7aa2b4d203d30a8c7b3e0e0bca35218b656c9638e3178c11b2cc5dc13358ac6",
+      "bytes": 4154,
+      "icon": "assets/images/synced/f7aa2b4d203d30a8c7b3e0e0bca35218b656c9638e3178c11b2cc5dc13358ac6.png"
+    },
+    "stat:electric": {
+      "kind": "stat",
+      "name": "電屬性傷害加成",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-electric-icon.ad4c441f.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "ba1fd03d1d42e287169816492fe7152ad12700ec1242e0e60947748ae15ad223",
+      "bytes": 4205,
+      "icon": "assets/images/synced/ba1fd03d1d42e287169816492fe7152ad12700ec1242e0e60947748ae15ad223.png"
+    },
+    "stat:ether": {
+      "kind": "stat",
+      "name": "以太傷害加成",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-ether-icon.9a1e42a1.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "2862fab8f1ce235e7e6fdde53cc2c35f105447a9e290433dfcd37df7501509c8",
+      "bytes": 4245,
+      "icon": "assets/images/synced/2862fab8f1ce235e7e6fdde53cc2c35f105447a9e290433dfcd37df7501509c8.png"
+    },
+    "stat:wind": {
+      "kind": "stat",
+      "name": "風屬性傷害加成",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-wind-icon.c5358f7e.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "a27aeca8b71e4a7e2bc1dafcc0641113d49e83c598497512b2b31daca032378e",
+      "bytes": 3355,
+      "icon": "assets/images/synced/a27aeca8b71e4a7e2bc1dafcc0641113d49e83c598497512b2b31daca032378e.png"
+    },
+    "stat:perforation": {
+      "kind": "stat",
+      "name": "貫穿力",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-perforation-icon.a38cc4d9.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "78b4e7099b53dc1ef76ce42b803341507703538320e938c280ec1b0494df1dd0",
+      "bytes": 735,
+      "icon": "assets/images/synced/78b4e7099b53dc1ef76ce42b803341507703538320e938c280ec1b0494df1dd0.png"
+    },
+    "stat:energyaccumulation": {
+      "kind": "stat",
+      "name": "閃能自動累積",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-energyaccumulation-icon.00b2ae57.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "80f9e9978f8db2fd6626c0b0f5f483e0b988cd06d1a04d39709e180c2c156bc9",
+      "bytes": 952,
+      "icon": "assets/images/synced/80f9e9978f8db2fd6626c0b0f5f483e0b988cd06d1a04d39709e180c2c156bc9.png"
+    },
+    "stat:accumulation": {
+      "kind": "stat",
+      "name": "銳能自動累積",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-accumulation-icon.37c5e8fe.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "fec24bc18c09d4a48a40e9f45bec32e980be54615c595bdbc7520a76006cdf68",
+      "bytes": 1913,
+      "icon": "assets/images/synced/fec24bc18c09d4a48a40e9f45bec32e980be54615c595bdbc7520a76006cdf68.png"
+    },
+    "stat:sharp": {
+      "kind": "stat",
+      "name": "銳暴傷害",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/prop-sharp-icon.704f0fa0.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "6b6a36f7f8dbbda11587cfde5da647b388db57d6971f2ca6107e784b4591af35",
+      "bytes": 1841,
+      "icon": "assets/images/synced/6b6a36f7f8dbbda11587cfde5da647b388db57d6971f2ca6107e784b4591af35.png"
+    },
+    "rarity:s": {
+      "kind": "rarity",
+      "name": "S級",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/rarity-s.57a8823c.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "8e6151e0afee42fb01a4cb2f916014befd7c59931f21b89e0f83910e589668ce",
+      "bytes": 2259,
+      "icon": "assets/images/synced/8e6151e0afee42fb01a4cb2f916014befd7c59931f21b89e0f83910e589668ce.png"
+    },
+    "rarity:a": {
+      "kind": "rarity",
+      "name": "A級",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/rarity-a.2e7c7c47.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "515fa6b01ce812612fd8e6f6a313888c35e65644ed51efaad984acf3c6cd82a1",
+      "bytes": 2436,
+      "icon": "assets/images/synced/515fa6b01ce812612fd8e6f6a313888c35e65644ed51efaad984acf3c6cd82a1.png"
+    },
+    "rarity:b": {
+      "kind": "rarity",
+      "name": "B級",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/rarity-b.7e53884c.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_004b00ec.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "fd4c41566eb4ea586c415cd6668a56e1ab6934f32abec274009bf0144da4b2a3",
+      "bytes": 2334,
+      "icon": "assets/images/synced/fd4c41566eb4ea586c415cd6668a56e1ab6934f32abec274009bf0144da4b2a3.png"
+    },
+    "action:normal": {
+      "kind": "action",
+      "name": "普通攻擊",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_Normal.a9f59c45.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "https://webstatic.hoyoverse.com/admin/mi18n/nap_global/m20240410hy38foxb7k/m20240410hy38foxb7k-zh-tw.json",
+      "sha256": "1ece28d3ccb587b56734dd8449d5b7ee2177934d3e3fd80f94daf3650757b9ff",
+      "bytes": 2990,
+      "icon": "assets/images/synced/1ece28d3ccb587b56734dd8449d5b7ee2177934d3e3fd80f94daf3650757b9ff.png"
+    },
+    "action:special": {
+      "kind": "action",
+      "name": "特殊技",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_Special.e7e386a8.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "https://webstatic.hoyoverse.com/admin/mi18n/nap_global/m20240410hy38foxb7k/m20240410hy38foxb7k-zh-tw.json",
+      "sha256": "e3cffe7f46faaff95593c67d5652a307050ec6701f1d8c6705c0141f3924f1b0",
+      "bytes": 3068,
+      "icon": "assets/images/synced/e3cffe7f46faaff95593c67d5652a307050ec6701f1d8c6705c0141f3924f1b0.png"
+    },
+    "action:special_ready": {
+      "kind": "action",
+      "name": "強化特殊技",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_SpecialReady.99a14434.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "e5fc5ff77e5e185233d7f5907d20fdcc925a2c4400eaf8292ce3af9c0ecd3430",
+      "bytes": 5284,
+      "icon": "assets/images/synced/e5fc5ff77e5e185233d7f5907d20fdcc925a2c4400eaf8292ce3af9c0ecd3430.png"
+    },
+    "action:dodge": {
+      "kind": "action",
+      "name": "閃避",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_Evade.52148d68.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "https://webstatic.hoyoverse.com/admin/mi18n/nap_global/m20240410hy38foxb7k/m20240410hy38foxb7k-zh-tw.json",
+      "sha256": "8b8931337367cc53c5697703b90089ca5fd48694b2ba0a07d1b98103dc9c25de",
+      "bytes": 3146,
+      "icon": "assets/images/synced/8b8931337367cc53c5697703b90089ca5fd48694b2ba0a07d1b98103dc9c25de.png"
+    },
+    "action:support": {
+      "kind": "action",
+      "name": "支援技",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_Switch.3c5a6456.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "https://webstatic.hoyoverse.com/admin/mi18n/nap_global/m20240410hy38foxb7k/m20240410hy38foxb7k-zh-tw.json",
+      "sha256": "3d0fc1fc0c4f5fce8f247f08155c72285571d51e391e3b00dcc15fbe49e59a2b",
+      "bytes": 3083,
+      "icon": "assets/images/synced/3d0fc1fc0c4f5fce8f247f08155c72285571d51e391e3b00dcc15fbe49e59a2b.png"
+    },
+    "action:chain": {
+      "kind": "action",
+      "name": "連攜技",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_QTE.1ba83f5d.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "https://webstatic.hoyoverse.com/admin/mi18n/nap_global/m20240410hy38foxb7k/m20240410hy38foxb7k-zh-tw.json",
+      "sha256": "59175fc6df32baa8b91ec756290e57983aae09adac1504b7f135c68151f394a2",
+      "bytes": 3292,
+      "icon": "assets/images/synced/59175fc6df32baa8b91ec756290e57983aae09adac1504b7f135c68151f394a2.png"
+    },
+    "action:ultimate": {
+      "kind": "action",
+      "name": "終結技",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_Ultimate.1ac20d28.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "913712bbdddc64bf305cb0e3891401ad113e2f1eb62eddc385925a1060097047",
+      "bytes": 3425,
+      "icon": "assets/images/synced/913712bbdddc64bf305cb0e3891401ad113e2f1eb62eddc385925a1060097047.png"
+    },
+    "action:ultimate_ready": {
+      "kind": "action",
+      "name": "終結技（可發動）",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_UltimateReady.b750178d.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "3de6850c41b463c37075ebfbbaf0343257db493123570beed3c2d67c48107150",
+      "bytes": 4499,
+      "icon": "assets/images/synced/3de6850c41b463c37075ebfbbaf0343257db493123570beed3c2d67c48107150.png"
+    },
+    "action:core": {
+      "kind": "action",
+      "name": "核心技",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_CoreSkill.d6f00ff6.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "https://webstatic.hoyoverse.com/admin/mi18n/nap_global/m20240410hy38foxb7k/m20240410hy38foxb7k-zh-tw.json",
+      "sha256": "e22bed54f02d536a43c7a03a103a43ce4065e245296efe8ce07b1fea14ba0878",
+      "bytes": 3861,
+      "icon": "assets/images/synced/e22bed54f02d536a43c7a03a103a43ce4065e245296efe8ce07b1fea14ba0878.png"
+    },
+    "action:move": {
+      "kind": "action",
+      "name": "移動",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/Icon_JoyStick.49d89a12.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "scripts/sync-icons.cjs (繁中顯示名稱對照)",
+      "sha256": "8fa9e0da7244f42f98ae06386252ad8b1e5c81f92d494d5f734a9c5a3855ae6d",
+      "bytes": 2935,
+      "icon": "assets/images/synced/8fa9e0da7244f42f98ae06386252ad8b1e5c81f92d494d5f734a9c5a3855ae6d.png"
+    },
+    "element:honededge": {
+      "kind": "element",
+      "name": "凜刃",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-honededge-icon.5c0ed0be.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "4811be82c2bdb4104083e170f99785552b3c90ca3760ef4103987642810fae97",
+      "bytes": 4739,
+      "icon": "assets/images/synced/4811be82c2bdb4104083e170f99785552b3c90ca3760ef4103987642810fae97.png"
+    },
+    "element:auricink": {
+      "kind": "element",
+      "name": "玄墨",
+      "sourceUrl": "https://act.hoyolab.com/app/zzz-game-record/images/attribute-auricink-icon.bb80b050.png",
+      "sourcePage": "https://act.hoyolab.com/app/zzz-game-record/index.html",
+      "sourceBundle": "https://act.hoyolab.com/app/zzz-game-record/pc_7ac5d7bf.js",
+      "labelSource": "HoYoWiki zh-tw filters",
+      "sha256": "af4aa1e3e305fde8f6f697fcdb93d94991d9c8f0d026e57f5b694d22809a5631",
+      "bytes": 4304,
+      "icon": "assets/images/synced/af4aa1e3e305fde8f6f697fcdb93d94991d9c8f0d026e57f5b694d22809a5631.png"
+    },
+    "disc:1177": {
+      "kind": "disc",
+      "name": "荊棘玫瑰",
+      "wikiId": "1177",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/07/28/c06b0fd130882fb22b422dc29c980734_562194368361393519.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/1177",
+      "sha256": "c2d997e5ece23c68d6136a29adb11c2f8d2d298d02fe642cb7a1a62418ba5f3e",
+      "bytes": 74665,
+      "icon": "assets/images/synced/c2d997e5ece23c68d6136a29adb11c2f8d2d298d02fe642cb7a1a62418ba5f3e.png"
+    },
+    "disc:1176": {
+      "kind": "disc",
+      "name": "讖羽之誓",
+      "wikiId": "1176",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/07/28/0bc6a03e304ab838d4e3e2804be708e5_7993761058901853668.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/1176",
+      "sha256": "58dfc5a76f5c5bbd267d48c99d7bf5d5795fec26c45c92315fcf773e53fa9bac",
+      "bytes": 72687,
+      "icon": "assets/images/synced/58dfc5a76f5c5bbd267d48c99d7bf5d5795fec26c45c92315fcf773e53fa9bac.png"
+    },
+    "disc:1109": {
+      "kind": "disc",
+      "name": "拂曉行紀",
+      "wikiId": "1109",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/06/16/83dc33403e36850f6aebab61d6a75a14_816854655715497740.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/1109",
+      "sha256": "08d68b18dfa2511bb633041355db0e70791202b40e6b279bc770dd953cacc35b",
+      "bytes": 71046,
+      "icon": "assets/images/synced/08d68b18dfa2511bb633041355db0e70791202b40e6b279bc770dd953cacc35b.png"
+    },
+    "disc:1108": {
+      "kind": "disc",
+      "name": "呼嘯沙龍",
+      "wikiId": "1108",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/06/16/629118bce003a8c9aba77f5f06ca059f_6802818800811286167.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/1108",
+      "sha256": "c97bf1f8497b43f35d8f8145a00fc79c960bae6c358f04ebf38882e6225cb933",
+      "bytes": 73915,
+      "icon": "assets/images/synced/c97bf1f8497b43f35d8f8145a00fc79c960bae6c358f04ebf38882e6225cb933.png"
+    },
+    "disc:1070": {
+      "kind": "disc",
+      "name": "囚徒手記",
+      "wikiId": "1070",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/03/23/ee7ad206fe6089cb283ddce94cf13ae2_1035147875814816092.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/1070",
+      "sha256": "db96ec63a78659e0bc6ee0562fc9c24e1ee7bc8c7344fd5b2060c181b23d0e19",
+      "bytes": 30260,
+      "icon": "assets/images/synced/db96ec63a78659e0bc6ee0562fc9c24e1ee7bc8c7344fd5b2060c181b23d0e19.png"
+    },
+    "disc:1069": {
+      "kind": "disc",
+      "name": "雪兔夢遊仙境",
+      "wikiId": "1069",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2026/03/23/7acf3d7763f83142dae00ec3d72382a6_4137210704565935097.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/1069",
+      "sha256": "70983fd73db91ef2e219bb3cf3bde7a60c863d61c197c668357f538f8338ac08",
+      "bytes": 28675,
+      "icon": "assets/images/synced/70983fd73db91ef2e219bb3cf3bde7a60c863d61c197c668357f538f8338ac08.png"
+    },
+    "disc:993": {
+      "kind": "disc",
+      "name": "流光詠嘆",
+      "wikiId": "993",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/12/30/6d165e695769274d3a1ffd9ef9890d13_2947659962052074212.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/993",
+      "sha256": "e94eabf0cd9281b2f379558ea5bacd88f02e00cb11abe5803999e321a13962d0",
+      "bytes": 29052,
+      "icon": "assets/images/synced/e94eabf0cd9281b2f379558ea5bacd88f02e00cb11abe5803999e321a13962d0.png"
+    },
+    "disc:992": {
+      "kind": "disc",
+      "name": "滄浪行歌",
+      "wikiId": "992",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/12/30/2467e415780b5f1b5c7ca57b91577dc5_6713105246471323838.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/992",
+      "sha256": "17dbafa2d07350dac5d15449264d6cac817a40b1b83841c5b83b367aed206388",
+      "bytes": 32047,
+      "icon": "assets/images/synced/17dbafa2d07350dac5d15449264d6cac817a40b1b83841c5b83b367aed206388.png"
+    },
+    "disc:914": {
+      "kind": "disc",
+      "name": "月光騎士頌",
+      "wikiId": "914",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/09/01/c2d47b96d0adf4caab5c0706554b542d_5949183389957633910.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/914",
+      "sha256": "b7a0e87488aca72943c6c52d4c6e19ed7a6ec22f8ec350cff776e0e2dc50d932",
+      "bytes": 34199,
+      "icon": "assets/images/synced/b7a0e87488aca72943c6c52d4c6e19ed7a6ec22f8ec350cff776e0e2dc50d932.png"
+    },
+    "disc:913": {
+      "kind": "disc",
+      "name": "拂曉生花",
+      "wikiId": "913",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2025/09/01/6b54ff23dc8c411abd636ba6a527afab_8230190418505433294.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/913",
+      "sha256": "3e399849c7c13eb9fce018f28f990e90e44d374daff7e76d6fffbd69c8204d2f",
+      "bytes": 33741,
+      "icon": "assets/images/synced/3e399849c7c13eb9fce018f28f990e90e44d374daff7e76d6fffbd69c8204d2f.png"
+    },
+    "disc:790": {
+      "kind": "disc",
+      "name": "山大王",
+      "wikiId": "790",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/06/10/297246445/03e35db16c441db2b763b50adcf9d448_5114721643639738776.gif",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/790",
+      "sha256": "24ca88db1d82ab700d9b1973df4b5f30a64a632c5fcb65a19b0b07120a32eba4",
+      "bytes": 58390,
+      "icon": "assets/images/synced/24ca88db1d82ab700d9b1973df4b5f30a64a632c5fcb65a19b0b07120a32eba4.gif"
+    },
+    "disc:789": {
+      "kind": "disc",
+      "name": "雲巋如我",
+      "wikiId": "789",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/06/10/297246445/e3c186b09bc8bbcd036df27f37c93ebc_660203726506984042.gif",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/789",
+      "sha256": "259d761feb891cdcd7147eba36544c43cbab4e6d3c5b3c4ce5fbe199af373587",
+      "bytes": 59232,
+      "icon": "assets/images/synced/259d761feb891cdcd7147eba36544c43cbab4e6d3c5b3c4ce5fbe199af373587.gif"
+    },
+    "disc:625": {
+      "kind": "disc",
+      "name": "如影相隨",
+      "wikiId": "625",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/03/21/186855736/42ba283c9d841a1e3446ca049ff4c17c_8643450229961392472.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/625",
+      "sha256": "bb34b402d87e6c482f5129668579784062e81d8e8ba9d7682fee84ebab1384c9",
+      "bytes": 33418,
+      "icon": "assets/images/synced/bb34b402d87e6c482f5129668579784062e81d8e8ba9d7682fee84ebab1384c9.png"
+    },
+    "disc:624": {
+      "kind": "disc",
+      "name": "法厄同之歌",
+      "wikiId": "624",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/03/21/186855736/11aa8d15d7780ed64c1e027427270977_3249572597102831633.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/624",
+      "sha256": "e33915a4a2833a9a775295648aee54fe302e789fc8b535d45167bd761514e1d8",
+      "bytes": 12652,
+      "icon": "assets/images/synced/e33915a4a2833a9a775295648aee54fe302e789fc8b535d45167bd761514e1d8.png"
+    },
+    "disc:547": {
+      "kind": "disc",
+      "name": "折枝劍歌",
+      "wikiId": "547",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2024/12/25/297246445/2ef493e0fe25c73faf761cb991d9920f_7611550456542539564.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/547",
+      "sha256": "bc6d4b008c147ad98946ef4b959b7262b0cd88d2f60e4a5ea64c5e480fa5c172",
+      "bytes": 63144,
+      "icon": "assets/images/synced/bc6d4b008c147ad98946ef4b959b7262b0cd88d2f60e4a5ea64c5e480fa5c172.png"
+    },
+    "disc:546": {
+      "kind": "disc",
+      "name": "靜聽嘉音",
+      "wikiId": "546",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2025/02/21/186855736/f194a3c57fa7110f1591286be2d9e875_2067185222887726471.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/546",
+      "sha256": "3e36db62f392b4ff7ebeaef13162e09c3f0a24073d2a30a0daba6d4eb69420aa",
+      "bytes": 75020,
+      "icon": "assets/images/synced/3e36db62f392b4ff7ebeaef13162e09c3f0a24073d2a30a0daba6d4eb69420aa.png"
+    },
+    "disc:392": {
+      "kind": "disc",
+      "name": "混沌爵士",
+      "wikiId": "392",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/09/24/3331555e4253b676a447e42f29201fd6_5344025446086892407.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/392",
+      "sha256": "4b4df9c351ed9a6e8afe5851ede9a6f873ffee592cc55fdc58da6b515369375a",
+      "bytes": 27557,
+      "icon": "assets/images/synced/4b4df9c351ed9a6e8afe5851ede9a6f873ffee592cc55fdc58da6b515369375a.png"
+    },
+    "disc:391": {
+      "kind": "disc",
+      "name": "原始龐克",
+      "wikiId": "391",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/09/24/9ed2248f48456f1533d602635034b25e_2030621787622153035.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/391",
+      "sha256": "1659d75c75465f2b9ae6ef5df4238c38009c0aaae70878e7a4c8b694fb956b18",
+      "bytes": 29390,
+      "icon": "assets/images/synced/1659d75c75465f2b9ae6ef5df4238c38009c0aaae70878e7a4c8b694fb956b18.png"
+    },
+    "disc:137": {
+      "kind": "disc",
+      "name": "獠牙重金屬",
+      "wikiId": "137",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/6d11b8c1e66b1824d7d790d444cde696_1608329811533476236.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/137",
+      "sha256": "aad6996da4ee0430b76593cb68bea2b3ec55206eaae775ffe9e08987fbb25125",
+      "bytes": 31422,
+      "icon": "assets/images/synced/aad6996da4ee0430b76593cb68bea2b3ec55206eaae775ffe9e08987fbb25125.png"
+    },
+    "disc:136": {
+      "kind": "disc",
+      "name": "極地重金屬",
+      "wikiId": "136",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/1c3c63f61e89acf72f66fa49270b4e16_7690792437263479747.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/136",
+      "sha256": "b02bebe5e496f0cf60e27f5d771ca2da2794a1af773e23e57d690cfe2d0f045b",
+      "bytes": 31243,
+      "icon": "assets/images/synced/b02bebe5e496f0cf60e27f5d771ca2da2794a1af773e23e57d690cfe2d0f045b.png"
+    },
+    "disc:135": {
+      "kind": "disc",
+      "name": "雷暴重金屬",
+      "wikiId": "135",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/75f9b18188620315fa938eb30766a91b_6900706211802222766.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/135",
+      "sha256": "7a9591401d3a65b8dd7593dfe5c337ea90d7110e3c79471e8f4e5be3ab6c9b65",
+      "bytes": 32416,
+      "icon": "assets/images/synced/7a9591401d3a65b8dd7593dfe5c337ea90d7110e3c79471e8f4e5be3ab6c9b65.png"
+    },
+    "disc:134": {
+      "kind": "disc",
+      "name": "混沌重金屬",
+      "wikiId": "134",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/d24db7eae8c2561bc49a1d72b9259364_3628772142390484587.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/134",
+      "sha256": "0fc46e3398346cd71899d402520b51e6b1f0efb1e4555d050912e7bb5e4a7a3a",
+      "bytes": 32590,
+      "icon": "assets/images/synced/0fc46e3398346cd71899d402520b51e6b1f0efb1e4555d050912e7bb5e4a7a3a.png"
+    },
+    "disc:133": {
+      "kind": "disc",
+      "name": "炎獄重金屬",
+      "wikiId": "133",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/16d66698b1d28c72040c270aac5919ff_3161385404722683377.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/133",
+      "sha256": "03973619aae8f6cde1be0f3bf7c866365fdef7cd00e55f7c444d0954140604af",
+      "bytes": 30762,
+      "icon": "assets/images/synced/03973619aae8f6cde1be0f3bf7c866365fdef7cd00e55f7c444d0954140604af.png"
+    },
+    "disc:132": {
+      "kind": "disc",
+      "name": "靈魂搖滾",
+      "wikiId": "132",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/b4fd81cd50ea47a2107308e7a11d8a55_5618445283317531443.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/132",
+      "sha256": "f5f5cc48927cc197c6f2240221775ce6907f312d4f65a2fd7baafb2dd5a089db",
+      "bytes": 29549,
+      "icon": "assets/images/synced/f5f5cc48927cc197c6f2240221775ce6907f312d4f65a2fd7baafb2dd5a089db.png"
+    },
+    "disc:131": {
+      "kind": "disc",
+      "name": "激素龐克",
+      "wikiId": "131",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/0a758d895fa95d4f11f36371c057c1cb_4732503042787764309.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/131",
+      "sha256": "f85280e7f938096fed018d49278dc35126f0de7999dc659fb6961aebdec801f5",
+      "bytes": 28210,
+      "icon": "assets/images/synced/f85280e7f938096fed018d49278dc35126f0de7999dc659fb6961aebdec801f5.png"
+    },
+    "disc:130": {
+      "kind": "disc",
+      "name": "自由藍調",
+      "wikiId": "130",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/ec6bd15b507c13de9ed3dfe331893b03_7048380845230519712.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/130",
+      "sha256": "fe00a7e7e856c92ee908e6ff4cf70de89c534469206e9baac200e3982bc3a583",
+      "bytes": 31012,
+      "icon": "assets/images/synced/fe00a7e7e856c92ee908e6ff4cf70de89c534469206e9baac200e3982bc3a583.png"
+    },
+    "disc:129": {
+      "kind": "disc",
+      "name": "震星迪斯可",
+      "wikiId": "129",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/b3feeb5bf8107a0f9aa81c948fb18d70_44281632904561529.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/129",
+      "sha256": "54ed5b818ecdb40dfbbb8ce2d32caf3471f9cd02d7e9e0db873f88a1bd1fd3d4",
+      "bytes": 32559,
+      "icon": "assets/images/synced/54ed5b818ecdb40dfbbb8ce2d32caf3471f9cd02d7e9e0db873f88a1bd1fd3d4.png"
+    },
+    "disc:128": {
+      "kind": "disc",
+      "name": "河豚電音",
+      "wikiId": "128",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/554cb9ae3eea679586cc85ac4cd586c0_9111840743195019243.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/128",
+      "sha256": "e410292a0970349922daf715bf08b6c44d9ed8d7e550e81042243874db817755",
+      "bytes": 28858,
+      "icon": "assets/images/synced/e410292a0970349922daf715bf08b6c44d9ed8d7e550e81042243874db817755.png"
+    },
+    "disc:127": {
+      "kind": "disc",
+      "name": "啄木鳥電音",
+      "wikiId": "127",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/0d4dd047370168a3b992d9884ca926c6_8904461176918742696.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/127",
+      "sha256": "702618f99300e9b83fb4c67c20e79a7f7a2dbdeb8f2fa5e48d987fe4ab662f30",
+      "bytes": 31043,
+      "icon": "assets/images/synced/702618f99300e9b83fb4c67c20e79a7f7a2dbdeb8f2fa5e48d987fe4ab662f30.png"
+    },
+    "disc:5": {
+      "kind": "disc",
+      "name": "搖擺爵士",
+      "wikiId": "5",
+      "idNamespace": "hoyowiki",
+      "sourceUrl": "https://act-webstatic.hoyoverse.com/event-static-hoyowiki-admin/2024/07/09/4f85a6c7c3f2a3bbde23b282b477f8dd_6306531671314941333.png",
+      "sourcePage": "https://wiki.hoyolab.com/pc/zzz/entry/5",
+      "sha256": "cf6df773e93341090b40276a211a535de380139601fa950c9cf85520256b27df",
+      "bytes": 34402,
+      "icon": "assets/images/synced/cf6df773e93341090b40276a211a535de380139601fa950c9cf85520256b27df.png"
+    }
+  }
+}
