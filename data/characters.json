@@ -1,0 +1,507 @@
+[
+  {
+    "id": 1001,
+    "name": "11號",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/11號.png"]
+  },
+  {
+    "id": 1002,
+    "name": "可琳",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/可琳.png"]
+  },
+  {
+    "id": 1003,
+    "name": "哲",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/哲.png"]
+  },
+  {
+    "id": 1004,
+    "name": "妮可",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/妮可.png"]
+  },
+  {
+    "id": 1005,
+    "name": "安東",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/安東.png"]
+  },
+  {
+    "id": 1006,
+    "name": "安比",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/安比.png"]
+  },
+  {
+    "id": 1007,
+    "name": "本",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/本.png"]
+  },
+  {
+    "id": 1008,
+    "name": "格莉絲",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/格莉絲.png"]
+  },
+  {
+    "id": 1009,
+    "name": "比利",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/比利.png"]
+  },
+  {
+    "id": 1010,
+    "name": "珂蕾妲",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/珂蕾妲.png"]
+  },
+  {
+    "id": 1011,
+    "name": "艾蓮",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/艾蓮.png"]
+  },
+  {
+    "id": 1012,
+    "name": "萊卡恩",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/萊卡恩.png"]
+  },
+  {
+    "id": 1013,
+    "name": "蒼角",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/蒼角.png"]
+  },
+  {
+    "id": 1014,
+    "name": "貓又",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/貓又.png"]
+  },
+  {
+    "id": 1015,
+    "name": "鈴",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/鈴.png"]
+  },
+  {
+    "id": 1016,
+    "name": "麗娜",
+    "version": "1.0",
+    "avatars": ["assets/avatars/1.0/麗娜.png"]
+  },
+  {
+    "id": 1017,
+    "name": "朱鳶",
+    "version": "1.1",
+    "avatars": [
+      "assets/avatars/1.1/朱鳶01.png",
+      "assets/avatars/1.1/朱鳶02.png"
+    ]
+  },
+  {
+    "id": 1018,
+    "name": "簡",
+    "version": "1.1",
+    "avatars": ["assets/avatars/1.1/簡01.png", "assets/avatars/1.1/簡02.png"]
+  },
+  {
+    "id": 1019,
+    "name": "賽斯",
+    "version": "1.1",
+    "avatars": [
+      "assets/avatars/1.1/賽斯01.png",
+      "assets/avatars/1.1/賽斯02.png"
+    ]
+  },
+  {
+    "id": 1020,
+    "name": "青衣",
+    "version": "1.1",
+    "avatars": [
+      "assets/avatars/1.1/青衣01.png",
+      "assets/avatars/1.1/青衣02.png"
+    ]
+  },
+  {
+    "id": 1021,
+    "name": "凱撒",
+    "version": "1.2",
+    "avatars": [
+      "assets/avatars/1.2/凱撒01.png",
+      "assets/avatars/1.2/凱撒02.png"
+    ]
+  },
+  {
+    "id": 1022,
+    "name": "柏妮思",
+    "version": "1.2",
+    "avatars": [
+      "assets/avatars/1.2/柏妮思01.png",
+      "assets/avatars/1.2/柏妮思02.png"
+    ]
+  },
+  {
+    "id": 1023,
+    "name": "派派",
+    "version": "1.2",
+    "avatars": [
+      "assets/avatars/1.2/派派01.png",
+      "assets/avatars/1.2/派派02.png"
+    ]
+  },
+  {
+    "id": 1024,
+    "name": "露西",
+    "version": "1.2",
+    "avatars": [
+      "assets/avatars/1.2/露西01.png",
+      "assets/avatars/1.2/露西02.png"
+    ]
+  },
+  {
+    "id": 1025,
+    "name": "月城柳",
+    "version": "1.3",
+    "avatars": [
+      "assets/avatars/1.3/月城柳01.png",
+      "assets/avatars/1.3/月城柳02.png"
+    ]
+  },
+  {
+    "id": 1026,
+    "name": "萊特",
+    "version": "1.3",
+    "avatars": [
+      "assets/avatars/1.3/萊特01.png",
+      "assets/avatars/1.3/萊特02.png"
+    ]
+  },
+  {
+    "id": 1027,
+    "name": "星見雅",
+    "version": "1.4",
+    "avatars": [
+      "assets/avatars/1.4/星見雅01.png",
+      "assets/avatars/1.4/星見雅02.png"
+    ]
+  },
+  {
+    "id": 1028,
+    "name": "淺羽悠真",
+    "version": "1.4",
+    "avatars": [
+      "assets/avatars/1.4/淺羽悠真01.png",
+      "assets/avatars/1.4/淺羽悠真02.png"
+    ]
+  },
+  {
+    "id": 1029,
+    "name": "伊芙琳",
+    "version": "1.5",
+    "avatars": [
+      "assets/avatars/1.5/伊芙琳01.png",
+      "assets/avatars/1.5/伊芙琳02.png"
+    ]
+  },
+  {
+    "id": 1030,
+    "name": "耀嘉音",
+    "version": "1.5",
+    "avatars": [
+      "assets/avatars/1.5/耀嘉音01.png",
+      "assets/avatars/1.5/耀嘉音02.png"
+    ]
+  },
+  {
+    "id": 1031,
+    "name": "扳機",
+    "version": "1.6",
+    "avatars": [
+      "assets/avatars/1.6/扳機01.png",
+      "assets/avatars/1.6/扳機02.png"
+    ]
+  },
+  {
+    "id": 1032,
+    "name": "波可娜",
+    "version": "1.6",
+    "avatars": [
+      "assets/avatars/1.6/波可娜01.png",
+      "assets/avatars/1.6/波可娜02.png"
+    ]
+  },
+  {
+    "id": 1033,
+    "name": "零號·安比",
+    "version": "1.6",
+    "avatars": [
+      "assets/avatars/1.6/零號·安比01.png",
+      "assets/avatars/1.6/零號·安比02.png"
+    ]
+  },
+  {
+    "id": 1034,
+    "name": "雨果",
+    "version": "1.7",
+    "avatars": [
+      "assets/avatars/1.7/⾬果01.png",
+      "assets/avatars/1.7/⾬果02.png"
+    ]
+  },
+  {
+    "id": 1035,
+    "name": "薇薇安",
+    "version": "1.7",
+    "avatars": [
+      "assets/avatars/1.7/薇薇安01.png",
+      "assets/avatars/1.7/薇薇安02.png"
+    ]
+  },
+  {
+    "id": 1036,
+    "name": "儀玄",
+    "version": "2.0",
+    "avatars": [
+      "assets/avatars/2.0/儀玄01.png",
+      "assets/avatars/2.0/儀玄02.png"
+    ]
+  },
+  {
+    "id": 1037,
+    "name": "橘福福",
+    "version": "2.0",
+    "avatars": [
+      "assets/avatars/2.0/橘福福01.png",
+      "assets/avatars/2.0/橘福福02.png"
+    ]
+  },
+  {
+    "id": 1038,
+    "name": "潘引壺",
+    "version": "2.0",
+    "avatars": [
+      "assets/avatars/2.0/潘引壺01.png",
+      "assets/avatars/2.0/潘引壺02.png"
+    ]
+  },
+  {
+    "id": 1039,
+    "name": "愛麗絲",
+    "version": "2.1",
+    "avatars": [
+      "assets/avatars/2.1/愛麗絲01.png",
+      "assets/avatars/2.1/愛麗絲02.png"
+    ]
+  },
+  {
+    "id": 1040,
+    "name": "浮波柚葉",
+    "version": "2.1",
+    "avatars": [
+      "assets/avatars/2.1/浮波柚葉01.png",
+      "assets/avatars/2.1/浮波柚葉02.png"
+    ]
+  },
+  {
+    "id": 1041,
+    "name": "「席德」",
+    "version": "2.2",
+    "avatars": [
+      "assets/avatars/2.2/「席德」01.png",
+      "assets/avatars/2.2/「席德」02.png"
+    ]
+  },
+  {
+    "id": 1042,
+    "name": "奧菲絲&「鬼火」",
+    "version": "2.2",
+    "avatars": [
+      "assets/avatars/2.2/奧菲絲&「鬼火」01.png",
+      "assets/avatars/2.2/奧菲絲&「鬼火」02.png"
+    ]
+  },
+  {
+    "id": 1043,
+    "name": "伊德海莉",
+    "version": "2.3",
+    "avatars": [
+      "assets/avatars/2.3/伊德海莉01.png",
+      "assets/avatars/2.3/伊德海莉02.png"
+    ]
+  },
+  {
+    "id": 1044,
+    "name": "狛野真斗",
+    "version": "2.3",
+    "avatars": [
+      "assets/avatars/2.3/狛野真斗01.png",
+      "assets/avatars/2.3/狛野真斗02.png"
+    ]
+  },
+  {
+    "id": 1045,
+    "name": "盧西婭",
+    "version": "2.3",
+    "avatars": [
+      "assets/avatars/2.3/盧西婭01.png",
+      "assets/avatars/2.3/盧西婭02.png"
+    ]
+  },
+  {
+    "id": 1046,
+    "name": "琉音",
+    "version": "2.4",
+    "avatars": [
+      "assets/avatars/2.4/琉音01.png",
+      "assets/avatars/2.4/琉音02.png"
+    ]
+  },
+  {
+    "id": 1047,
+    "name": "般岳",
+    "version": "2.4",
+    "avatars": [
+      "assets/avatars/2.4/般岳01.png",
+      "assets/avatars/2.4/般岳02.png"
+    ]
+  },
+  {
+    "id": 1048,
+    "name": "照",
+    "version": "2.5",
+    "avatars": ["assets/avatars/2.5/照01.png", "assets/avatars/2.5/照02.png"]
+  },
+  {
+    "id": 1049,
+    "name": "葉瞬光",
+    "version": "2.5",
+    "avatars": [
+      "assets/avatars/2.5/葉瞬光01.png",
+      "assets/avatars/2.5/葉瞬光02.png"
+    ]
+  },
+  {
+    "id": 1050,
+    "name": "千夏",
+    "version": "2.6",
+    "avatars": [
+      "assets/avatars/2.6/千夏01.png",
+      "assets/avatars/2.6/千夏02.png"
+    ]
+  },
+  {
+    "id": 1051,
+    "name": "愛芮",
+    "version": "2.6",
+    "avatars": [
+      "assets/avatars/2.6/愛芮01.png",
+      "assets/avatars/2.6/愛芮02.png"
+    ]
+  },
+  {
+    "id": 1052,
+    "name": "南宮羽",
+    "version": "2.7",
+    "avatars": [
+      "assets/avatars/2.7/南宮羽01.png",
+      "assets/avatars/2.7/南宮羽02.png"
+    ]
+  },
+  {
+    "id": 1053,
+    "name": "希希芙",
+    "version": "2.7",
+    "avatars": [
+      "assets/avatars/2.7/希希芙01.png",
+      "assets/avatars/2.7/希希芙02.png"
+    ]
+  },
+  {
+    "id": 1054,
+    "name": "星徽·比利",
+    "version": "2.8",
+    "avatars": [
+      "assets/avatars/2.8/星徽·比利01.png",
+      "assets/avatars/2.8/星徽·比利02.png"
+    ]
+  },
+  {
+    "id": 1055,
+    "name": "普羅米婭",
+    "version": "2.8",
+    "avatars": [
+      "assets/avatars/2.8/普羅米婭01.png",
+      "assets/avatars/2.8/普羅米婭02.png"
+    ]
+  },
+  {
+    "id": 1056,
+    "name": "佩洛伊斯",
+    "version": "3.0",
+    "avatars": [
+      "assets/avatars/3.0/佩洛伊斯01.png",
+      "assets/avatars/3.0/佩洛伊斯02.png"
+    ]
+  },
+  {
+    "id": 1057,
+    "name": "維琳娜",
+    "version": "3.0",
+    "avatars": [
+      "assets/avatars/3.0/维琳娜01.png",
+      "assets/avatars/3.0/维琳娜02.png"
+    ]
+  },
+  {
+    "id": 1058,
+    "name": "諾姆",
+    "version": "3.0",
+    "avatars": [
+      "assets/avatars/3.0/诺姆01.png",
+      "assets/avatars/3.0/诺姆02.png"
+    ]
+  },
+  {
+    "id": 1059,
+    "name": "希格莉德",
+    "version": "3.1",
+    "avatars": [
+      "assets/avatars/3.1/希格莉德01.png",
+      "assets/avatars/3.1/希格莉德02.png"
+    ]
+  },
+  {
+    "id": 1060,
+    "name": "蕾米埃爾",
+    "version": "3.1",
+    "avatars": [
+      "assets/avatars/3.1/蕾米埃爾01.png",
+      "assets/avatars/3.1/蕾米埃爾02.png"
+    ]
+  },
+  {
+    "id": 1061,
+    "name": "克拉蕾",
+    "version": "3.2",
+    "avatars": [
+      "assets/avatars/3.2/克拉蕾01.png",
+      "assets/avatars/3.2/克拉蕾02.png"
+    ],
+    "guide": "guides/agents/1061.md"
+  },
+  {
+    "id": 1062,
+    "name": "洛克茜",
+    "version": "3.2",
+    "avatars": [
+      "assets/avatars/3.2/洛克茜01.png",
+      "assets/avatars/3.2/洛克茜02.png"
+    ]
+  }
+]
