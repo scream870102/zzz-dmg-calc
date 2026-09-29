@@ -87,7 +87,7 @@ img.mark{border:0;border-radius:0;box-shadow:none;transform:none;filter:brightne
 body:not([data-view=calc]) .mobile-dock{display:none!important}
 .module-head{padding:44px 0 26px}.module-head h2{font-size:clamp(32px,4.5vw,54px);font-weight:900;font-style:italic;letter-spacing:-.06em;margin:14px 0 10px;text-shadow:4px 4px 0 #00000070}.module-head p{margin:0;color:var(--muted);font-size:14px;line-height:1.9}
 .roster{color:var(--muted);font-size:14px;padding-bottom:40px}
-.roster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:18px 14px}
+.roster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(172px,1fr));gap:24px 18px}
 .roster-filters{margin:0 0 18px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
 .roster-filters summary{padding:15px 18px}.roster-filters summary:after{content:'＋'}.roster-filters[open] summary:after{content:'−'}
 .roster-filter-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0 18px 18px}
@@ -100,23 +100,21 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .roster-count{margin:0 0 18px;font-size:13px;color:var(--muted)}.roster-empty{grid-column:1/-1;margin:0;padding:32px 18px;text-align:center;border:1px dashed var(--line);border-radius:10px;line-height:1.8}
 @media(max-width:760px){#filter-faction{grid-column:auto}.roster-filter-fields{grid-template-columns:minmax(0,1fr);gap:12px;padding:0 14px 14px}.roster-filter-footer{align-items:flex-start}.roster-filter-footer span{max-width:65%;line-height:1.6}}
 .agent-ver{position:absolute;top:-7px;right:-8px;padding:3px 6px;border:2px solid #0b0b0b;border-radius:3px;background:var(--acid);color:#17120a;font:800 9px/1 ui-monospace,monospace;letter-spacing:.1em;transform:rotate(6deg);box-shadow:2px 2px 0 #050505}
-/* Portrait edges move 1px right per 4px down. Tail = caption/4; edge correction = (rail + tail - caption)/4. The right rail follows the same slope. */
-.agent-card{--agent-slant:14.036243deg;--agent-rail:28px;--agent-name-height:32px;--agent-tail:8px;--agent-edge-correction:1px;--agent-name-offset:5px;--agent-badge-size:22px;position:relative;display:block;gap:0;padding:0;background:#22211f;border:0;border-radius:0;box-shadow:none;clip-path:polygon(0 0,calc(75% + var(--agent-edge-correction)) 0,100% 100%,calc(25% - var(--agent-edge-correction)) 100%);color:var(--text);font-size:13px;font-weight:800;text-align:center}
-.agent-portrait{position:relative;display:block;width:calc(100% - var(--agent-rail) - var(--agent-tail));margin-left:0;aspect-ratio:1;min-width:0;background:transparent}
-.agent-portrait:before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,#b3712f,#47423a);clip-path:polygon(0 0,75% 0,100% 100%,25% 100%)}
-.agent-card .portrait-image{position:relative;display:block;width:100%;height:100%;aspect-ratio:1;object-fit:contain;border-radius:0;background:transparent}
-.agent-badges{position:absolute;left:75%;top:0;display:flex;flex-direction:column;gap:0;width:var(--agent-rail);height:100%;background:#11110f;border-left:1px solid #686055;transform:skewX(var(--agent-slant));transform-origin:top left}
-.agent-badge{display:grid;place-items:center;flex:0 0 var(--agent-badge-size);width:100%;height:var(--agent-badge-size)}
-.agent-badge img{width:calc(var(--agent-badge-size) * .8);height:80%;object-fit:contain;transform:skewX(calc(-1 * var(--agent-slant)))}
-.agent-name{position:relative;isolation:isolate;display:block;width:calc(75% + var(--agent-edge-correction));height:var(--agent-name-height);line-height:var(--agent-name-height);margin-left:calc(25% - var(--agent-name-offset));padding:0 5px;background:transparent;border:0;border-radius:0}
-.agent-name:before{content:'';position:absolute;top:0;bottom:0;left:calc(var(--agent-tail) / -2);right:calc(var(--agent-tail) / 2);z-index:-1;background:linear-gradient(120deg,#ffffff03,transparent 45%),var(--panel);border:3px solid #070707;box-shadow:inset 0 0 0 1px #565656;transform:skewX(var(--agent-slant));transform-origin:top left}
-.agent-name-text{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.agent-card:hover .agent-name:before,.agent-card:focus-visible .agent-name:before{border-color:var(--acid)}
-.agent-card:hover,.agent-card:focus-visible{background:#4c4839}.agent-card:focus-visible .agent-name{color:var(--acid)}
+/* Capsule like the guide portrait: one skewed rounded shell (outline, inner rim, hard shadow) holding portrait, badge rail and name.
+   Box is 3:4 and skewed 1px right per 4px down, so its slanted extent is exactly the cell width. Children counter-skew to stay upright; the portrait may crop. */
+.agent-card{--agent-slant:14.036243deg;--agent-rail:32px;--agent-name-height:36px;--agent-radius:20px;position:relative;display:grid;grid-template-columns:minmax(0,1fr) var(--agent-rail);grid-template-rows:minmax(0,1fr) var(--agent-name-height);width:75%;aspect-ratio:3/4;margin:0 auto;padding:0;overflow:hidden;background:#11110f;border:3px solid #070707;border-radius:var(--agent-radius);box-shadow:4px 5px 0 #070707;transform:skewX(var(--agent-slant));color:var(--text);font-size:14px;font-weight:800;text-align:center}
+.agent-card:after{content:'';position:absolute;inset:0;border:2px solid #707070;border-radius:calc(var(--agent-radius) - 4px);pointer-events:none}
+.agent-portrait{position:relative;display:block;grid-area:1/1;min-width:0;overflow:hidden;background:linear-gradient(120deg,#b3712f,#47423a)}
+.agent-card .portrait-image{position:absolute;top:0;left:50%;display:block;width:auto;height:100%;max-width:none;aspect-ratio:1;object-fit:contain;transform:translateX(-50%) skewX(calc(-1 * var(--agent-slant)))}
+.agent-badges{display:flex;flex-direction:column;grid-area:1/2;min-height:0;padding-top:calc(var(--agent-radius) * .4);background:#11110f;border-left:1px solid #686055}
+.agent-badge{display:grid;place-items:center;flex:0 0 var(--agent-rail);width:100%;height:var(--agent-rail)}
+.agent-badge img{width:78%;height:78%;object-fit:contain;transform:skewX(calc(-1 * var(--agent-slant)))}
+.agent-name{display:block;grid-column:1/-1;grid-row:2;min-width:0;line-height:calc(var(--agent-name-height) - 2px);padding:0 10px;background:linear-gradient(120deg,#ffffff06,transparent 45%),var(--panel);border-top:2px solid #070707;box-shadow:inset 0 1px 0 #565656}
+.agent-name-text{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transform:skewX(calc(-1 * var(--agent-slant)))}
+.agent-card:hover,.agent-card:focus-visible{border-color:var(--acid);transform:skewX(var(--agent-slant)) translateY(-2px)}.agent-card:focus-visible{outline:none}.agent-card:focus-visible .agent-name{color:var(--acid)}
 .agent-card,.team-card,.member-link,.agent-chip,.back-link{text-decoration:none;transition:border-color .15s,transform .15s}
-.agent-card:hover,.team-card:hover{border-color:var(--acid);transform:translateY(-2px)}
-/* Capsule language on the slanted card: 2px black outline + hard offset shadow, drawn outside the clip-path. */
-.agent-card-wrap{display:block;min-width:0;filter:drop-shadow(2px 0 0 #070707) drop-shadow(-2px 0 0 #070707) drop-shadow(0 -2px 0 #070707) drop-shadow(0 2px 0 #070707) drop-shadow(3px 4px 0 #070707)}
+.team-card:hover{border-color:var(--acid);transform:translateY(-2px)}
+.agent-card-wrap{display:block;min-width:0;padding-bottom:5px}
 .item-card{position:relative;display:grid;gap:8px;min-width:0;padding:8px 8px 10px;background:linear-gradient(120deg,#ffffff03,transparent 45%),var(--panel);border:3px solid #070707;border-radius:16px;box-shadow:inset 0 0 0 1px #565656,0 4px 0 #070707;color:var(--text);font-size:13px;font-weight:800;text-align:center;text-decoration:none;transition:border-color .15s,transform .15s}
 .item-card:hover,.item-card:focus-visible{border-color:var(--acid);transform:translateY(-2px)}.item-card:focus-visible .item-card-name{color:var(--acid)}
 .item-card-art{position:relative;display:block;aspect-ratio:1;border-radius:10px;background:#4e4e4e;overflow:hidden}
@@ -160,7 +158,7 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .guide-related{margin-top:34px}.guide-related h3{font-size:18px;font-weight:900;margin:0 0 14px}
 .icon-chip img{object-fit:contain;border-radius:0}
 .guide-empty{color:var(--muted);font-size:14px}
-@media(max-width:760px){.module-head{padding:28px 0 20px}.roster-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.agent-card{--agent-rail:24px;--agent-name-height:28px;--agent-tail:7px;--agent-edge-correction:.75px;--agent-name-offset:4.25px;--agent-badge-size:18px;font-size:12px;padding:0}.calc-links{width:100%;margin-top:16px}.guide-page{padding-top:20px}.guide-head:not(.agent-head){gap:16px}.guide-section{padding:0 14px 6px}.guide-body{font-size:14px}.member-link img{width:64px;height:64px}.team-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.module-head{padding:28px 0 20px}.roster-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.agent-card{--agent-rail:28px;--agent-name-height:32px;--agent-radius:18px;font-size:13px}.calc-links{width:100%;margin-top:16px}.guide-page{padding-top:20px}.guide-head:not(.agent-head){gap:16px}.guide-section{padding:0 14px 6px}.guide-body{font-size:14px}.member-link img{width:64px;height:64px}.team-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -480,12 +478,11 @@ function appendBadges(box,badgeList){
     const img=el('img');img.src=encodeURI(entry.icon);img.alt='';badge.append(img);box.append(badge);
   }
 }
-// Agents: slanted card (portrait, category badge rail, name plate). The clip-path would cut a shadow off,
-// so the card sits in a wrapper that draws the outline and hard shadow with drop-shadow filters.
+// Agents: skewed capsule card (portrait, category badge rail, name plate) matching the guide-page portrait.
 function agentCard(c){
   const card=el('a','agent-card'+(c.guide?'':' no-guide'));card.href='#/agent/'+c.id;card.dataset.id=c.id;
   const portrait=el('span','agent-portrait');portrait.append(avatarImg(c,'portrait-image'));card.append(portrait);
-  const badges=el('span','agent-badges');portrait.append(badges);
+  const badges=el('span','agent-badges');card.append(badges);
   appendBadges(badges,[['rarity',c.rarity],['profession',c.professionId],['element',c.elementId],['faction',c.faction]]);
   const name=el('span','agent-name');name.append(el('span','agent-name-text',c.name));card.append(name);
   if(!c.guide)card.title='攻略撰寫中';
