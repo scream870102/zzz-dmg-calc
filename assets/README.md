@@ -3,6 +3,7 @@
 | 目錄 | 管理方式 | 用途 |
 | --- | --- | --- |
 | `images/manual/avatars/<版本>/` | 使用者手動下載、維護 | Q 版頭像：攻略內文角色引用、隊伍小頭像、計算頁輪播 |
+| `images/manual/icons/` | 使用者手動維護 | 自訂圖示，在 `data/custom-icons.json` 登記為 `{{custom:<id>}}` |
 | `images/synced/` | `node scripts/sync-icons.cjs` 自動下載 | 官方完整角色肖像、音擎、驅動盤、屬性、職業、稀有度、操作圖示 |
 | `images/site/` | 專案維護 | favicon、網站標誌等 |
 | `vendor/` | 專案維護 | 第三方程式庫，非圖片 |

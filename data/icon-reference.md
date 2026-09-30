@@ -1,6 +1,6 @@
 # 攻略圖示對照表
 
-由 `node scripts/sync-icons.cjs` 產生。角色、音擎、驅動盤資料分別在 data/characters.json、data/wengines.json、data/discs.json；操作統一使用 action。
+由 `node scripts/sync-icons.cjs` 產生。角色、音擎、驅動盤資料分別在 data/characters.json、data/wengines.json、data/discs.json；自訂圖示在 data/custom-icons.json；操作統一使用 action。
 
 | 引用 | 圖示 | 繁中名稱 | 分類 | Wiki ID | 備註 |
 | --- | --- | --- | --- | --- | --- |

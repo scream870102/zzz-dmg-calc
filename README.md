@@ -117,7 +117,15 @@ zzz-lab/
   - 操作：在 `labels.action` 加 `xxx:'名稱'`，並在 `actionFiles` 加 `xxx:'Icon_Xxx'`。
   - 再跑一次同步，引用代碼是 `{{stat:xxx}}`／`{{action:xxx}}`，名稱中的 `-` 會變成 `_`。
   - 名稱查不到官方來源時先不要加，不要猜。
-- **非官方的自訂圖示**：目前不支援。同步只接受官方 https 來源並重新下載驗證；直接在 `data/icon-registry.json` 手加的項目，下次同步會因「已發布的代碼消失」而中止。
+- **自訂圖示**（官方沒有、表達上需要的圖）：圖片放進 `assets/images/manual/icons/`，再在 `data/custom-icons.json` 加一筆，然後執行 `node scripts/sync-icons.cjs --tables-only`。引用代碼是 `{{custom:<id>}}`，id 只能用英數、`_`、`-`：
+
+  ```json
+  {
+    "custom:shield": {"name": "護盾", "icon": "assets/images/manual/icons/shield.png", "note": "選填備註", "source": "選填來源網址"}
+  }
+  ```
+
+  同步程式不會讀取、下載或覆寫這個檔案，也不要把自訂項目加到 `data/icon-registry.json`（下次同步會中止）。`custom:` 是獨立的命名空間，不會和官方代碼衝突；`icon` 也可以指向 `assets/images/` 下的現有圖片。
 
 **改完後的檢查**：執行 `node verify-icons.cjs` 與 `node verify-damage.cjs`。要看版面時，兩者都加 `--browser`。`verify-icons.cjs` 會確認所有攻略裡的 `{{...}}` 都找得到圖示。
 
