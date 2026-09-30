@@ -268,3 +268,11 @@
 | `{{faction:covenant_of_dayat}}` | <img src="../assets/images/synced/62366161929aa50b12c2ef6033774fa41f264fac1a60aef4ff34ed7143748c75.png" width="32" height="32" alt=""> | 達識結社 | 陣營 |  |  |
 | `{{faction:airspace_patrol_department}}` | <img src="../assets/images/synced/b08bc11cc93c0718b2291df40448c4ff04019036663dc4f0510cce92c4b1ea69.png" width="32" height="32" alt=""> | 空域巡戍局 | 陣營 |  |  |
 | `{{faction:flint_workshop}}` | <img src="../assets/images/synced/4dea07a77d05c5cc35ca56f738ce65561f05aa3fcbd1223d351d37f047e114b9.png" width="32" height="32" alt=""> | 弗林特工坊 | 陣營 |  |  |
+| `{{custom:heavy_attack}}` | <img src="../assets/images/manual/icons/heavy-attack.svg" width="32" height="32" alt=""> | 重擊 | 自訂 |  | 本站自製 SVG |
+| `{{custom:stun}}` | <img src="../assets/images/manual/icons/stun.svg" width="32" height="32" alt=""> | 失衡 | 自訂 |  | 本站自製 SVG |
+| `{{custom:stun_value}}` | <img src="../assets/images/manual/icons/daze.svg" width="32" height="32" alt=""> | 失衡值 | 自訂 |  | 本站自製 SVG |
+| `{{custom:stun_multiplier}}` | <img src="../assets/images/manual/icons/stun-multiplier.svg" width="32" height="32" alt=""> | 失衡倍率 | 自訂 |  | 本站自製 SVG |
+| `{{custom:mechanic_gauge}}` | <img src="../assets/images/manual/icons/mechanic-gauge.svg" width="32" height="32" alt=""> | 機制條 | 自訂 |  | 本站自製 SVG |
+| `{{custom:mechanic_point}}` | <img src="../assets/images/manual/icons/mechanic-point.svg" width="32" height="32" alt=""> | 機制點 | 自訂 |  | 本站自製 SVG |
+| `{{custom:anomaly_buildup}}` | <img src="../assets/images/manual/icons/anomaly-buildup.svg" width="32" height="32" alt=""> | 異常積蓄 | 自訂 |  | 本站自製 SVG |
+| `{{custom:decibel}}` | <img src="../assets/images/manual/icons/decibel.png" width="32" height="32" alt=""> | 喧響值 | 自訂 |  | 取自遊戲內喧響值字樣（使用者提供截圖） |
