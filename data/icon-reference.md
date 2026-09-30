@@ -280,3 +280,17 @@
 | `{{custom:decibel}}` | <img src="../assets/images/manual/icons/decibel.png" width="32" height="32" alt=""> | 喧響值 | 自訂 |  | 取自遊戲內喧響值字樣（使用者提供截圖） |
 | `{{custom:sharp_gauge}}` | <img src="../assets/images/manual/icons/trace.svg" width="32" height="32" alt=""> | 殘痕 | 自訂 |  | 本站自製 SVG；中心為官方 stat:sharp 圖示 |
 | `{{custom:switch}}` | <img src="../assets/images/manual/icons/axis-merge.svg" width="32" height="32" alt=""> | 合軸 | 自訂 |  | 本站自製 SVG |
+| `{{custom:dash_attack}}` | <img src="../assets/images/synced/8b8931337367cc53c5697703b90089ca5fd48694b2ba0a07d1b98103dc9c25de.png" width="32" height="32" alt=""> | 衝刺攻擊 | 自訂 |  | 同 {{action:dodge}} 圖示；HoYoWiki 閃避分類下的技能類型 |
+| `{{custom:dodge_counter}}` | <img src="../assets/images/synced/8b8931337367cc53c5697703b90089ca5fd48694b2ba0a07d1b98103dc9c25de.png" width="32" height="32" alt=""> | 閃避反擊 | 自訂 |  | 同 {{action:dodge}} 圖示；HoYoWiki 閃避分類下的技能類型 |
+| `{{custom:perfect_dodge}}` | <img src="../assets/images/synced/8b8931337367cc53c5697703b90089ca5fd48694b2ba0a07d1b98103dc9c25de.png" width="32" height="32" alt=""> | 極限閃避 | 自訂 |  | 同 {{action:dodge}} 圖示；HoYoWiki 技能說明用語 |
+| `{{custom:quick_assist}}` | <img src="../assets/images/synced/3d0fc1fc0c4f5fce8f247f08155c72285571d51e391e3b00dcc15fbe49e59a2b.png" width="32" height="32" alt=""> | 快速支援 | 自訂 |  | 同 {{action:support}} 圖示；HoYoWiki 支援技分類下的技能類型 |
+| `{{custom:defensive_assist}}` | <img src="../assets/images/synced/3d0fc1fc0c4f5fce8f247f08155c72285571d51e391e3b00dcc15fbe49e59a2b.png" width="32" height="32" alt=""> | 招架支援 | 自訂 |  | 同 {{action:support}} 圖示；HoYoWiki 支援技分類下的技能類型 |
+| `{{custom:evasive_assist}}` | <img src="../assets/images/synced/3d0fc1fc0c4f5fce8f247f08155c72285571d51e391e3b00dcc15fbe49e59a2b.png" width="32" height="32" alt=""> | 回避支援 | 自訂 |  | 同 {{action:support}} 圖示；HoYoWiki 支援技分類下的技能類型 |
+| `{{custom:assist_follow_up}}` | <img src="../assets/images/synced/3d0fc1fc0c4f5fce8f247f08155c72285571d51e391e3b00dcc15fbe49e59a2b.png" width="32" height="32" alt=""> | 支援突擊 | 自訂 |  | 同 {{action:support}} 圖示；HoYoWiki 支援技分類下的技能類型 |
+| `{{custom:counter_assist}}` | <img src="../assets/images/synced/3d0fc1fc0c4f5fce8f247f08155c72285571d51e391e3b00dcc15fbe49e59a2b.png" width="32" height="32" alt=""> | 反制支援 | 自訂 |  | 同 {{action:support}} 圖示；HoYoWiki 支援技分類下的技能類型 |
+| `{{custom:core_passive}}` | <img src="../assets/images/synced/e22bed54f02d536a43c7a03a103a43ce4065e245296efe8ce07b1fea14ba0878.png" width="32" height="32" alt=""> | 核心被動 | 自訂 |  | 同 {{action:core}} 圖示；HoYoWiki 核心技分類下的技能類型 |
+| `{{custom:additional_ability}}` | <img src="../assets/images/synced/e22bed54f02d536a43c7a03a103a43ce4065e245296efe8ce07b1fea14ba0878.png" width="32" height="32" alt=""> | 額外能力 | 自訂 |  | 同 {{action:core}} 圖示；HoYoWiki 核心技分類下的技能類型 |
+| `{{custom:anomaly_dmg}}` | <img src="../assets/images/synced/85325ac35b2f06504ba4354a9444eef186b0488d661b0a39e4d359ca5a81c88a.png" width="32" height="32" alt=""> | 異常傷害 | 自訂 |  | 同 {{profession:anomaly}} 圖示 |
+| `{{custom:sheer_dmg}}` | <img src="../assets/images/synced/3b48202757b73b0139eed326795737bfc4a4c5c1c2d2367da9c6e7ef125e08ca.png" width="32" height="32" alt=""> | 貫穿傷害 | 自訂 |  | 同 {{profession:rupture}} 圖示 |
+| `{{custom:sharp_dmg}}` | <img src="../assets/images/synced/ef43ba2a2c697c6c8b83fa0640dffd7902855a7e473cc764c2ace372421c96a7.png" width="32" height="32" alt=""> | 毀傷 | 自訂 |  | 同 {{profession:fengyu}} 圖示 |
+| `{{custom:duo_chain}}` | <img src="../assets/images/synced/59175fc6df32baa8b91ec756290e57983aae09adac1504b7f135c68151f394a2.png" width="32" height="32" alt=""> | 雙連攜 | 自訂 |  | 同 {{action:chain}} 圖示 |

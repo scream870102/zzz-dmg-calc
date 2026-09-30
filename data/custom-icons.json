@@ -58,5 +58,71 @@
     "name": "合軸",
     "icon": "assets/images/manual/icons/axis-merge.svg",
     "note": "本站自製 SVG"
+  },
+  "custom:dash_attack": {
+    "name": "衝刺攻擊",
+    "iconOf": "action:dodge",
+    "note": "HoYoWiki 閃避分類下的技能類型"
+  },
+  "custom:dodge_counter": {
+    "name": "閃避反擊",
+    "iconOf": "action:dodge",
+    "note": "HoYoWiki 閃避分類下的技能類型"
+  },
+  "custom:perfect_dodge": {
+    "name": "極限閃避",
+    "iconOf": "action:dodge",
+    "note": "HoYoWiki 技能說明用語"
+  },
+  "custom:quick_assist": {
+    "name": "快速支援",
+    "iconOf": "action:support",
+    "note": "HoYoWiki 支援技分類下的技能類型"
+  },
+  "custom:defensive_assist": {
+    "name": "招架支援",
+    "iconOf": "action:support",
+    "note": "HoYoWiki 支援技分類下的技能類型"
+  },
+  "custom:evasive_assist": {
+    "name": "回避支援",
+    "iconOf": "action:support",
+    "note": "HoYoWiki 支援技分類下的技能類型"
+  },
+  "custom:assist_follow_up": {
+    "name": "支援突擊",
+    "iconOf": "action:support",
+    "note": "HoYoWiki 支援技分類下的技能類型"
+  },
+  "custom:counter_assist": {
+    "name": "反制支援",
+    "iconOf": "action:support",
+    "note": "HoYoWiki 支援技分類下的技能類型"
+  },
+  "custom:core_passive": {
+    "name": "核心被動",
+    "iconOf": "action:core",
+    "note": "HoYoWiki 核心技分類下的技能類型"
+  },
+  "custom:additional_ability": {
+    "name": "額外能力",
+    "iconOf": "action:core",
+    "note": "HoYoWiki 核心技分類下的技能類型"
+  },
+  "custom:anomaly_dmg": {
+    "name": "異常傷害",
+    "iconOf": "profession:anomaly"
+  },
+  "custom:sheer_dmg": {
+    "name": "貫穿傷害",
+    "iconOf": "profession:rupture"
+  },
+  "custom:sharp_dmg": {
+    "name": "毀傷",
+    "iconOf": "profession:fengyu"
+  },
+  "custom:duo_chain": {
+    "name": "雙連攜",
+    "iconOf": "action:chain"
   }
 }

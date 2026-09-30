@@ -156,7 +156,7 @@ body:not([data-view=calc]) .mobile-dock{display:none!important}
 .video-embed{aspect-ratio:16/9;margin:0 0 16px;border:3px solid #070707;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 4px 0 #070707}.video-embed iframe{display:block;width:100%;height:100%;border:0}
 .agent-chip{display:inline-flex;align-items:center;gap:5px;padding:1px 9px 1px 2px;margin:0 2px;vertical-align:middle;border:2px solid #070707;border-radius:30px;background:var(--raised);color:var(--text)!important;font-size:.9em;font-weight:800;line-height:1.7}.agent-chip img{width:24px;height:24px;border-radius:50%;object-fit:cover}.agent-chip:hover{border-color:var(--acid)}.agent-chip.text-only{padding-left:9px}.agent-chip.missing{padding-left:9px;color:var(--orange)!important;border-style:dashed}
 .guide-related{margin-top:34px}.guide-related h3{font-size:18px;font-weight:900;margin:0 0 14px}
-.icon-chip img{object-fit:contain;border-radius:0}
+.icon-chip img{object-fit:contain;border-radius:0}.icon-chip.alias{border-style:dashed;border-color:var(--muted);font-style:italic}
 .guide-empty{color:var(--muted);font-size:14px}
 @media(max-width:760px){.module-head{padding:28px 0 20px}.roster-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.agent-card{--agent-rail:28px;--agent-name-height:32px;--agent-radius:18px;font-size:13px}.calc-links{width:100%;margin-top:16px}.guide-page{padding-top:20px}.guide-head:not(.agent-head){gap:16px}.guide-section{padding:0 14px 6px}.guide-body{font-size:14px}.member-link img{width:64px;height:64px}.team-grid{grid-template-columns:1fr}}
 </style>
@@ -434,6 +434,8 @@ const getJson=url=>fetch(url,{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Err
 const dataReady=Promise.all([getJson('data/characters.json'),getJson('data/teams.json'),getJson('data/icon-registry.json').catch(error=>{console.warn('Icon registry unavailable:',error);return {entries:{}};}),getJson('data/wengines.json'),getJson('data/discs.json'),getJson('data/custom-icons.json').catch(error=>{console.warn('Custom icons unavailable:',error);return {};})]).then(([characters,teams,registry,wengines,discs,custom])=>{
   // Hand-made custom:* icons sit beside the crawled registry; official keys win on any clash.
   CHARACTERS=characters;TEAMS=teams;ICON_ENTRIES={...custom,...registry.entries};WENGINES=wengines;DISCS=discs;
+  // iconOf borrows another entry's image, so one official icon can carry several meanings (閃避 → 閃避反擊、衝刺攻擊…).
+  for(const e of Object.values(custom))if(e.iconOf)e.icon=ICON_ENTRIES[e.iconOf]?.icon;
   AVATARS=characters.filter(c=>c.version).flatMap(c=>c.avatars.map(f=>({f,n:c.name,v:c.version})));
 });
 dataReady.catch(()=>{for(const id of ['roster','wengine-roster','disc-roster','team-list'])$(id).textContent='資料載入失敗。請透過網頁伺服器開啟（直接雙擊 index.html 無法讀取 data/ 內的檔案，見 README）。';});
@@ -745,21 +747,22 @@ function renderMarkdown(body,md,path){
     wrap.append(frame);p.replaceWith(wrap);
   }
   // Numeric and agent references use official HoYoWiki character IDs.
+  // {{key=文字}} keeps key's icon but shows 文字, e.g. an agent-only term like 猩紅銘刻 on the shared 機制條 icon.
   const walker=document.createTreeWalker(tmp,NodeFilter.SHOW_TEXT),texts=[];
-  const tokenPattern=/\{\{(?:\d+|[a-z][a-z0-9_]*:[a-zA-Z0-9_-]+)\}\}/;
+  const tokenPattern=/\{\{(?:\d+|[a-z][a-z0-9_]*:[a-zA-Z0-9_-]+)(?:=[^{}=]+)?\}\}/;
   while(walker.nextNode())if(tokenPattern.test(walker.currentNode.nodeValue)&&!walker.currentNode.parentElement.closest('code,pre'))texts.push(walker.currentNode);
   for(const node of texts){
     const frag=document.createDocumentFragment();
-    node.nodeValue.split(/(\{\{(?:\d+|[a-z][a-z0-9_]*:[a-zA-Z0-9_-]+)\}\})/).forEach((part,i)=>{
+    node.nodeValue.split(/(\{\{(?:\d+|[a-z][a-z0-9_]*:[a-zA-Z0-9_-]+)(?:=[^{}=]+)?\}\})/).forEach((part,i)=>{
       if(i%2===0){if(part)frag.append(part);return;}
-      const reference=part.slice(2,-2),key=/^\d+$/.test(reference)?'agent:'+reference:reference;
+      const [reference,label]=part.slice(2,-2).split('='),key=/^\d+$/.test(reference)?'agent:'+reference:reference;
       const ref=resolveReference(key);
       if(!ref){frag.append(el('span','agent-chip icon-chip missing',part));return;}
       const chip=el(ref.href?'a':'span','agent-chip icon-chip');chip.dataset.iconKey=key;
       if(ref.href)chip.href=ref.href;
       if(ref.src){const img=el('img');img.src=encodeURI(ref.src);img.alt='';img.loading='lazy';chip.append(img);}
       else chip.classList.add('text-only');
-      chip.append(ref.name);frag.append(chip);
+      if(label?.trim()){chip.classList.add('alias');chip.title=ref.name;chip.append(label.trim());}else chip.append(ref.name);frag.append(chip);
     });
     node.replaceWith(frag);
   }

@@ -127,6 +127,10 @@ zzz-lab/
 
   同步程式不會讀取、下載或覆寫這個檔案，也不要把自訂項目加到 `data/icon-registry.json`（下次同步會中止）。`custom:` 是獨立的命名空間，不會和官方代碼衝突；`icon` 也可以指向 `assets/images/` 下的現有圖片。
 
+  同一張官方圖有多種意思時（閃避 → 閃避反擊、衝刺攻擊；支援技 → 快速支援、招架支援），用 `iconOf` 借圖，不要寫死 `assets/images/synced/` 的雜湊檔名：`"custom:dodge_counter": {"name": "閃避反擊", "iconOf": "action:dodge"}`。`iconOf` 和 `icon` 只能擇一。
+
+  角色專有名詞不要新增圖示，攻略直接寫 `{{custom:mechanic_gauge=猩紅銘刻}}`（機制條圖＋原名，虛線膠囊）或 `{{custom:mechanic_point=原名}}`。
+
 **改完後的檢查**：執行 `node verify-icons.cjs` 與 `node verify-damage.cjs`。要看版面時，兩者都加 `--browser`。`verify-icons.cjs` 會確認所有攻略裡的 `{{...}}` 都找得到圖示。
 
 ## 撰寫攻略
