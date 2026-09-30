@@ -270,9 +270,13 @@
 | `{{faction:flint_workshop}}` | <img src="../assets/images/synced/4dea07a77d05c5cc35ca56f738ce65561f05aa3fcbd1223d351d37f047e114b9.png" width="32" height="32" alt=""> | 弗林特工坊 | 陣營 |  |  |
 | `{{custom:heavy_attack}}` | <img src="../assets/images/manual/icons/heavy-attack.svg" width="32" height="32" alt=""> | 重擊 | 自訂 |  | 本站自製 SVG |
 | `{{custom:stun}}` | <img src="../assets/images/manual/icons/stun.svg" width="32" height="32" alt=""> | 失衡 | 自訂 |  | 本站自製 SVG |
+| `{{custom:stun_dur}}` | <img src="../assets/images/manual/icons/stun.svg" width="32" height="32" alt=""> | 失衡期間 | 自訂 |  | 本站自製 SVG |
+| `{{custom:non_stun_dur}}` | <img src="../assets/images/manual/icons/stun.svg" width="32" height="32" alt=""> | 非失衡期間 | 自訂 |  | 本站自製 SVG |
 | `{{custom:stun_value}}` | <img src="../assets/images/manual/icons/daze.svg" width="32" height="32" alt=""> | 失衡值 | 自訂 |  | 本站自製 SVG |
 | `{{custom:stun_multiplier}}` | <img src="../assets/images/manual/icons/stun-multiplier.svg" width="32" height="32" alt=""> | 失衡倍率 | 自訂 |  | 本站自製 SVG |
 | `{{custom:mechanic_gauge}}` | <img src="../assets/images/manual/icons/mechanic-gauge.svg" width="32" height="32" alt=""> | 機制條 | 自訂 |  | 本站自製 SVG |
 | `{{custom:mechanic_point}}` | <img src="../assets/images/manual/icons/mechanic-point.svg" width="32" height="32" alt=""> | 機制點 | 自訂 |  | 本站自製 SVG |
 | `{{custom:anomaly_buildup}}` | <img src="../assets/images/manual/icons/anomaly-buildup.svg" width="32" height="32" alt=""> | 異常積蓄 | 自訂 |  | 本站自製 SVG |
 | `{{custom:decibel}}` | <img src="../assets/images/manual/icons/decibel.png" width="32" height="32" alt=""> | 喧響值 | 自訂 |  | 取自遊戲內喧響值字樣（使用者提供截圖） |
+| `{{custom:sharp_gauge}}` | <img src="../assets/images/manual/icons/trace.svg" width="32" height="32" alt=""> | 殘痕 | 自訂 |  | 本站自製 SVG；中心為官方 stat:sharp 圖示 |
+| `{{custom:switch}}` | <img src="../assets/images/manual/icons/axis-merge.svg" width="32" height="32" alt=""> | 合軸 | 自訂 |  | 本站自製 SVG |
