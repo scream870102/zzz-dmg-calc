@@ -4,9 +4,9 @@
 
 ## 圖示引用
 
-攻略可引用官方圖示與文字，例如 `{{1185}}`（克拉蕾的 Wiki ID）、`{{stat:crit_rate}}`、`{{wengine:1189}}`（音擎）、`{{disc:1177}}`（驅動盤）。角色清單、路由、攻略檔名與數字引用统一採官方 Wiki ID。請參閱 [圖示預覽／搜尋表](icon-reference.html) 與 [引用及更新說明](ICONS.md)。保留可重跑的官方資源抓取程式：`node scripts/sync-icons.cjs`。
+攻略可引用官方圖示與文字，例如 `{{1185}}`（克拉蕾的 Wiki ID）、`{{stat:crit_rate}}`、`{{wengine:1189}}`（音擎）、`{{disc:1177}}`（驅動盤）。角色清單、路由、攻略檔名與數字引用统一採官方 Wiki ID。請參閱 [圖示預覽／搜尋表](icon-reference.html)。
 
-所有工具（同步、驗證、Shorts 產生器）的用法與參數見 [工具使用說明](TOOLS.md)。
+資料同步爬蟲、驗證程式與 Shorts 產生器放在另一個非公開 repo（zzz-lab-tools），本 repo 只保存 GitHub Pages 網站內容。
 
 ## 功能
 
@@ -59,7 +59,6 @@ zzz-lab/
 ├── assets/images/manual/avatars/     # 手動 Q 版頭像，依版本分資料夾（108 張原圖，約 29 MB）
 ├── assets/images/synced/            # 爬蟲下載的完整肖像與共用圖示
 ├── assets/README.md                # 圖片來源分區與手動更新步驟
-├── verify-damage.cjs   # 數值、離線依賴與瀏覽器互動驗證
 └── README.md           # 專案說明
 ```
 
@@ -82,58 +81,21 @@ zzz-lab/
 
 ## 音擎與驅動盤表
 
-`data/wengines.json`、`data/discs.json` 由 `node scripts/sync-icons.cjs` 從官方 HoYoWiki 清單與詳細頁產生，`id` 同樣是 Wiki ID。官方富文字轉為純文字（保留換行）後才存入，網頁不插入官方 HTML；原始欄位保留在 `sourceMetadata`。
+`data/wengines.json`、`data/discs.json` 由爬蟲（工具 repo）從官方 HoYoWiki 清單與詳細頁產生，`id` 同樣是 Wiki ID。官方富文字轉為純文字（保留換行）後才存入，網頁不插入官方 HTML；原始欄位保留在 `sourceMetadata`。
 
 - 音擎：`rarity`、`professionId`／`profession`（沒有職業限制的留 `null`）、`baseStat`／`advancedStat`（Lv.60 改裝後）、`effectName`、`effectCondition`、`effect`、`intro`、`recommendedAgents`（Wiki 的推薦／專屬代理人 ID）。
 - 驅動盤：`rarities`（該套可出現的品質）、`twoPiece`、`fourPiece`。
 - `version`：取自 Wiki「實裝版本」。官方未填時為 `null`，不推測；可手動填入，重新同步時官方仍未提供就保留手填值。
 - `guide`（選填）：例如 `"guides/wengines/1189.md"`、`"guides/discs/1177.md"`，會接在資料下方以攻略格式顯示。
 
-新增角色：執行 `node scripts/sync-icons.cjs` 從官方清單加入，未確認的版本留 `null`。之後可補上版本、原有頭像素材與攻略路徑；同步會保留這些欄位。執行 `node verify-icons.cjs` 與 `node verify-damage.cjs` 檢查資料、引用與圖片。
+新增角色：由工具 repo 的同步程式從官方清單加入，未確認的版本留 `null`。之後可補上版本、原有頭像素材與攻略路徑；同步會保留這些欄位。
 
 圖片統一放在 `assets/images/`：`manual/avatars/` 是手動 Q 版，`synced/` 是爬蟲圖，`site/` 是網站圖示；`vendor/` 繼續保存程式庫。爬蟲不會取得或覆寫手動 Q 版。詳見 [素材管理說明](assets/README.md)。
 
 ## 修改圖示表與新增項目
 
-圖示表（`icon-reference.html`、`data/icon-reference.md`）是**產物**，不要直接改；改來源資料後重新產生。原則：官方資料改爬蟲設定或人工欄位，不要手改 `sourceMetadata`、`icon`、`sha256` 這類爬蟲欄位，下次同步會被蓋掉。
+圖示表（`icon-reference.html`、`data/icon-reference.md`）與 `data/` 內的官方資料都是爬蟲**產物**，不要直接改 `sourceMetadata`、`icon`、`sha256` 這類爬蟲欄位。同步、新增圖示與驗證工具放在另一個非公開 repo（zzz-lab-tools），流程寫在那邊的 README。
 
-**改名稱或補資料**
-
-| 想改的東西 | 改哪裡 | 之後執行 |
-| --- | --- | --- |
-| 共用圖示顯示名稱：能力屬性、稀有度，以及操作裡的 `special_ready`、`ultimate`、`ultimate_ready`、`move` | `scripts/sync-icons.cjs` 的 `labels` | `node scripts/sync-icons.cjs` |
-| 上面這類名稱，只想先本機生效、不連網 | 同時改 `labels` 與 `data/icon-registry.json` 該筆的 `name`（兩邊要一致，否則下次同步會換回 `labels` 的值） | `node scripts/sync-icons.cjs --tables-only` |
-| 角色的陣營等爬蟲欄位有錯 | `data/characters.json` 該角色加 `overrides`（見上方「角色表」） | `node scripts/sync-icons.cjs` |
-| 角色簡稱、版本、Q 版頭像、攻略路徑 | 直接改 `data/characters.json` 的 `name`、`version`、`avatars`、`guide`；同步會保留 | `node scripts/sync-icons.cjs --tables-only` |
-| 音擎／驅動盤官方沒填的版本、攻略路徑 | 直接改 `data/wengines.json`／`data/discs.json` 的 `version`、`guide` | `node scripts/sync-icons.cjs --tables-only` |
-
-有些名稱**改 `labels` 沒用**，因為同步時會以官方文字覆蓋：
-- 操作：`normal`、`special`、`dodge`、`support`、`chain`、`core`，用 HoYoLAB 官方繁中語系。
-- 元素、職業：用 HoYoWiki 篩選選項的名稱。
-
-**新增項目**
-
-- **新角色、音擎、驅動盤、陣營**：官方 Wiki 上架後執行 `node scripts/sync-icons.cjs`，會自動加入，不用手動建檔。之後再手動補 `version`、`avatars`、`guide`。
-- **新的共用圖示**（例如新能力屬性、新操作）：先執行同步，官方新圖會出現在 `data/icon-registry.json` 的 `unclassified`，裡面有檔名（例如 `prop-xxx-icon`、`Icon_Xxx`）。確認官方繁中名稱後：
-  - 能力屬性：在 `labels.stat` 加 `xxx:'名稱'`，其中 `xxx` 對應檔名 `prop-xxx-icon`。
-  - 操作：在 `labels.action` 加 `xxx:'名稱'`，並在 `actionFiles` 加 `xxx:'Icon_Xxx'`。
-  - 再跑一次同步，引用代碼是 `{{stat:xxx}}`／`{{action:xxx}}`，名稱中的 `-` 會變成 `_`。
-  - 名稱查不到官方來源時先不要加，不要猜。
-- **自訂圖示**（官方沒有、表達上需要的圖）：圖片放進 `assets/images/manual/icons/`，再在 `data/custom-icons.json` 加一筆，然後執行 `node scripts/sync-icons.cjs --tables-only`。引用代碼是 `{{custom:<id>}}`，id 只能用英數、`_`、`-`：
-
-  ```json
-  {
-    "custom:shield": {"name": "護盾", "icon": "assets/images/manual/icons/shield.png", "note": "選填備註", "source": "選填來源網址"}
-  }
-  ```
-
-  同步程式不會讀取、下載或覆寫這個檔案，也不要把自訂項目加到 `data/icon-registry.json`（下次同步會中止）。`custom:` 是獨立的命名空間，不會和官方代碼衝突；`icon` 也可以指向 `assets/images/` 下的現有圖片。
-
-  同一張官方圖有多種意思時（閃避 → 閃避反擊、衝刺攻擊；支援技 → 快速支援、招架支援），用 `iconOf` 借圖，不要寫死 `assets/images/synced/` 的雜湊檔名：`"custom:dodge_counter": {"name": "閃避反擊", "iconOf": "action:dodge"}`。`iconOf` 和 `icon` 只能擇一。
-
-  角色專有名詞不要新增圖示，攻略直接寫 `{{custom:mechanic_gauge=猩紅銘刻}}`（機制條圖＋原名，虛線膠囊）或 `{{custom:mechanic_point=原名}}`。
-
-**改完後的檢查**：執行 `node verify-icons.cjs` 與 `node verify-damage.cjs`。要看版面時，兩者都加 `--browser`。`verify-icons.cjs` 會確認所有攻略裡的 `{{...}}` 都找得到圖示。
 
 ## 撰寫攻略
 
@@ -164,32 +126,14 @@ zzz-lab/
 
 寫在句子裡或 `[文字](網址)` 形式的影片連結會保持一般連結。放在行內程式碼（反引號包住）裡的 `{{id}}` 不會轉換。
 
-改完執行 `node verify-damage.cjs`，會檢查攻略檔是否存在、隊伍成員 id 是否都在角色表內。
+改完用工具 repo 的 `verify-damage.cjs` 檢查攻略檔是否存在、隊伍成員 id 是否都在角色表內。
 
 ## 驗證
 
-已在 Node.js 24 執行驗證，不需安裝 npm 套件。在專案資料夾執行：
+數值、資料表與桌面／手機版面的驗證程式放在非公開的工具 repo（zzz-lab-tools）。
 
-```sh
-node verify-damage.cjs
-```
+最近一次驗證（2026-10-02）：120 項數值、離線與資料表檢查，加上桌面、手機各 134 項互動／版面檢查，以及圖示／引用代碼的瀏覽器檢查，全部通過。
 
-執行數值與離線依賴檢查。若也要驗證桌面、手機版面和互動：
-
-```sh
-node verify-damage.cjs --browser
-```
-
-瀏覽器驗證會在本機啟動暫時的 HTTP 伺服器載入測試頁，並使用 Windows 的下列安裝路徑，依序尋找 Chrome 或 Edge：
-
-- `C:/Program Files/Google/Chrome/Application/chrome.exe`
-- `C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe`
-
-程式使用獨立的暫存瀏覽器設定檔；執行結果會列出截圖位置。其他作業系統或自訂安裝位置需先調整 `verify-damage.cjs` 的瀏覽器路徑。
-
-瀏覽器驗證的攻略頁測試使用寫在暫存資料夾的假資料，不會動到 `data/` 與 `guides/`。
-
-最近一次驗證（2026-09-29）：`verify-damage.cjs --browser` 120 項數值、離線與資料表檢查，加上桌面、手機各 134 項互動／版面檢查；`verify-icons.cjs --browser` 含角色／音擎／驅動盤總覽、複選篩選、排序、專屬頁、引用代碼與圖示搜尋表，全部通過。
 
 ## 發布到 GitHub Pages
 
